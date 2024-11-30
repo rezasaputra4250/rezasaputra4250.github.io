@@ -1,0 +1,160 @@
+/* Reset default margin dan padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Set latar belakang hitam untuk seluruh halaman */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #000; /* Hitam */
+  color: #fff; /* Putih */
+  line-height: 1.6;
+}
+
+/* Styling untuk header dan navigasi */
+header {
+  background-color: #111; /* Gelap sedikit lebih terang dari hitam */
+  padding: 20px;
+}
+
+nav ul {
+  list-style: none;
+  text-align: center;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 20px;
+}
+
+nav ul li a {
+  color: #fff; /* Putih */
+  text-decoration: none;
+  font-size: 18px;
+  text-transform: uppercase;
+}
+
+nav ul li a:hover {
+  color: #e60000; /* Merah terang saat hover */
+}
+
+/* Styling untuk section utama */
+#hero {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+h1 {
+  font-size: 3em;
+  color: #fff; /* Putih */
+}
+
+h1 span {
+  color: #e60000; /* Merah terang untuk teks tertentu */
+}
+
+p {
+  font-size: 1.2em;
+  margin-top: 20px;
+}
+
+/* Styling untuk About section */
+#about {
+  padding: 50px 20px;
+  text-align: center;
+  background-color: #222;
+}
+
+#about h2 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+#about ul {
+  list-style: none;
+}
+
+#about ul li {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+/* Styling untuk Project section */
+#projects {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.project {
+  background-color: #333;
+  margin: 20px 0;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.project a {
+  color: #e60000; /* Merah */
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.project a:hover {
+  text-decoration: underline;
+}
+
+/* Styling untuk Form di Contact section */
+#contact {
+  padding: 50px 20px;
+  background-color: #111;
+  text-align: center;
+}
+
+form {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: #222;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+form label {
+  display: block;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+form input, form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #555;
+  border-radius: 4px;
+}
+
+form button {
+  padding: 10px 20px;
+  background-color: #e60000;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 1.1em;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: #c50000;
+}
+
+/* Footer styling */
+footer {
+  background-color: #111;
+  color: #fff; /* Putih */
+  text-align: center;
+  padding: 10px;
+}
+
+footer span {
+  color: #e60000; /* Merah untuk tahun */
+}
