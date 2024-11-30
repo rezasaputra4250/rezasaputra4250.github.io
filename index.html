@@ -4,74 +4,92 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Reza Saputra - Web Developer</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="script.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.0/dist/tailwind.min.css" rel="stylesheet">
+  <!-- Font Awesome CDN -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 </head>
-<body>
-  <header>
+<body class="bg-black text-white font-sans">
+
+  <!-- Header / Navbar -->
+  <header class="bg-gray-700 py-4 shadow-md">
     <nav>
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li><a href="#login">Login</a></li>
+      <ul class="flex justify-center space-x-8">
+        <li><a href="#" class="text-white hover:text-red-500 transition duration-300">Home</a></li>
+        <li><a href="#about" class="text-white hover:text-red-500 transition duration-300">About</a></li>
+        <li><a href="#contact" class="text-white hover:text-red-500 transition duration-300">Contact</a></li>
+        <li><a href="#login" class="text-white hover:text-red-500 transition duration-300">Login</a></li>
       </ul>
     </nav>
   </header>
 
-  <section id="hero">
-    <h1>Hallo, Saya <span>Reza Saputra</span> seorang <span>Web Developer</span></h1>
-    <p>Welcome to my portfolio. I create stunning websites and applications with modern web technologies.</p>
+  <!-- Social Media Icons in Navbar -->
+  <section class="text-center py-6">
+    <div class="flex justify-center space-x-6">
+      <a href="#" class="text-white hover:text-blue-500 transition duration-300">
+        <i class="fab fa-facebook-f text-2xl"></i>
+      </a>
+      <a href="#" class="text-white hover:text-blue-400 transition duration-300">
+        <i class="fab fa-twitter text-2xl"></i>
+      </a>
+      <a href="#" class="text-white hover:text-pink-500 transition duration-300">
+        <i class="fab fa-instagram text-2xl"></i>
+      </a>
+      <a href="#" class="text-white hover:text-blue-700 transition duration-300">
+        <i class="fab fa-linkedin-in text-2xl"></i>
+      </a>
+    </div>
   </section>
 
-  <section id="about">
-    <h2>About Me</h2>
-    <p>Hi, I'm Reza Saputra, a passionate Web Developer with over 5 years of experience in building dynamic and responsive websites. I specialize in front-end development using HTML, CSS, and JavaScript, as well as back-end development with Node.js and PHP. I love solving complex problems and turning ideas into fully functional web applications.</p>
-    <ul>
+  <!-- Hero Section -->
+  <section id="hero" class="text-center py-24">
+    <h1 class="text-5xl font-bold text-white mb-4">Hallo, Saya <span class="text-red-500">Reza Saputra</span> seorang <span class="text-red-500">Web Developer</span></h1>
+    <p class="text-lg">Welcome to my portfolio. I create stunning websites and applications with modern web technologies.</p>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="py-24 bg-gray-800 text-center">
+    <h2 class="text-3xl font-semibold text-red-500 mb-6">About Me</h2>
+    <p class="text-xl mb-4">Hi, I'm Reza Saputra, a passionate Web Developer with over 5 years of experience in building dynamic and responsive websites. I specialize in front-end development using HTML, CSS, and JavaScript, as well as back-end development with Node.js and PHP. I love solving complex problems and turning ideas into fully functional web applications.</p>
+    <ul class="text-lg list-none">
       <li><strong>Location:</strong> Jakarta, Indonesia</li>
       <li><strong>Skills:</strong> HTML, CSS, JavaScript, Node.js, React, PHP, MySQL</li>
       <li><strong>Hobbies:</strong> Coding, Music, Traveling, Photography</li>
     </ul>
   </section>
 
-  <section id="projects">
-    <h2>My Projects</h2>
-    <div class="project">
-      <h3>Project 1: Portfolio Website</h3>
-      <p>A personal portfolio website built to showcase my skills and projects.</p>
-      <a href="#">View Project</a>
+  <div class="flex justify-center items-center min-h-screen space-x-6">
+    <!-- WebDevIndo Link -->
+    <div class="text-center bg-gray-800 p-6 rounded-lg shadow-lg">
+      <a href="https://github.com/webdevindo" target="_blank" class="text-2xl font-semibold text-blue-500 hover:text-blue-300">
+        <i class="fab fa-github"></i> WebDevIndo
+      </a>
     </div>
-    <div class="project">
-      <h3>Project 2: E-commerce Website</h3>
-      <p>An online store with product listings, shopping cart, and payment integration.</p>
-      <a href="#">View Project</a>
-    </div>
-    <div class="project">
-      <h3>Project 3: Blog Application</h3>
-      <p>A blogging platform where users can post, edit, and delete articles.</p>
-      <a href="#">View Project</a>
-    </div>
-  </section>
 
-  <section id="contact">
-    <h2>Contact Me</h2>
-    <p>If you'd like to get in touch, please fill out the form below or reach me via email.</p>
-    <form id="contact-form">
-      <label for="name">Name:</label>
-      <input type="text" id="name" name="name" required>
-      
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" required>
-      
-      <label for="message">Message:</label>
-      <textarea id="message" name="message" rows="4" required></textarea>
-      
-      <button type="submit">Send Message</button>
-    </form>
-  </section>
-
-  <footer>
+    <!-- PusatIlmu Link -->
+    <div class="text-center bg-gray-800 p-6 rounded-lg shadow-lg">
+      <a href="https://github.com/pusatilmu" target="_blank" class="text-2xl font-semibold text-green-500 hover:text-green-300">
+        <i class="fab fa-github"></i> PusatIlmu
+      </a>
+    </div>
+  </div>
+  
+  <!-- Footer -->
+  <footer class="bg-gray-900 py-6 text-center text-gray-300">
     <p>&copy; <span id="year"></span> Reza Saputra | All Rights Reserved</p>
+    <div class="flex justify-center space-x-6">
+      <a href="#" class="text-gray-300 hover:text-blue-500 transition duration-300">
+        <i class="fab fa-facebook-f text-xl"></i>
+      </a>
+      <a href="#" class="text-gray-300 hover:text-blue-400 transition duration-300">
+        <i class="fab fa-twitter text-xl"></i>
+      </a>
+      <a href="#" class="text-gray-300 hover:text-pink-500 transition duration-300">
+        <i class="fab fa-instagram text-xl"></i>
+      </a>
+      <a href="#" class="text-gray-300 hover:text-blue-700 transition duration-300">
+        <i class="fab fa-linkedin-in text-xl"></i>
+      </a>
+    </div>
   </footer>
 
   <script>
