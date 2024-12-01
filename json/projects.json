@@ -1,0 +1,27 @@
+[
+  {
+    "title": "Website Sekolah",
+    "description": "Deskripsi singkat proyek 1.",
+    "image": "https://unsplash.com/illustrations/a-person-using-a-tablet-with-a-calendar-on-it-EZHtyKcNg0A"
+  },
+  {
+    "title": "Website Perusahaan",
+    "description": "Deskripsi singkat proyek 2.",
+    "image": "https://unsplash.com/photos/laptop-computer-on-glass-top-table-hpjSkU2UYSU"
+  },
+  {
+    "title": "Custom Website",
+    "description": "Deskripsi singkat proyek 3.",
+    "image": "project3.jpg"
+  },
+  {
+    "title": "Proyek 4",
+    "description": "Deskripsi singkat proyek 4.",
+    "image": "project4.jpg"
+  },
+  {
+    "title": "Proyek 5",
+    "description": "Deskripsi singkat proyek 5.",
+    "image": "project5.jpg"
+  }
+]

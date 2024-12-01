@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome CDN -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  </head>
+
+  <body class="bg-gray-100">
+
+    <!-- Navbar -->
+    <nav class="bg-blue-600 p-2">
+      <div class="max-w-7xl mx-auto flex items-center justify-between">
+        <!-- Logo or Dashboard Name -->
+        <a href="#" class="text-white text-2xl font-bold">Dashboard</a>
+
+        <!-- Navbar Links -->
+        <div class="hidden md:flex space-x-4">
+          <a href="#" class="text-white hover:bg-blue-700 px-4 py-2 rounded-md">Home</a>
+          <a href="#" class="text-white hover:bg-blue-700 px-4 py-2 rounded-md">Profile</a>
+
+          <!-- User Profile Dropdown (Desktop) -->
+          <div class="hidden md:flex items-center space-x-4">
+            <span class="text-white">Welcome, <span id="username">Loading...</span></span>
+            <div class="relative">
+              <button id="userMenuButton" class="text-white flex items-center space-x-2">
+                <i class="fas fa-caret-down"></i> <!-- Font Awesome dropdown icon -->
+              </button>
+              <!-- Dropdown Menu -->
+              <div id="userMenu" class="absolute right-0 hidden bg-white shadow-lg rounded-md mt-2 w-48">
+                <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-200">
+                  <i class="fas fa-cogs"></i> Settings
+                </a>
+                <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-200" id="logoutButton">
+                  <i class="fas fa-sign-out-alt"></i> Logout
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <div class="md:hidden flex items-center">
+          <button id="menuButton" class="text-white">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Sidebar for mobile -->
+    <div id="mobileMenu" class="md:hidden hidden bg-blue-600 p-4 space-y-2">
+      <a href="#" class="text-white hover:bg-blue-700 px-4 py-2 rounded-md">Home</a>
+      <a href="#" class="text-white hover:bg-blue-700 px-4 py-2 rounded-md">Settings</a>
+      <a href="#" class="text-white hover:bg-blue-700 px-4 py-2 rounded-md">Profile</a>
+      <a href="#" class="text-white hover:bg-blue-700 px-4 py-2 rounded-md" id="logoutMobileButton">Logout</a>
+    </div>
+
+    <!-- Main content -->
+    <div class="max-w-7xl mx-auto p-6">
+      <h1 class="text-3xl font-bold">Welcome to the Dashboard!</h1>
+      <p class="mt-4">You are successfully logged in.</p>
+      <p class="mt-2">Your role is: <span id="role">Loading...</span></p>
+    </div>
+
+    <!-- JavaScript to handle user data, mobile menu, and dropdown toggle -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        // Retrieve user data from sessionStorage
+        const user = JSON.parse(sessionStorage.getItem('user'));
+
+        // Check if user is logged in
+        if (user) {
+          console.log(user)
+          // Display user name and role
+          document.getElementById('username').textContent = user.username || 'User';  // Default to 'User' if name is empty
+          document.getElementById('role').textContent = user.role || 'Unknown Role'; // Default to 'Unknown Role' if role is empty
+          // Show user profile dropdown on desktop
+          document.querySelector(".md\\:flex").style.display = "flex";  // Show profile dropdown
+        } else {
+          // If no user data found, show 'Guest'
+          document.getElementById('username').textContent = 'Guest';
+          document.getElementById('role').textContent = 'Guest';
+        }
+
+        // Mobile menu toggle
+        const menuButton = document.getElementById('menuButton');
+        const mobileMenu = document.getElementById('mobileMenu');
+        menuButton.addEventListener('click', () => {
+          mobileMenu.classList.toggle('hidden');
+        });
+
+        // Dropdown menu toggle (desktop)
+        const userMenuButton = document.getElementById('userMenuButton');
+        const userMenu = document.getElementById('userMenu');
+
+        userMenuButton.addEventListener('click', () => {
+          userMenu.classList.toggle('hidden');
+        });
+
+        // Logout action for both mobile and desktop
+        const logoutButton = document.getElementById('logoutButton');
+        const logoutMobileButton = document.getElementById('logoutMobileButton');
+
+        function logout() {
+          // Clear session data
+          sessionStorage.removeItem('user');
+          window.location.href = './login.html';  // Redirect to login page after logout
+        }
+
+        logoutButton.addEventListener('click', logout);
+        logoutMobileButton.addEventListener('click', logout);
+      });
+    </script>
+
+  </body>
+
+</html>

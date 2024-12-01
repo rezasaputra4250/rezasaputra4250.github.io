@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio Saya</title>
+
+    <!-- CDN Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+    <!-- CDN Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- CDN FontAwesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+  </head>
+
+  <body class="bg-black text-white">
+
+    <!-- Swiper Container Projects -->
+    <section id="projects" class="py-20 bg-gray-800">
+      <div class="container mx-auto text-center">
+        <h2 class="text-3xl font-bold text-white mb-12">Proyek Saya</h2>
+
+        <!-- Swiper -->
+        <div class="swiper projects">
+          <div class="swiper-wrapper" id="projectSlides">
+            <!-- Slide dinamis akan dimasukkan di sini oleh JavaScript -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Skills (Card Slide Show) -->
+    <section id="skills" class="py-20 bg-gray-900">
+      <div class="container mx-auto text-center">
+        <h2 class="text-3xl font-bold text-white mb-12">Keahlian Saya</h2>
+
+        <!-- Swiper untuk Skill Card -->
+        <div class="swiper skills">
+          <div class="swiper-wrapper" id="skillsSlides">
+            <!-- Skill Card akan dimasukkan di sini oleh JavaScript -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CDN Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        // Data proyek
+        const projects = [
+          {
+            title: "Website E-Commerce",
+            description: "Website e-commerce yang memungkinkan pengguna untuk membeli dan menjual produk secara online dengan sistem pembayaran terintegrasi.",
+            imageUrl: "https://via.placeholder.com/400x250?text=Project+1"
+          },
+          {
+            title: "Aplikasi Mobile",
+            description: "Aplikasi mobile untuk manajemen tugas harian, memungkinkan pengguna untuk membuat dan mengelola to-do list dengan mudah.",
+            imageUrl: "https://via.placeholder.com/400x250?text=Project+2"
+          },
+          {
+            title: "Landing Page",
+            description: "Halaman arahan (landing page) untuk promosi produk baru dengan desain modern dan responsif.",
+            imageUrl: "https://via.placeholder.com/400x250?text=Project+3"
+          },
+          {
+            title: "Aplikasi Keuangan",
+            description: "Aplikasi keuangan pribadi yang membantu pengguna mengelola pendapatan dan pengeluaran mereka dengan mudah.",
+            imageUrl: "https://via.placeholder.com/400x250?text=Project+4"
+          }
+        ];
+
+        // Data Skill
+        const skills = [
+          {
+            name: "HTML & CSS",
+            icon: "fas fa-laptop-code",
+            progress: 90,
+            color: "bg-blue-500",
+            iconColor: "text-white"
+          },
+          {
+            name: "JavaScript",
+            icon: "fas fa-cogs",
+            progress: 80,
+            color: "bg-green-500",
+            iconColor: "text-white"
+          },
+          {
+            name: "MySQL",
+            icon: "fas fa-database",
+            progress: 70,
+            color: "bg-yellow-500",
+            iconColor: "text-black"
+          },
+          {
+            name: "React",
+            icon: "fas fa-mobile-alt",
+            progress: 75,
+            color: "bg-teal-500",
+            iconColor: "text-white"
+          },
+          {
+            name: "Node.js",
+            icon: "fas fa-server",
+            progress: 85,
+            color: "bg-red-500",
+            iconColor: "text-white"
+          },
+          {
+            name: "AWS",
+            icon: "fas fa-cloud",
+            progress: 60,
+            color: "bg-indigo-500",
+            iconColor: "text-white"
+          }
+        ];
+
+        // Referensi ke elemen container Swiper untuk Projects
+        const projectSlides = document.getElementById('projectSlides');
+
+        // Loop untuk menambahkan slide proyek ke Swiper berdasarkan data
+        projects.forEach(project => {
+          const slideElement = document.createElement('div');
+          slideElement.classList.add('swiper-slide');
+
+          slideElement.innerHTML = `
+          <div class="max-w-xs rounded-lg overflow-hidden shadow-lg bg-white text-gray-900">
+            <img class="w-full h-56 object-cover" src="${project.imageUrl}" alt="${project.title}">
+            <div class="px-6 py-4">
+              <h3 class="font-bold text-xl">${project.title}</h3>
+              <p class="text-gray-700 text-base mt-2">${project.description}</p>
+            </div>
+          </div>
+        `;
+
+          // Menambahkan slide proyek ke dalam container
+          projectSlides.appendChild(slideElement);
+        });
+
+        // Referensi ke elemen container Swiper untuk Skills
+        const skillsSlides = document.getElementById('skillsSlides');
+
+        // Loop untuk menambahkan skill card ke Swiper berdasarkan data
+        skills.forEach(skill => {
+          const skillCard = document.createElement('div');
+          skillCard.classList.add('swiper-slide');
+
+          skillCard.innerHTML = `
+          <div class="max-w-xs rounded-lg overflow-hidden shadow-lg bg-white text-gray-900 p-6">
+            <div class="flex items-center justify-center mb-4">
+              <div class="flex items-center justify-center w-16 h-16 rounded-full ${skill.color}">
+                <i class="${skill.icon} ${skill.iconColor} text-4xl"></i>
+              </div>
+            </div>
+            <h3 class="font-bold text-xl text-center mb-4">${skill.name}</h3>
+            <div class="w-full bg-gray-700 h-2">
+              <div class="${skill.color} h-full" style="width: ${skill.progress}%;"></div>
+            </div>
+          </div>
+        `;
+
+          // Menambahkan skill card ke dalam container
+          skillsSlides.appendChild(skillCard);
+        });
+
+        // Inisialisasi Swiper untuk Projects
+        const swiperProjects = new Swiper('.swiper.projects', {
+          loop: true,
+          slidesPerView: 3,
+          spaceBetween: 30,
+        });
+
+        // Inisialisasi Swiper untuk Skills
+        const swiperSkills = new Swiper('.swiper.skills', {
+          loop: true,
+          slidesPerView: 3,
+          spaceBetween: 30,
+        });
+      });
+    </script>
+
+  </body>
+
+</html>

@@ -1,0 +1,17 @@
+[
+  {
+    "title": "Sertifikat 1",
+    "description": "Deskripsi sertifikat 1.",
+    "image": "certificate1.jpg"
+  },
+  {
+    "title": "Sertifikat 2",
+    "description": "Deskripsi sertifikat 2.",
+    "image": "certificate2.jpg"
+  },
+  {
+    "title": "Sertifikat 3",
+    "description": "Deskripsi sertifikat 3.",
+    "image": "certificate3.jpg"
+  }
+]
