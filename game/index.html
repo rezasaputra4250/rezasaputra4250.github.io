@@ -1,34 +1,37 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Game Typing Sederhana</title>
-    <!-- Menambahkan link ke Tailwind CSS -->
+    <title>Simple Typing Game</title>
+    <!-- Adding Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
 
   <body class="bg-gray-200 font-sans flex items-center justify-center min-h-screen">
 
-    <div class="container p-12 bg-white rounded-xl shadow-2xl w-[600px] text-center">
-      <h1 class="text-4xl font-bold text-gray-800 mb-8">Game Typing Sederhana</h1>
+    <div
+      class="container p-4 sm:p-6 bg-white rounded-xl shadow-2xl w-full sm:w-[350px] text-center my-4 sm:my-8 px-4 sm:mx-8">
+      <h1 class="text-xl sm:text-2xl font-bold text-gray-800 mb-4 sm:mb-5">Simple Typing Game</h1>
 
-      <div id="sentence-container" class="mb-8">
-        <p id="sentence" class="text-2xl text-gray-700">Siapkan untuk mengetik!</p>
+      <div id="sentence-container" class="mb-3 sm:mb-4">
+        <p id="sentence" class="text-sm sm:text-base text-gray-700">Get ready to type!</p>
       </div>
 
       <input type="text" id="input-field"
-        class="w-full p-5 text-3xl border border-gray-400 rounded-xl focus:outline-none focus:ring-4 focus:ring-blue-500 mb-8"
-        placeholder="Mulai mengetik..." autofocus />
+        class="w-full p-2 sm:p-3 text-base sm:text-lg border border-gray-400 rounded-xl focus:outline-none focus:ring-4 focus:ring-blue-500 mb-4 sm:mb-5"
+        placeholder="Start typing..." autofocus />
 
-      <div id="timer-container" class="mb-8">
-        <p class="text-2xl text-gray-700">Waktu: <span id="timer" class="font-bold text-2xl">0</span> detik</p>
-        <p class="text-2xl text-gray-700">Skor: <span id="score" class="font-bold text-2xl">0</span></p>
+      <div id="timer-container" class="mb-4 sm:mb-5">
+        <p class="text-sm sm:text-base text-gray-700">Time: <span id="timer"
+            class="font-bold text-base sm:text-lg">0</span> seconds</p>
+        <p class="text-sm sm:text-base text-gray-700">Score: <span id="score"
+            class="font-bold text-base sm:text-lg">0</span></p>
       </div>
 
       <button id="start-button"
-        class="w-full bg-green-500 text-white py-5 rounded-xl text-3xl hover:bg-green-600 focus:outline-none focus:ring-4 focus:ring-green-400">Mulai
+        class="w-full bg-green-500 text-white py-2 sm:py-3 rounded-xl text-base sm:text-lg hover:bg-green-600 focus:outline-none focus:ring-4 focus:ring-green-400">Start
         Game</button>
     </div>
 
