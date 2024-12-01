@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="id">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Typing Sederhana</title>
+    <!-- Menambahkan link ke Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+
+  <body class="bg-gray-200 font-sans flex items-center justify-center min-h-screen">
+
+    <div class="container p-12 bg-white rounded-xl shadow-2xl w-[600px] text-center">
+      <h1 class="text-4xl font-bold text-gray-800 mb-8">Game Typing Sederhana</h1>
+
+      <div id="sentence-container" class="mb-8">
+        <p id="sentence" class="text-2xl text-gray-700">Siapkan untuk mengetik!</p>
+      </div>
+
+      <input type="text" id="input-field"
+        class="w-full p-5 text-3xl border border-gray-400 rounded-xl focus:outline-none focus:ring-4 focus:ring-blue-500 mb-8"
+        placeholder="Mulai mengetik..." autofocus />
+
+      <div id="timer-container" class="mb-8">
+        <p class="text-2xl text-gray-700">Waktu: <span id="timer" class="font-bold text-2xl">0</span> detik</p>
+        <p class="text-2xl text-gray-700">Skor: <span id="score" class="font-bold text-2xl">0</span></p>
+      </div>
+
+      <button id="start-button"
+        class="w-full bg-green-500 text-white py-5 rounded-xl text-3xl hover:bg-green-600 focus:outline-none focus:ring-4 focus:ring-green-400">Mulai
+        Game</button>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+
+</html>
