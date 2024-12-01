@@ -1,27 +1,32 @@
 [
   {
-    "title": "Website Sekolah",
-    "description": "Deskripsi singkat proyek 1.",
-    "image": "https://unsplash.com/illustrations/a-person-using-a-tablet-with-a-calendar-on-it-EZHtyKcNg0A"
+    "title": "Calculator App",
+    "description": "A basic calculator app that can perform basic arithmetic operations like addition, subtraction, multiplication, and division.",
+    "image": "https://via.placeholder.com/400",
+    "link": "http://rezasaputra4250.github.io"
   },
   {
-    "title": "Website Perusahaan",
-    "description": "Deskripsi singkat proyek 2.",
-    "image": "https://unsplash.com/photos/laptop-computer-on-glass-top-table-hpjSkU2UYSU"
+    "title": "Basic To-Do List",
+    "description": "A simple to-do list application where you can add, edit, and delete tasks. It helps you organize your day-to-day tasks.",
+    "image": "https://via.placeholder.com/400",
+    "link": "http://rezasaputra4250.github.io"
   },
   {
-    "title": "Custom Website",
-    "description": "Deskripsi singkat proyek 3.",
-    "image": "project3.jpg"
+    "title": "Game Typing",
+    "description": "A fun typing game where you need to type words or sentences as quickly and accurately as possible to earn points.",
+    "image": "https://via.placeholder.com/400",
+    "link": "http://rezasaputra4250.github.io/game/index.html"
   },
   {
-    "title": "Proyek 4",
-    "description": "Deskripsi singkat proyek 4.",
-    "image": "project4.jpg"
+    "title": "Weather App",
+    "description": "An app that shows the weather forecast for your city. It fetches real-time data from an API and displays current weather conditions.",
+    "image": "https://via.placeholder.com/400",
+    "link": "http://rezasaputra4250.github.io"
   },
   {
-    "title": "Proyek 5",
-    "description": "Deskripsi singkat proyek 5.",
-    "image": "project5.jpg"
+    "title": "Expense Tracker",
+    "description": "An application to track your daily expenses and manage your budget. It allows you to categorize and analyze your spending.",
+    "image": "https://via.placeholder.com/400",
+    "link": "http://rezasaputra4250.github.io"
   }
 ]
