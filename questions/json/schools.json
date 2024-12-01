@@ -1,0 +1,19 @@
+{
+  "schools": [
+    {
+      "name": "SD SETU 01",
+      "level": "Sekolah Dasar",
+      "type": "Negeri"
+    },
+    {
+      "name": "SMP SETU 01",
+      "level": "Sekolah Menengah Pertama",
+      "type": "Negeri"
+    },
+    {
+      "name": "SMK SETU 01",
+      "level": "Sekolah Menengah Kejuruan",
+      "type": "Negeri"
+    }
+  ]
+}
