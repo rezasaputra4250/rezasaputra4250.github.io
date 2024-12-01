@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "name": "Honda Motor Co., Ltd.",
+    "description": "Honda adalah pemimpin global dalam industri sepeda motor, mengembangkan kendaraan berkualitas tinggi untuk pasar internasional.",
+    "location": "Tokyo, Jepang",
+    "website": "https://www.honda.com"
+  },
+  {
+    "id": 2,
+    "name": "Yamaha Motor Co., Ltd.",
+    "description": "Yamaha dikenal di seluruh dunia untuk inovasi teknologi dan desain sepeda motor yang memadukan kinerja dan kenyamanan.",
+    "location": "Iwata, Jepang",
+    "website": "https://www.yamaha-motor.com"
+  },
+  {
+    "id": 3,
+    "name": "Suzuki Motor Corporation",
+    "description": "Suzuki adalah produsen sepeda motor ternama yang terkenal dengan kendaraan yang tangguh dan hemat bahan bakar, serta inovasi desain.",
+    "location": "Hamamatsu, Jepang",
+    "website": "https://www.suzuki-motor.com"
+  }
+]
