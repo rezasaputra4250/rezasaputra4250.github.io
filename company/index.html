@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="id">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perusahaan Kami</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Sertakan Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  </head>
+
+  <body class="font-sans bg-gray-50 text-gray-900">
+
+    <!-- Header -->
+    <header class="bg-blue-600 text-white shadow-lg">
+      <div class="container mx-auto px-4 py-5 flex justify-between items-center">
+        <h1 class="text-2xl font-semibold">Perusahaan Kami</h1>
+        <nav>
+          <ul class="flex space-x-6">
+            <li><a href="#home" class="hover:text-blue-200"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="#about" class="hover:text-blue-200"><i class="fas fa-users"></i> About Us</a></li>
+            <li><a href="#services" class="hover:text-blue-200"><i class="fas fa-cogs"></i> Services</a></li>
+            <li><a href="#contact" class="hover:text-blue-200"><i class="fas fa-envelope"></i> Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+      <!-- Hero Section -->
+      <section id="home" class="bg-blue-100 py-20 text-center">
+        <div class="container mx-auto px-4">
+          <h2 class="text-4xl font-bold text-gray-800">Selamat Datang di Perusahaan Kami!</h2>
+          <p class="mt-4 text-lg text-gray-600">Kami menyediakan solusi terbaik untuk kebutuhan bisnis Anda.</p>
+        </div>
+      </section>
+
+      <!-- About Us -->
+      <section id="about" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+          <h3 class="text-3xl font-semibold text-center">Tentang Kami</h3>
+          <p class="mt-4 text-lg text-gray-700 text-center">Kami adalah perusahaan yang berfokus pada memberikan layanan
+            terbaik untuk klien kami di berbagai industri.</p>
+        </div>
+      </section>
+
+      <!-- Services -->
+      <section id="services" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-4 text-center">
+          <h3 class="text-3xl font-semibold">Layanan Kami</h3>
+          <div class="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+            <div class="bg-white p-8 shadow-md rounded-lg">
+              <h4 class="text-2xl font-semibold text-blue-600">Layanan 1</h4>
+              <p class="mt-4 text-gray-600">Deskripsi layanan pertama kami.</p>
+            </div>
+            <div class="bg-white p-8 shadow-md rounded-lg">
+              <h4 class="text-2xl font-semibold text-blue-600">Layanan 2</h4>
+              <p class="mt-4 text-gray-600">Deskripsi layanan kedua kami.</p>
+            </div>
+            <div class="bg-white p-8 shadow-md rounded-lg">
+              <h4 class="text-2xl font-semibold text-blue-600">Layanan 3</h4>
+              <p class="mt-4 text-gray-600">Deskripsi layanan ketiga kami.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section id="contact" class="py-20 bg-white">
+        <div class="container mx-auto px-4 text-center">
+          <h3 class="text-3xl font-semibold">Kontak Kami</h3>
+          <p class="mt-4 text-lg text-gray-700">Hubungi kami untuk pertanyaan lebih lanjut atau untuk memulai proyek
+            baru dengan kami.</p>
+          <form class="mt-8 space-y-6 max-w-md mx-auto">
+            <input type="text" placeholder="Nama Anda" class="w-full p-3 border border-gray-300 rounded-lg" required>
+            <input type="email" placeholder="Email Anda" class="w-full p-3 border border-gray-300 rounded-lg" required>
+            <textarea placeholder="Pesan Anda" class="w-full p-3 border border-gray-300 rounded-lg" rows="4" required></textarea>
+            <button type="submit" class="w-full bg-blue-600 text-white py-3 rounded-lg">Kirim Pesan</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-blue-600 text-white py-6">
+      <div class="container mx-auto text-center">
+        <p>&copy; 2024 Perusahaan Kami. Semua Hak Dilindungi.</p>
+      </div>
+    </footer>
+
+  </body>
+
+</html>
