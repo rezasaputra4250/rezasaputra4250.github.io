@@ -1,101 +1,138 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Reza Saputra - Web Developer</title>
-  <link href="https://unpkg.com/tailwindcss@3.2.4/dist/tailwind.min.css" rel="stylesheet">
-
-  <!-- Font Awesome CDN -->
+  <title>Portofolio Saya</title>
+  <!-- CDN Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- CDN FontAwesome -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 </head>
-<body class="bg-black text-white font-sans">
 
-  <!-- Header / Navbar -->
-  <header class="bg-gray-700 py-4 shadow-md">
-    <nav>
-      <ul class="flex justify-center space-x-8">
-        <li><a href="#" class="text-white hover:text-red-500 transition duration-300">Home</a></li>
-        <li><a href="#about" class="text-white hover:text-red-500 transition duration-300">About</a></li>
-        <li><a href="#contact" class="text-white hover:text-red-500 transition duration-300">Contact</a></li>
-        <li><a href="#login" class="text-white hover:text-red-500 transition duration-300">Login</a></li>
+<body class="bg-black text-white">
+
+  <!-- Navbar -->
+  <nav class="bg-black p-4">
+    <div class="container mx-auto flex justify-between items-center">
+      <a href="#" class="text-white text-2xl font-bold name">Portofolio</a>
+      <ul class="flex space-x-4">
+        <li><a href="#skills" class="text-white hover:text-gray-300">Keahlian</a></li>
+        <li><a href="#projects" class="text-white hover:text-gray-300">Proyek</a></li>
+        <li><a href="#certificates" class="text-white hover:text-gray-300">Sertifikat</a></li>
+        <li><a href="#experience" class="text-white hover:text-gray-300">Pengalaman</a></li>
       </ul>
-    </nav>
-  </header>
-
-  <!-- Social Media Icons in Navbar -->
-  <section class="text-center py-6">
-    <div class="flex justify-center space-x-6">
-      <a href="#" class="text-white hover:text-blue-500 transition duration-300">
-        <i class="fab fa-facebook-f text-2xl"></i>
-      </a>
-      <a href="#" class="text-white hover:text-blue-400 transition duration-300">
-        <i class="fab fa-twitter text-2xl"></i>
-      </a>
-      <a href="#" class="text-white hover:text-pink-500 transition duration-300">
-        <i class="fab fa-instagram text-2xl"></i>
-      </a>
-      <a href="#" class="text-white hover:text-blue-700 transition duration-300">
-        <i class="fab fa-linkedin-in text-2xl"></i>
-      </a>
     </div>
-  </section>
+  </nav>
 
   <!-- Hero Section -->
-  <section id="hero" class="text-center py-24">
-    <h1 class="text-5xl font-bold text-white mb-4">Hallo, Saya <span class="text-red-500">Reza Saputra</span> seorang <span class="text-red-500">Web Developer</span></h1>
-    <p class="text-lg">Welcome to my portfolio. I create stunning websites and applications with modern web technologies.</p>
+  <section id="hero" class="flex items-center justify-center h-screen bg-gray-900 text-white">
+    <div class="text-center px-4">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">Halo semua, saya <span class="text-red-500">Reza
+          Saputra</span></h1>
+      <p class="text-xl md:text-2xl font-bold mb-6">Saya seorang <span class="text-red-500">Web Development</span> yang
+        bersemangat
+        untuk menciptakan solusi kreatif
+        dan inovatif di dunia digital.</p>
+
+      <!-- Tautan ke Portofolio -->
+      <a href="#about"
+        class="inline-block bg-white text-black py-2 px-6 rounded-lg font-bold hover:bg-gray-100 transition duration-300 mb-6">Lihat
+        Portofolio</a>
+
+      <!-- Ikon Sosial Media -->
+      <div class="flex justify-center space-x-6 mt-6">
+        <a href="https://www.linkedin.com/in/your-profile" class="text-2xl hover:text-gray-300" title="LinkedIn Saya"><i
+            class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/your-username" class="text-2xl hover:text-gray-300" title="GitHub Saya"><i
+            class="fab fa-github"></i></a>
+        <a href="https://facebook.com/your-username" class="text-2xl hover:text-gray-300" title="Facebook Saya"><i
+            class="fab fa-facebook"></i></a>
+        <a href="https://www.instagram.com/your-username" class="text-2xl hover:text-gray-300" title="Instagram Saya"><i
+            class="fab fa-instagram"></i></a>
+        <a href="https://x.com/your-username" class="text-2xl hover:text-gray-300" title="X (Twitter) Saya"><i
+            class="fab fa-x"></i></a>
+      </div>
+    </div>
   </section>
 
   <!-- About Section -->
-  <section id="about" class="py-24 bg-gray-800 text-center">
-    <h2 class="text-3xl font-semibold text-red-500 mb-6">About Me</h2>
-    <p class="text-xl mb-4">Hi, I'm Reza Saputra, a passionate Web Developer with over 5 years of experience in building dynamic and responsive websites. I specialize in front-end development using HTML, CSS, and JavaScript, as well as back-end development with Node.js and PHP. I love solving complex problems and turning ideas into fully functional web applications.</p>
-    <ul class="text-lg list-none">
-      <li><strong>Location:</strong> Jakarta, Indonesia</li>
-      <li><strong>Skills:</strong> HTML, CSS, JavaScript, Node.js, React, PHP, MySQL</li>
-      <li><strong>Hobbies:</strong> Coding, Music, Traveling, Photography</li>
-    </ul>
+  <section id="about" class="py-20 bg-gray-800">
+    <div class="container mx-auto text-center">
+      <h2 class="text-3xl font-bold mb-6">Tentang Saya</h2>
+      <p class="text-xl text-white">Saya adalah seorang web developer dengan pengalaman dalam membangun situs web
+        responsif, aplikasi web, dan solusi berbasis frontend dan backend. Saya selalu berusaha untuk belajar dan
+        berkembang di dunia teknologi yang terus berubah ini.</p>
+    </div>
   </section>
 
-  <div class="flex justify-center items-center min-h-screen space-x-6">
-    <!-- WebDevIndo Link -->
-    <div class="text-center bg-gray-800 p-6 rounded-lg shadow-lg">
-      <a href="https://github.com/webdevindo" target="_blank" class="text-2xl font-semibold text-blue-500 hover:text-blue-300">
-        <i class="fab fa-github"></i> WebDevIndo
-      </a>
+  <!-- Skills Section -->
+  <section id="skills" class="py-20 bg-gray-900">
+    <div class="container mx-auto text-center">
+      <h2 class="text-3xl font-bold mb-6">Keahlian</h2>
+      <div id="skills-list" class="space-y-8">
+        <!-- Skills will be dynamically inserted here -->
+      </div>
     </div>
+  </section>
 
-    <!-- PusatIlmu Link -->
-    <div class="text-center bg-gray-800 p-6 rounded-lg shadow-lg">
-      <a href="https://github.com/pusatilmu" target="_blank" class="text-2xl font-semibold text-green-500 hover:text-green-300">
-        <i class="fab fa-github"></i> PusatIlmu
-      </a>
+  <!-- Projects Section -->
+  <section id="projects" class="py-20 bg-gray-800">
+    <div class="container mx-auto text-center">
+      <h2 class="text-3xl font-bold mb-6">Proyek Saya</h2>
+      <div id="projects-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Projects will be dynamically inserted here -->
+      </div>
     </div>
-  </div>
-  
-  <!-- Footer -->
-  <footer class="bg-gray-900 py-6 text-center text-gray-300">
-    <p>&copy; <span id="year"></span> Reza Saputra | All Rights Reserved</p>
-    <div class="flex justify-center space-x-6">
-      <a href="#" class="text-gray-300 hover:text-blue-500 transition duration-300">
-        <i class="fab fa-facebook-f text-xl"></i>
-      </a>
-      <a href="#" class="text-gray-300 hover:text-blue-400 transition duration-300">
-        <i class="fab fa-twitter text-xl"></i>
-      </a>
-      <a href="#" class="text-gray-300 hover:text-pink-500 transition duration-300">
-        <i class="fab fa-instagram text-xl"></i>
-      </a>
-      <a href="#" class="text-gray-300 hover:text-blue-700 transition duration-300">
-        <i class="fab fa-linkedin-in text-xl"></i>
-      </a>
+  </section>
+
+  <!-- Certificates Section -->
+  <section id="certificates" class="py-20 bg-gray-900">
+    <div class="container mx-auto text-center">
+      <h2 class="text-3xl font-bold mb-6">Sertifikat</h2>
+      <div id="certificates-list" class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Certificates will be dynamically inserted here -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience Section -->
+  <section id="experience" class="py-20 bg-gray-800">
+    <div class="container mx-auto text-center">
+      <h2 class="text-3xl font-bold mb-6">Pengalaman Bekerja</h2>
+      <div id="experience-list" class="space-y-8">
+        <!-- Experience will be dynamically inserted here -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Communities Section -->
+  <section id="communities" class="py-20 bg-gray-900">
+    <div class="container mx-auto text-center">
+      <h2 class="text-3xl font-bold mb-6">Komunitas yang Pernah Diikuti</h2>
+      <div id="communities-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Communities will be dynamically inserted here -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer class="bg-black text-white py-8">
+    <div class="container mx-auto text-center">
+      <p class="text-lg mb-4">Dibuat dengan 💙 oleh <span class="text-red-500">Reza Saputra</span></p>
+      <p class="text-sm mb-4">&copy; 2024 Reza Saputra. Semua hak cipta dilindungi.</p>
+      <div class="flex justify-center space-x-6">
+        <a href="mailto:email@example.com" class="text-2xl hover:text-gray-300" title="Email Saya"><i
+            class="fas fa-envelope"></i></a>
+        <a href="https://www.linkedin.com/in/your-profile" class="text-2xl hover:text-gray-300" title="LinkedIn Saya"><i
+            class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/your-username" class="text-2xl hover:text-gray-300" title="GitHub Saya"><i
+            class="fab fa-github"></i></a>
+      </div>
+      <p class="text-sm mt-4">Terima kasih telah mengunjungi portofolio saya!</p>
     </div>
   </footer>
 
-  <script>
-    // Set the current year in the footer
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+  <!-- Add your JavaScript file -->
+  <script src="script.js"></script>
 </body>
+
 </html>
