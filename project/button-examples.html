@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contoh Tombol dengan Ikon</title>
+    <!-- Link ke Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Link Font Awesome untuk ikon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body class="bg-gray-100 h-screen flex justify-center items-center">
+
+    <!-- Container Tombol -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-8">
+
+        <!-- Tombol Create (Buat Baru) -->
+        <button
+            class="px-4 py-2 bg-green-500 text-white rounded-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-300 flex items-center space-x-2">
+            <i class="fas fa-plus w-5 h-5"></i> <!-- Ikon Plus dari Font Awesome -->
+            <span>Buat Baru</span>
+        </button>
+
+        <!-- Tombol Update (Perbarui) -->
+        <button
+            class="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-300 flex items-center space-x-2">
+            <i class="fas fa-edit w-5 h-5"></i> <!-- Ikon Edit dari Font Awesome -->
+            <span>Perbarui</span>
+        </button>
+
+        <!-- Tombol Delete (Hapus) -->
+        <button
+            class="px-4 py-2 bg-red-500 text-white rounded-md hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-300 flex items-center space-x-2">
+            <i class="fas fa-trash-alt w-5 h-5"></i> <!-- Ikon Trash dari Font Awesome -->
+            <span>Hapus</span>
+        </button>
+
+        <!-- Tombol Facebook (Social Media) -->
+        <button
+            class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 flex items-center space-x-2">
+            <i class="fab fa-facebook w-5 h-5"></i> <!-- Ikon Facebook dari Font Awesome -->
+            <span>Facebook</span>
+        </button>
+
+        <!-- Tombol Twitter (Social Media) -->
+        <button
+            class="px-4 py-2 bg-blue-400 text-white rounded-md hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-300 flex items-center space-x-2">
+            <i class="fab fa-twitter w-5 h-5"></i> <!-- Ikon Twitter dari Font Awesome -->
+            <span>Twitter</span>
+        </button>
+
+        <!-- Tombol Instagram (Social Media) -->
+        <button
+            class="px-4 py-2 bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 text-white rounded-md hover:from-purple-500 hover:via-pink-600 hover:to-red-600 focus:outline-none focus:ring-2 focus:ring-pink-400 flex items-center space-x-2">
+            <i class="fab fa-instagram w-5 h-5"></i> <!-- Ikon Instagram dari Font Awesome -->
+            <span>Instagram</span>
+        </button>
+
+        <!-- Tombol Search (Pencarian) -->
+        <button
+            class="px-4 py-2 bg-gray-500 text-white rounded-md hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-300 flex items-center space-x-2">
+            <i class="fas fa-search w-5 h-5"></i> <!-- Ikon Search dari Font Awesome -->
+            <span>Cari</span>
+        </button>
+
+    </div>
+
+</body>
+
+</html>

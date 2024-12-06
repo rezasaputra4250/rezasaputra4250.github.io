@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock dan Timer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 flex justify-center items-center min-h-screen">
+
+    <div class="bg-white rounded-lg shadow-xl p-8 text-center w-80">
+        <!-- Jam Digital -->
+        <div class="text-4xl font-bold text-gray-800 mb-6" id="clock"></div>
+
+        <!-- Tombol Timer -->
+        <button onclick="startTimer()"
+            class="w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-300 mb-4">
+            Start Timer
+        </button>
+
+        <!-- Timer -->
+        <div class="text-xl text-gray-600" id="timer">Timer: 00:00</div>
+    </div>
+
+    <script>
+        // Update Jam
+        function updateClock() {
+            const now = new Date();
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const seconds = String(now.getSeconds()).padStart(2, '0');
+            document.getElementById('clock').textContent = `${hours}:${minutes}:${seconds}`;
+        }
+
+        let timerInterval;
+        let remainingTime = 60;
+
+        // Mulai Timer
+        function startTimer() {
+            if (timerInterval) clearInterval(timerInterval);
+            remainingTime = 60;  // Mulai hitung mundur dari 60 detik
+            timerInterval = setInterval(updateTimer, 1000);
+        }
+
+        // Update Timer
+        function updateTimer() {
+            const minutes = String(Math.floor(remainingTime / 60)).padStart(2, '0');
+            const seconds = String(remainingTime % 60).padStart(2, '0');
+            document.getElementById('timer').textContent = `Timer: ${minutes}:${seconds}`;
+            if (remainingTime <= 0) {
+                clearInterval(timerInterval);
+                alert('Waktu habis!');
+            }
+            remainingTime--;
+        }
+
+        updateClock();  // Update awal jam
+        setInterval(updateClock, 1000);  // Update jam setiap detik
+    </script>
+
+</body>
+
+</html>

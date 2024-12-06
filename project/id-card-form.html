@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulir KTP</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./dist/js/script.js"></script>
+</head>
+
+<body class="bg-gray-100 min-h-screen flex items-center justify-center">
+
+    <!-- Kontainer Form KTP -->
+    <div class="bg-white p-8 my-5 rounded-lg shadow-lg w-full max-w-4xl">
+        <h2 class="text-2xl font-semibold text-center text-gray-800 mb-6">Formulir KTP</h2>
+
+        <form action="#" method="POST">
+            <!-- NIK -->
+            <div class="mb-4">
+                <label for="nik" class="block text-gray-700">NIK</label>
+                <input type="text" id="nik" name="nik" placeholder="Masukkan NIK"
+                    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    required>
+            </div>
+
+            <!-- Nama -->
+            <div class="mb-4">
+                <label for="nama" class="block text-gray-700">Nama Lengkap</label>
+                <input type="text" id="nama" name="nama" placeholder="Masukkan nama lengkap Anda"
+                    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    required>
+            </div>
+
+            <!-- Tempat Lahir -->
+            <div class="mb-4">
+                <label for="tempat_lahir" class="block text-gray-700">Tempat Lahir</label>
+                <input type="text" id="tempat_lahir" name="tempat_lahir" placeholder="Masukkan tempat lahir"
+                    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    required>
+            </div>
+
+            <!-- Tanggal Lahir -->
+            <div class="mb-4">
+                <label for="tanggal_lahir" class="block text-gray-700">Tanggal Lahir</label>
+                <input type="date" id="tanggal_lahir" name="tanggal_lahir"
+                    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    required>
+            </div>
+
+            <!-- Jenis Kelamin -->
+            <div class="mb-4">
+                <label class="block text-gray-700">Jenis Kelamin</label>
+                <div class="flex items-center space-x-6">
+                    <label class="inline-flex items-center">
+                        <input type="radio" name="jenis_kelamin" value="L" class="form-radio text-blue-500" required>
+                        <span class="ml-2">Laki-laki</span>
+                    </label>
+                    <label class="inline-flex items-center">
+                        <input type="radio" name="jenis_kelamin" value="P" class="form-radio text-pink-500" required>
+                        <span class="ml-2">Perempuan</span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Golongan Darah -->
+            <div class="mb-4">
+                <label for="golongan_darah" class="block text-gray-700">Golongan Darah</label>
+                <select id="golongan_darah" name="golongan_darah"
+                    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    required>
+                    <option value="">Pilih Golongan Darah</option>
+                </select>
+            </div>
+
+
+            <!-- Alamat -->
+            <div class="mb-4">
+                <label for="alamat" class="block text-gray-700">Alamat</label>
+                <textarea id="alamat" name="alamat" placeholder="Masukkan alamat lengkap"
+                    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    required></textarea>
+            </div>
+
+            <!-- RT/RW -->
+            <div class="mb-4 flex space-x-4">
+                <div class="w-1/2">
+                    <label for="rt" class="block text-gray-700">RT</label>
+                    <input type="text" id="rt" name="rt" placeholder="Masukkan RT"
+                        class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                        required>
+                </div>
+                <div class="w-1/2">
+                    <label for="rw" class="block text-gray-700">RW</label>
+                    <input type="text" id="rw" name="rw" placeholder="Masukkan RW"
+                        class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                        required>
+                </div>
+            </div>
+
+            <!-- Provinsi -->
+            <div class="mb-4">
+                <label for="provinsi" class="block text-gray-700">Provinsi</label>
+                <select id="provinsi" name="provinsi"
+                    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    required>
+                    <option value="">Pilih Provinsi</option>
+                </select>
+            </div>
+
+            <!-- Kota -->
+            <div class="mb-4">
+                <label for="kota" class="block text-gray-700">Kota</label>
+                <select id="kota" name="kota"
+                    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    required>
+                    <option value="">Pilih Kota</option>
+                </select>
+            </div>
+
+            <!-- Kecamatan -->
+            <div class="mb-4">
+                <label for="kecamatan" class="block text-gray-700">Kecamatan</label>
+                <select id="kecamatan" name="kecamatan"
+                    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    required>
+                    <option value="">Pilih Kecamatan</option>
+                </select>
+            </div>
+
+            <!-- Kelurahan -->
+            <div class="mb-4">
+                <label for="kelurahan" class="block text-gray-700">Kelurahan</label>
+                <select id="kelurahan" name="kelurahan"
+                    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    required>
+                    <option value="">Pilih Kelurahan</option>
+                </select>
+            </div>
+
+            <!-- Agama -->
+            <div class="mb-4">
+                <label for="agama" class="block text-sm font-medium text-gray-700">Agama</label>
+                <select id="agama" name="agama"
+                    class="w-full p-2 mt-1 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+                    required>
+                    <option value="">Pilih agama</option>
+                    <!-- Pilihan agama akan diisi oleh JavaScript -->
+                </select>
+            </div>
+
+            <!-- Status Pernikahan -->
+            <div class="mb-4">
+                <label for="status_pernikahan" class="block text-sm font-medium text-gray-700">Status Pernikahan</label>
+                <select id="status_pernikahan" name="status_pernikahan"
+                    class="w-full p-2 mt-1 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+                    required>
+                    <option value="">Pilih status pernikahan</option>
+                </select>
+            </div>
+
+            <!-- Jenis Pekerjaan -->
+            <div class="mb-4">
+                <label for="pekerjaan" class="block text-sm font-medium text-gray-700">Pekerjaan</label>
+                <select id="pekerjaan" name="pekerjaan"
+                    class="w-full p-2 mt-1 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+                    required>
+                    <option value="">Pilih pekerjaan</option>
+                </select>
+            </div>
+
+            <!-- Kewarganegaraan -->
+            <div class="mb-4">
+                <label for="kewarganegaraan" class="block text-sm font-medium text-gray-700">Kewarganegaraan</label>
+                <select id="kewarganegaraan" name="kewarganegaraan"
+                    class="w-full p-2 mt-1 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+                    required>
+                    <option value="">Pilih kewarganegaraan</option>
+                </select>
+            </div>
+
+            <!-- Tombol Kirim -->
+            <div class="mb-4">
+                <button type="submit"
+                    class="w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400">
+                    Kirim Formulir
+                </button>
+            </div>
+        </form>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Pengisian Data Pribadi</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./dist/js/script.js"></script>
+</head>
+
+<body class="bg-gray-100">
+
+    <div class="max-w-4xl mx-auto mt-10 bg-white p-8 rounded-lg shadow-lg">
+        <h1 class="text-2xl font-semibold text-center mb-6">Form Pengisian Kartu Keluarga</h1>
+
+        <form action="#" method="POST" id="form-data">
+            <!-- Nomor KK -->
+            <div class="mb-4">
+                <label for="no_kk" class="block text-sm font-medium text-gray-700">Nomor KK</label>
+                <input type="text" id="no_kk" name="no_kk"
+                    class="w-full p-2 mt-1 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+                    required>
+            </div>
+
+            <!-- Alamat -->
+            <div class="mb-4">
+                <label for="alamat" class="block text-sm font-medium text-gray-700">Alamat</label>
+                <input type="text" id="alamat" name="alamat"
+                    class="w-full p-2 mt-1 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+                    required>
+            </div>
+
+            <!-- RT / RW -->
+            <div class="mb-4 flex space-x-4">
+                <div class="w-1/2">
+                    <label for="rt" class="block text-sm font-medium text-gray-700">RT</label>
+                    <input type="text" id="rt" name="rt"
+                        class="w-full p-2 mt-1 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+                        required>
+                </div>
+                <div class="w-1/2">
+                    <label for="rw" class="block text-sm font-medium text-gray-700">RW</label>
+                    <input type="text" id="rw" name="rw"
+                        class="w-full p-2 mt-1 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+                        required>
+                </div>
+            </div>
+
+            <!-- Provinsi -->
+            <div class="mb-4">
+                <label for="provinsi" class="block text-sm font-medium text-gray-700">Provinsi</label>
+                <select id="provinsi" name="provinsi"
+                    class="w-full p-2 mt-1 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+                    required>
+                    <option value="">Pilih provinsi</option>
+                    <!-- Pilihan provinsi akan diisi oleh JavaScript -->
+                </select>
+            </div>
+
+            <!-- Kota -->
+            <div class="mb-4">
+                <label for="kota" class="block text-sm font-medium text-gray-700">Kota</label>
+                <select id="kota" name="kota"
+                    class="w-full p-2 mt-1 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+                    required>
+                    <option value="">Pilih kota</option>
+                    <!-- Pilihan kota akan diisi oleh JavaScript -->
+                </select>
+            </div>
+
+            <!-- Kecamatan -->
+            <div class="mb-4">
+                <label for="kecamatan" class="block text-sm font-medium text-gray-700">Kecamatan</label>
+                <select id="kecamatan" name="kecamatan"
+                    class="w-full p-2 mt-1 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+                    required>
+                    <option value="">Pilih kecamatan</option>
+                    <!-- Pilihan kecamatan akan diisi oleh JavaScript -->
+                </select>
+            </div>
+
+            <div class="mb-4">
+                <label for="kelurahan" class="block text-sm font-medium text-gray-700">Kelurahan</label>
+                <select id="kelurahan" name="kelurahan"
+                    class="w-full p-2 mt-1 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+                    required>
+                    <option value="">Pilih kelurahan</option>
+                    <!-- Pilihan kelurahan akan diisi oleh JavaScript -->
+                </select>
+            </div>
+
+
+            <!-- Nama Lengkap -->
+            <div class="mb-4">
+                <label for="nama_lengkap" class="block text-sm font-medium text-gray-700">Nama Lengkap</label>
+                <input type="text" id="nama_lengkap" name="nama_lengkap"
+                    class="w-full p-2 mt-1 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+                    required>
+            </div>
+
+            <!-- NIK -->
+            <div class="mb-4">
+                <label for="nik" class="block text-sm font-medium text-gray-700">NIK</label>
+                <input type="text" id="nik" name="nik"
+                    class="w-full p-2 mt-1 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+                    required>
+            </div>
+
+            <!-- Jenis Kelamin -->
+            <div class="mb-4">
+                <label class="block text-sm font-medium text-gray-700">Jenis Kelamin</label>
+                <div class="flex items-center space-x-4">
+                    <label><input type="radio" name="jenis_kelamin" value="Laki-laki" required> Laki-laki</label>
+                    <label><input type="radio" name="jenis_kelamin" value="Perempuan" required> Perempuan</label>
+                </div>
+            </div>
+            <div class="mb-4 flex space-x-4">
+                <!-- Tempat Lahir -->
+                <div class="w-1/2">
+                    <label for="tempat_lahir" class="block text-sm font-medium text-gray-700">Tempat Lahir</label>
+                    <input type="text" id="tempat_lahir" name="tempat_lahir"
+                        class="w-full p-2 mt-1 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+                        required>
+                </div>
+
+                <!-- Tanggal Lahir -->
+                <div class="w-1/2">
+                    <label for="tanggal_lahir" class="block text-sm font-medium text-gray-700">Tanggal Lahir</label>
+                    <input type="date" id="tanggal_lahir" name="tanggal_lahir"
+                        class="w-full p-2 mt-1 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+                        required>
+                </div>
+            </div>
+
+            <!-- Golongan Darah -->
+            <div class="mb-4">
+                <label for="golongan_darah" class="block text-gray-700">Golongan Darah</label>
+                <select id="golongan_darah" name="golongan_darah"
+                    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    required>
+                    <option value="">Pilih Golongan Darah</option>
+                </select>
+            </div>
+
+            <!-- Agama -->
+            <div class="mb-4">
+                <label for="agama" class="block text-sm font-medium text-gray-700">Agama</label>
+                <select id="agama" name="agama"
+                    class="w-full p-2 mt-1 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+                    required>
+                    <option value="">Pilih agama</option>
+                    <!-- Pilihan agama akan diisi oleh JavaScript -->
+                </select>
+            </div>
+
+            <!-- Pendidikan -->
+            <div class="mb-4">
+                <label for="pendidikan" class="block text-sm font-medium text-gray-700">Pendidikan</label>
+                <select id="pendidikan" name="pendidikan"
+                    class="w-full p-2 mt-1 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+                    required>
+                    <option value="">Pilih pendidikan</option>
+                    <!-- Pilihan pendidikan akan diisi oleh JavaScript -->
+                </select>
+            </div>
+
+            <!-- Jenis Pekerjaan -->
+
+            <div class="mb-4">
+                <label for="pekerjaan" class="block text-sm font-medium text-gray-700">Pekerjaan</label>
+                <select id="pekerjaan" name="pekerjaan"
+                    class="w-full p-2 mt-1 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+                    required>
+                    <option value="">Pilih pekerjaan</option>
+                    <!-- Pilihan pekerjaan akan diisi oleh JavaScript -->
+                </select>
+            </div>
+
+            <!-- Status Pernikahan -->
+            <div class="mb-4">
+                <label for="status_pernikahan" class="block text-sm font-medium text-gray-700">Status Pernikahan</label>
+                <select id="status_pernikahan" name="status_pernikahan"
+                    class="w-full p-2 mt-1 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+                    required>
+                    <option value="">Pilih status pernikahan</option>
+
+                </select>
+            </div>
+
+            <!-- Status Hubungan dalam Keluarga -->
+            <div class="mb-4">
+                <label for="hubungan_keluarga" class="block text-sm font-medium text-gray-700">Status Hubungan dalam
+                    Keluarga</label>
+                <select id="hubungan_keluarga" name="hubungan_keluarga"
+                    class="w-full p-2 mt-1 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+                    required>
+                    <option value="">Pilih status hubungan dalam keluarga</option>
+                    <!-- Pilihan status hubungan akan diisi oleh JavaScript -->
+                </select>
+            </div>
+
+
+            <!-- Kewarganegaraan -->
+            <div class="mb-4">
+                <label for="kewarganegaraan" class="block text-sm font-medium text-gray-700">Kewarganegaraan</label>
+                <select id="kewarganegaraan" name="kewarganegaraan"
+                    class="w-full p-2 mt-1 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+                    required>
+                    <option value="">Pilih kewarganegaraan</option>
+                </select>
+            </div>
+
+            <!-- No Paspor -->
+            <div class="mb-4">
+                <label for="no_paspor" class="block text-sm font-medium text-gray-700">No Paspor</label>
+                <input type="text" id="no_paspor" name="no_paspor"
+                    class="w-full p-2 mt-1 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+                    required>
+            </div>
+
+            <!-- No KITAS -->
+            <div class="mb-4">
+                <label for="no_kitas" class="block text-sm font-medium text-gray-700">No KITAS</label>
+                <input type="text" id="no_kitas" name="no_kitas"
+                    class="w-full p-2 mt-1 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+                    required>
+            </div>
+
+            <!-- Nama Ayah -->
+            <div class="mb-4">
+                <label for="nama_ayah" class="block text-sm font-medium text-gray-700">Nama Ayah</label>
+                <input type="text" id="nama_ayah" name="nama_ayah"
+                    class="w-full p-2 mt-1 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+                    required>
+            </div>
+
+            <!-- Nama Ibu -->
+            <div class="mb-4">
+                <label for="nama_ibu" class="block text-sm font-medium text-gray-700">Nama Ibu</label>
+                <input type="text" id="nama_ibu" name="nama_ibu"
+                    class="w-full p-2 mt-1 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+                    required>
+            </div>
+
+            <div class="mb-4">
+                <button type="submit"
+                    class="w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400">
+                    Kirim Formulir
+                </button>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

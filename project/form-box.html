@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulir Kontak</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100">
+
+    <div class="flex items-center justify-center h-screen">
+        <div class="bg-white p-8 rounded-lg shadow-lg w-full sm:w-96">
+            <h2 class="text-2xl font-semibold text-center mb-6 text-blue-600">Formulir Kontak</h2>
+
+            <input type="text" id="name" placeholder="Nama Anda"
+                class="w-full p-3 mb-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+            <input type="email" id="email" placeholder="Email Anda"
+                class="w-full p-3 mb-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+            <textarea id="message" rows="4" placeholder="Pesan Anda"
+                class="w-full p-3 mb-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none"></textarea>
+
+            <button onclick="submitForm()"
+                class="w-full py-3 bg-green-500 text-white rounded-lg hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500">
+                Kirim
+            </button>
+
+            <div id="messageBox" class="mt-4 text-center"></div>
+        </div>
+    </div>
+
+    <script>
+        function submitForm() {
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+            const messageBox = document.getElementById('messageBox');
+
+            if (name && email && message) {
+                messageBox.innerHTML = `Terima kasih, ${name}! Pesan Anda telah terkirim.`;
+                messageBox.style.color = 'green';
+            } else {
+                messageBox.innerHTML = 'Mohon isi semua field.';
+                messageBox.style.color = 'red';
+            }
+        }
+    </script>
+
+</body>
+
+</html>

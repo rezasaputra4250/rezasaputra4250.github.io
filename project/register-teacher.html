@@ -1,0 +1,1061 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Wizard Example</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .step {
+            display: none;
+        }
+
+        .active {
+            display: block;
+        }
+
+        .step-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100">
+    <div class="step-container">
+        <form id="wizardForm" class="space-y-8">
+            <!-- Step 1: Identitas Sekolah -->
+            <div class="step active" id="step1">
+                <h2 class="text-2xl font-semibold text-gray-700 mb-4">Identitas Sekolah</h2>
+                <div class="flex flex-wrap gap-4">
+                    <div class="w-full">
+                        <label for="nama_sekolah" class="block text-gray-600">Nama Sekolah / Nama Instansi</label>
+                        <input type="text" id="nama_sekolah" name="nama_sekolah"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                    </div>
+                    <div class="w-full">
+                        <label for="nssj" class="block text-gray-600">NSSJ</label>
+                        <input type="text" id="nssj" name="nssj"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                    </div>
+                    <div class="w-full">
+                        <label for="alamat_sekolah" class="block text-gray-600">Alamat Sekolah</label>
+                        <input type="text" id="alamat_sekolah" name="alamat_sekolah"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                    </div>
+                </div>
+            </div>
+            <!-- Step 2: Identitas Pendidik dan Tenaga Pendidik -->
+            <div class="step" id="step2">
+                <h2 class="text-2xl font-semibold text-gray-700 mb-4">Identitas Pendidik dan Tenaga Pendidik</h2>
+                <div class="space-y-4">
+                    <div class="w-full">
+                        <label for="nama_lengkap" class="block text-gray-600">Nama Lengkap</label>
+                        <input type="text" id="nama_lengkap" name="nama_lengkap"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                    </div>
+                    <div class="w-full">
+                        <label for="nik" class="block text-gray-600">NIK</label>
+                        <input type="text" id="nik" name="nik"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                    </div>
+                    <div class="w-full">
+                        <label for="jenis_kelamin" class="block text-gray-600">Jenis Kelamin</label>
+                        <select id="jenis_kelamin" name="jenis_kelamin"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                            <option value="Laki-laki">Laki-laki</option>
+                            <option value="Perempuan">Perempuan</option>
+                        </select>
+                    </div>
+                    <div class="w-full">
+                        <label for="kewarganegaraan" class="block text-gray-600">Kewarganegaraan</label>
+                        <input type="text" id="kewarganegaraan" name="kewarganegaraan"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                    </div>
+                    <div class="w-full">
+                        <label for="tempat_lahir" class="block text-gray-600">Tempat Lahir</label>
+                        <input type="text" id="tempat_lahir" name="tempat_lahir"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                    </div>
+                    <div class="w-full">
+                        <label for="tanggal_lahir" class="block text-gray-600">Tanggal Lahir</label>
+                        <input type="date" id="tanggal_lahir" name="tanggal_lahir"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                    </div>
+                    <div class="w-full">
+                        <label for="nama_ibu" class="block text-gray-600">Nama Ibu Kandung</label>
+                        <input type="text" id="nama_ibu" name="nama_ibu"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 3: Data Pribadi -->
+            <div class="step" id="step3">
+                <h2 class="text-2xl font-semibold text-gray-700 mb-4">Data Pribadi</h2>
+                <div class="space-y-4">
+                    <div>
+                        <label for="alamat_tempat_tinggal" class="block text-gray-600">Alamat Tempat Tinggal</label>
+                        <input type="text" id="alamat_tempat_tinggal" name="alamat_tempat_tinggal"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                    </div>
+                    <div>
+                        <label for="dusun" class="block text-gray-600">Dusun</label>
+                        <input type="text" id="dusun" name="dusun"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                    </div>
+                    <div>
+                        <label for="rt" class="block text-gray-600">RT</label>
+                        <input type="text" id="rt" name="rt"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                    </div>
+                    <div>
+                        <label for="rw" class="block text-gray-600">RW</label>
+                        <input type="text" id="rw" name="rw"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                    </div>
+                    <div>
+                        <label for="kelurahan" class="block text-gray-600">Kelurahan</label>
+                        <input type="text" id="kelurahan" name="kelurahan"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                    </div>
+                    <div>
+                        <label for="kode_pos" class="block text-gray-600">Kode Pos</label>
+                        <input type="text" id="kode_pos" name="kode_pos"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                    </div>
+                    <div>
+                        <label for="kecamatan" class="block text-gray-600">Kecamatan</label>
+                        <input type="text" id="kecamatan" name="kecamatan"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                    </div>
+                    <div>
+                        <label for="kota" class="block text-gray-600">Kota</label>
+                        <input type="text" id="kota" name="kota"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                    </div>
+                    <div>
+                        <label for="provinsi" class="block text-gray-600">Provinsi</label>
+                        <input type="text" id="provinsi" name="provinsi"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                    </div>
+                    <div>
+                        <label for="agama" class="block text-gray-600">Agama</label>
+                        <select id="agama" name="agama" class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                            <option value="Islam">Islam</option>
+                            <option value="Kristen">Kristen</option>
+                            <option value="Katolik">Katolik</option>
+                            <option value="Hindu">Hindu</option>
+                            <option value="Buddha">Buddha</option>
+                            <option value="Konghucu">Konghucu</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="npwp" class="block text-gray-600">NPWP</label>
+                        <input type="text" id="npwp" name="npwp"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                    </div>
+                    <div>
+                        <label for="kewarganegaraan" class="block text-gray-600">Kewarganegaraan</label>
+                        <input type="text" id="kewarganegaraan" name="kewarganegaraan"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                    </div>
+                    <div>
+                        <label for="status_kawin" class="block text-gray-600">Status Kawin</label>
+                        <select id="status_kawin" name="status_kawin"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                            <option value="Kawin">Kawin</option>
+                            <option value="Belum Kawin">Belum Kawin</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="nama_suami_istri" class="block text-gray-600">Nama Suami/Istri</label>
+                        <input type="text" id="nama_suami_istri" name="nama_suami_istri"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                    </div>
+                    <div>
+                        <label for="pekerjaan_suami_istri" class="block text-gray-600">Pekerjaan Suami/Istri</label>
+                        <input type="text" id="pekerjaan_suami_istri" name="pekerjaan_suami_istri"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                    </div>
+                    <div>
+                        <label for="nip" class="block text-gray-600">NIP (Jika PNS)</label>
+                        <input type="text" id="nip" name="nip"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 4: Kepegawaian -->
+            <div class="step" id="step4">
+                <h2 class="text-2xl font-semibold text-gray-700 mb-4">Kepegawaian</h2>
+                <div class="space-y-4">
+                    <div>
+                        <label for="status_kepegawaian" class="block text-gray-600">Status Kepegawaian</label>
+                        <select id="status_kepegawaian" name="status_kepegawaian"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                            <option value="PNS">PNS</option>
+                            <option value="Honorer">Honorer</option>
+                            <option value="Outsourcing">Outsourcing</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="nip" class="block text-gray-600">NIP (Jika PNS)</label>
+                        <input type="text" id="nip" name="nip"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                    </div>
+                    <div>
+                        <label for="nigb" class="block text-gray-600">NIGB</label>
+                        <input type="text" id="nigb" name="nigb"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                    </div>
+                    <div>
+                        <label for="nuptk" class="block text-gray-600">NUPTK</label>
+                        <input type="text" id="nuptk" name="nuptk"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                    </div>
+                    <div>
+                        <label for="jenis_ptk" class="block text-gray-600">Jenis PTK</label>
+                        <select id="jenis_ptk" name="jenis_ptk"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                            <option value="Guru">Guru</option>
+                            <option value="Tendik">Tenaga Pendidik</option>
+                            <option value="Kepala Sekolah">Kepala Sekolah</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="status_aktif" class="block text-gray-600">Status Aktif</label>
+                        <select id="status_aktif" name="status_aktif"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                            <option value="Aktif">Aktif</option>
+                            <option value="Non-Aktif">Non-Aktif</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="sk_pengangkatan" class="block text-gray-600">SK Pengangkatan</label>
+                        <input type="text" id="sk_pengangkatan" name="sk_pengangkatan"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                    </div>
+                    <div>
+                        <label for="tmt_pengangkatan" class="block text-gray-600">TMT Pengangkatan</label>
+                        <input type="date" id="tmt_pengangkatan" name="tmt_pengangkatan"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                    </div>
+                    <div>
+                        <label for="lembaga_pengangkatan" class="block text-gray-600">Lembaga Pengangkatan</label>
+                        <input type="text" id="lembaga_pengangkatan" name="lembaga_pengangkatan"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                    </div>
+                    <div>
+                        <label for="sk_cpns" class="block text-gray-600">SK CPNS</label>
+                        <input type="text" id="sk_cpns" name="sk_cpns"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                    </div>
+                    <div>
+                        <label for="tmt_cpns" class="block text-gray-600">TMT CPNS</label>
+                        <input type="date" id="tmt_cpns" name="tmt_cpns"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                    </div>
+                    <div>
+                        <label for="tmt_pns" class="block text-gray-600">TMT PNS</label>
+                        <input type="date" id="tmt_pns" name="tmt_pns"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                    </div>
+                    <div>
+                        <label for="pangkat_golongan" class="block text-gray-600">Pangkat/Golongan</label>
+                        <input type="text" id="pangkat_golongan" name="pangkat_golongan"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                    </div>
+                    <div>
+                        <label for="sumber_gaji" class="block text-gray-600">Sumber Gaji</label>
+                        <input type="text" id="sumber_gaji" name="sumber_gaji"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                    </div>
+                </div>
+            </div>
+            <!-- Step 5: Kontak -->
+            <div class="step" id="step5">
+                <h2 class="text-2xl font-semibold text-gray-700 mb-4">Kontak</h2>
+                <div class="space-y-4">
+                    <div>
+                        <label for="nomor_telepon" class="block text-gray-600">Nomor Telepon</label>
+                        <input type="tel" id="nomor_telepon" name="nomor_telepon"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                    </div>
+                    <div>
+                        <label for="alamat_email" class="block text-gray-600">Alamat Email</label>
+                        <input type="email" id="alamat_email" name="alamat_email"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 6: Kompetensi Khusus -->
+            <div class="step" id="step6">
+                <h2 class="text-2xl font-semibold text-gray-700 mb-4">Kompetensi Khusus</h2>
+                <div class="space-y-4">
+                    <div>
+                        <label for="jabatan_kepala_sekolah" class="block text-gray-600">Jika Jabatan Anda Kepala
+                            Sekolah</label>
+                        <select id="jabatan_kepala_sekolah" name="jabatan_kepala_sekolah"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                            <option value="Ya">Ya</option>
+                            <option value="Tidak">Tidak</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="lisensi_kepala_sekolah" class="block text-gray-600">Lisensi Kepala Sekolah</label>
+                        <input type="text" id="lisensi_kepala_sekolah" name="lisensi_kepala_sekolah"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                    </div>
+                    <div>
+                        <label for="kode_program_keahlian" class="block text-gray-600">Kode Program Keahlian</label>
+                        <input type="text" id="kode_program_keahlian" name="kode_program_keahlian"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                    </div>
+                    <div>
+                        <label for="jenis_keunaan_ditangani" class="block text-gray-600">Jika Anda Guru yang Menangani
+                            Siswa Kebutuhan Khusus, Jenis Kebutuhan Apa Saja yang Ditangani</label>
+                        <input type="text" id="jenis_keunaan_ditangani" name="jenis_keunaan_ditangani"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                    </div>
+                    <div>
+                        <label for="spesialis_keahlian" class="block text-gray-600">Spesialis Apa yang Dimiliki untuk
+                            Menangani Kebutuhan Khusus</label>
+                        <input type="text" id="spesialis_keahlian" name="spesialis_keahlian"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                    </div>
+                    <div>
+                        <label for="keahlian_khusus" class="block text-gray-600">Keahlian Khusus Apa Saja yang Dimiliki
+                            untuk Kebutuhan Khusus</label>
+                        <input type="text" id="keahlian_khusus" name="keahlian_khusus"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                    </div>
+                </div>
+            </div>
+            <!-- Step 7: Anak -->
+            <div class="step" id="step7">
+                <h2 class="text-2xl font-semibold text-gray-700 mb-4">Anak</h2>
+                <div class="space-y-4">
+                    <div>
+                        <label for="no_anak" class="block text-gray-600">No</label>
+                        <input type="number" id="no_anak" name="no_anak"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                    </div>
+                    <div>
+                        <label for="status_anak" class="block text-gray-600">Status</label>
+                        <select id="status_anak" name="status_anak"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                            <option value="Aktif">Aktif</option>
+                            <option value="Tidak Aktif">Tidak Aktif</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="jenjang_anak" class="block text-gray-600">Jenjang</label>
+                        <input type="text" id="jenjang_anak" name="jenjang_anak"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                    </div>
+                    <div>
+                        <label for="nisn_anak" class="block text-gray-600">NISN</label>
+                        <input type="text" id="nisn_anak" name="nisn_anak"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                    </div>
+                    <div>
+                        <label for="nama_anak" class="block text-gray-600">Nama Anak</label>
+                        <input type="text" id="nama_anak" name="nama_anak"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                    </div>
+                    <div>
+                        <label for="jenis_kelamin_anak" class="block text-gray-600">Jenis Kelamin</label>
+                        <select id="jenis_kelamin_anak" name="jenis_kelamin_anak"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                            <option value="Laki-Laki">Laki-Laki</option>
+                            <option value="Perempuan">Perempuan</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="tempat_lahir_anak" class="block text-gray-600">Tempat Lahir</label>
+                        <input type="text" id="tempat_lahir_anak" name="tempat_lahir_anak"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                    </div>
+                    <div>
+                        <label for="tanggal_lahir_anak" class="block text-gray-600">Tanggal Lahir</label>
+                        <input type="date" id="tanggal_lahir_anak" name="tanggal_lahir_anak"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                    </div>
+                    <div>
+                        <label for="tahun_masuk_anak" class="block text-gray-600">Tahun Masuk</label>
+                        <input type="number" id="tahun_masuk_anak" name="tahun_masuk_anak"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 8: Beasiswa -->
+            <div class="step" id="step8">
+                <h2 class="text-2xl font-semibold text-gray-700 mb-4">Beasiswa</h2>
+                <div class="space-y-4">
+                    <div>
+                        <label for="no_beasiswa" class="block text-gray-600">No</label>
+                        <input type="number" id="no_beasiswa" name="no_beasiswa"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                    </div>
+                    <div>
+                        <label for="jenis_beasiswa" class="block text-gray-600">Jenis</label>
+                        <input type="text" id="jenis_beasiswa" name="jenis_beasiswa"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                    </div>
+                    <div>
+                        <label for="penyelenggara_beasiswa" class="block text-gray-600">Penyelenggara</label>
+                        <input type="text" id="penyelenggara_beasiswa" name="penyelenggara_beasiswa"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                    </div>
+                    <div>
+                        <label for="dari_tahun_beasiswa" class="block text-gray-600">Dari Tahun</label>
+                        <input type="number" id="dari_tahun_beasiswa" name="dari_tahun_beasiswa"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                    </div>
+                    <div>
+                        <label for="sampai_tahun_beasiswa" class="block text-gray-600">Sampai Tahun</label>
+                        <input type="number" id="sampai_tahun_beasiswa" name="sampai_tahun_beasiswa"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                    </div>
+                    <div>
+                        <label for="masih_menerima_beasiswa" class="block text-gray-600">Masih Menerima</label>
+                        <select id="masih_menerima_beasiswa" name="masih_menerima_beasiswa"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                            <option value="Ya">Ya</option>
+                            <option value="Tidak">Tidak</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <!-- Step 9: Publikasi (Beasisawa) -->
+            <div class="step" id="step9">
+                <h2 class="text-2xl font-semibold text-gray-700 mb-4">Publikasi</h2>
+                <div class="space-y-4">
+                    <div>
+                        <label for="no_publikasi" class="block text-gray-600">No</label>
+                        <input type="number" id="no_publikasi" name="no_publikasi"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                    </div>
+                    <div>
+                        <label for="judul_buku" class="block text-gray-600">Judul Buku</label>
+                        <input type="text" id="judul_buku" name="judul_buku"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                    </div>
+                    <div>
+                        <label for="tahun_publikasi" class="block text-gray-600">Tahun</label>
+                        <input type="number" id="tahun_publikasi" name="tahun_publikasi"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                    </div>
+                    <div>
+                        <label for="penerbit_buku" class="block text-gray-600">Penerbit</label>
+                        <input type="text" id="penerbit_buku" name="penerbit_buku"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 10: Diklat -->
+            <div class="step" id="step10">
+                <h2 class="text-2xl font-semibold text-gray-700 mb-4">Diklat</h2>
+                <div class="space-y-4">
+                    <div>
+                        <label for="no_diklat" class="block text-gray-600">No</label>
+                        <input type="number" id="no_diklat" name="no_diklat"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                    </div>
+                    <div>
+                        <label for="jenis_diklat" class="block text-gray-600">Jenis Diklat</label>
+                        <input type="text" id="jenis_diklat" name="jenis_diklat"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                    </div>
+                    <div>
+                        <label for="nama_diklat" class="block text-gray-600">Nama Diklat</label>
+                        <input type="text" id="nama_diklat" name="nama_diklat"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                    </div>
+                    <div>
+                        <label for="penyelenggara_diklat" class="block text-gray-600">Penyelenggara</label>
+                        <input type="text" id="penyelenggara_diklat" name="penyelenggara_diklat"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                    </div>
+                    <div>
+                        <label for="tahun_diklat" class="block text-gray-600">Tahun</label>
+                        <input type="number" id="tahun_diklat" name="tahun_diklat"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                    </div>
+                    <div>
+                        <label for="peran_diklat" class="block text-gray-600">Peran</label>
+                        <input type="text" id="peran_diklat" name="peran_diklat"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 11: Kesejahteraan -->
+            <div class="step" id="step11">
+                <h2 class="text-2xl font-semibold text-gray-700 mb-4">Kesejahteraan</h2>
+                <div class="space-y-4">
+                    <div>
+                        <label for="no_kesejahteraan" class="block text-gray-600">No</label>
+                        <input type="number" id="no_kesejahteraan" name="no_kesejahteraan"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                    </div>
+                    <div>
+                        <label for="jenis_kesejahteraan" class="block text-gray-600">Jenis Kesejahteraan</label>
+                        <input type="text" id="jenis_kesejahteraan" name="jenis_kesejahteraan"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                    </div>
+                    <div>
+                        <label for="nama_kesejahteraan" class="block text-gray-600">Nama Kesejahteraan</label>
+                        <input type="text" id="nama_kesejahteraan" name="nama_kesejahteraan"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                    </div>
+                    <div>
+                        <label for="penyelenggara_kesejahteraan" class="block text-gray-600">Penyelenggara</label>
+                        <input type="text" id="penyelenggara_kesejahteraan" name="penyelenggara_kesejahteraan"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                    </div>
+                    <div>
+                        <label for="dari_tahun_kesejahteraan" class="block text-gray-600">Dari Tahun</label>
+                        <input type="number" id="dari_tahun_kesejahteraan" name="dari_tahun_kesejahteraan"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                    </div>
+                    <div>
+                        <label for="sampai_tahun_kesejahteraan" class="block text-gray-600">Sampai Tahun</label>
+                        <input type="number" id="sampai_tahun_kesejahteraan" name="sampai_tahun_kesejahteraan"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                    </div>
+                    <div>
+                        <label for="status_kesejahteraan" class="block text-gray-600">Status</label>
+                        <select id="status_kesejahteraan" name="status_kesejahteraan"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                            <option value="Aktif">Aktif</option>
+                            <option value="Tidak Aktif">Tidak Aktif</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <!-- Step 12: Tunjangan -->
+            <div class="step" id="step12">
+                <h2 class="text-2xl font-semibold text-gray-700 mb-4">Tunjangan</h2>
+                <div class="space-y-4">
+                    <div>
+                        <label for="no_tunjangan" class="block text-gray-600">No</label>
+                        <input type="number" id="no_tunjangan" name="no_tunjangan"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                    </div>
+                    <div>
+                        <label for="jenis_tunjangan" class="block text-gray-600">Jenis Tunjangan</label>
+                        <input type="text" id="jenis_tunjangan" name="jenis_tunjangan"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                    </div>
+                    <div>
+                        <label for="nama_tunjangan" class="block text-gray-600">Nama Tunjangan</label>
+                        <input type="text" id="nama_tunjangan" name="nama_tunjangan"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                    </div>
+                    <div>
+                        <label for="instansi_tunjangan" class="block text-gray-600">Instansi</label>
+                        <input type="text" id="instansi_tunjangan" name="instansi_tunjangan"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                    </div>
+                    <div>
+                        <label for="sumber_daya_tunjangan" class="block text-gray-600">Sumber Daya</label>
+                        <input type="text" id="sumber_daya_tunjangan" name="sumber_daya_tunjangan"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                    </div>
+                    <div>
+                        <label for="dari_tahun_tunjangan" class="block text-gray-600">Dari Tahun</label>
+                        <input type="number" id="dari_tahun_tunjangan" name="dari_tahun_tunjangan"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                    </div>
+                    <div>
+                        <label for="sampai_tahun_tunjangan" class="block text-gray-600">Sampai Tahun</label>
+                        <input type="number" id="sampai_tahun_tunjangan" name="sampai_tahun_tunjangan"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                    </div>
+                    <div>
+                        <label for="nominal_tunjangan" class="block text-gray-600">Nominal</label>
+                        <input type="number" id="nominal_tunjangan" name="nominal_tunjangan"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                    </div>
+                    <div>
+                        <label for="status_tunjangan" class="block text-gray-600">Status</label>
+                        <select id="status_tunjangan" name="status_tunjangan"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                            <option value="Aktif">Aktif</option>
+                            <option value="Tidak Aktif">Tidak Aktif</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="tugas_tambahan" class="block text-gray-600">Tugas Tambahan</label>
+                        <input type="text" id="tugas_tambahan" name="tugas_tambahan"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                    </div>
+                    <div>
+                        <label for="no_jabatan_tambahan" class="block text-gray-600">No Jabatan PTK</label>
+                        <input type="number" id="no_jabatan_tambahan" name="no_jabatan_tambahan"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                    </div>
+                    <div>
+                        <label for="jam_per_minggu" class="block text-gray-600">Jam Per Minggu</label>
+                        <input type="number" id="jam_per_minggu" name="jam_per_minggu"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                    </div>
+                    <div>
+                        <label for="no_sk_tambahan" class="block text-gray-600">No SK</label>
+                        <input type="text" id="no_sk_tambahan" name="no_sk_tambahan"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                    </div>
+                    <div>
+                        <label for="tmt_tambahan" class="block text-gray-600">TMT Tambahan</label>
+                        <input type="date" id="tmt_tambahan" name="tmt_tambahan"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                    </div>
+                    <div>
+                        <label for="tst_tambahan" class="block text-gray-600">TST Tambahan</label>
+                        <input type="date" id="tst_tambahan" name="tst_tambahan"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 13: Inpassing -->
+            <div class="step" id="step13">
+                <h2 class="text-2xl font-semibold text-gray-700 mb-4">Inpassing</h2>
+                <div class="space-y-4">
+                    <div>
+                        <label for="no_inpassing" class="block text-gray-600">No</label>
+                        <input type="number" id="no_inpassing" name="no_inpassing"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                    </div>
+                    <div>
+                        <label for="pangkat_inpassing" class="block text-gray-600">Pangkat Golongan</label>
+                        <input type="text" id="pangkat_inpassing" name="pangkat_inpassing"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                    </div>
+                    <div>
+                        <label for="no_sk_inpassing" class="block text-gray-600">No. SK Inpassing</label>
+                        <input type="text" id="no_sk_inpassing" name="no_sk_inpassing"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                    </div>
+                    <div>
+                        <label for="tmt_inpassing" class="block text-gray-600">TMT Inpassing</label>
+                        <input type="date" id="tmt_inpassing" name="tmt_inpassing"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                    </div>
+                    <div>
+                        <label for="angka_kredit_inpassing" class="block text-gray-600">Angka Kredit</label>
+                        <input type="number" id="angka_kredit_inpassing" name="angka_kredit_inpassing"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                    </div>
+                    <div>
+                        <label for="masa_kerja_tahun_inpassing" class="block text-gray-600">Masa Kerja Tahun</label>
+                        <input type="number" id="masa_kerja_tahun_inpassing" name="masa_kerja_tahun_inpassing"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                    </div>
+                    <div>
+                        <label for="masa_kerja_bulan_inpassing" class="block text-gray-600">Masa Kerja Bulan</label>
+                        <input type="number" id="masa_kerja_bulan_inpassing" name="masa_kerja_bulan_inpassing"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 14: Penghargaan -->
+            <div class="step" id="step14">
+                <h2 class="text-2xl font-semibold text-gray-700 mb-4">Penghargaan</h2>
+                <div class="space-y-4">
+                    <div>
+                        <label for="no_penghargaan" class="block text-gray-600">No</label>
+                        <input type="number" id="no_penghargaan" name="no_penghargaan"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                    </div>
+                    <div>
+                        <label for="tingkat_penghargaan" class="block text-gray-600">Tingkat Penghargaan</label>
+                        <input type="text" id="tingkat_penghargaan" name="tingkat_penghargaan"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                    </div>
+                    <div>
+                        <label for="jenis_penghargaan" class="block text-gray-600">Jenis Penghargaan</label>
+                        <input type="text" id="jenis_penghargaan" name="jenis_penghargaan"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                    </div>
+                    <div>
+                        <label for="nama_penghargaan" class="block text-gray-600">Nama Penghargaan</label>
+                        <input type="text" id="nama_penghargaan" name="nama_penghargaan"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                    </div>
+                    <div>
+                        <label for="tahun_penghargaan" class="block text-gray-600">Tahun</label>
+                        <input type="number" id="tahun_penghargaan" name="tahun_penghargaan"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                    </div>
+                    <div>
+                        <label for="instansi_penghargaan" class="block text-gray-600">Instansi</label>
+                        <input type="text" id="instansi_penghargaan" name="instansi_penghargaan"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                    </div>
+                </div>
+            </div>
+            <!-- Step 15: Nilai Test -->
+            <div class="step" id="step15">
+                <h2 class="text-2xl font-semibold text-gray-700 mb-4">Nilai Test</h2>
+                <div class="space-y-4">
+                    <div>
+                        <label for="no_test" class="block text-gray-600">No</label>
+                        <input type="number" id="no_test" name="no_test"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                    </div>
+                    <div>
+                        <label for="jenis_test" class="block text-gray-600">Jenis Test</label>
+                        <input type="text" id="jenis_test" name="jenis_test"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                    </div>
+                    <div>
+                        <label for="nama_test" class="block text-gray-600">Nama Test</label>
+                        <input type="text" id="nama_test" name="nama_test"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                    </div>
+                    <div>
+                        <label for="penyelenggara_test" class="block text-gray-600">Penyelenggara</label>
+                        <input type="text" id="penyelenggara_test" name="penyelenggara_test"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                    </div>
+                    <div>
+                        <label for="tahun_test" class="block text-gray-600">Tahun</label>
+                        <input type="number" id="tahun_test" name="tahun_test"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                    </div>
+                    <div>
+                        <label for="skor_test" class="block text-gray-600">Skor</label>
+                        <input type="number" id="skor_test" name="skor_test"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 16: Riwayat Gaji Berkala -->
+            <div class="step" id="step16">
+                <h2 class="text-2xl font-semibold text-gray-700 mb-4">Riwayat Gaji Berkala</h2>
+                <div class="space-y-4">
+                    <div>
+                        <label for="no_gaji" class="block text-gray-600">No</label>
+                        <input type="number" id="no_gaji" name="no_gaji"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                    </div>
+                    <div>
+                        <label for="pangkat_golongan_gaji" class="block text-gray-600">Pangkat Golongan</label>
+                        <input type="text" id="pangkat_golongan_gaji" name="pangkat_golongan_gaji"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                    </div>
+                    <div>
+                        <label for="no_sk_gaji" class="block text-gray-600">No SK</label>
+                        <input type="text" id="no_sk_gaji" name="no_sk_gaji"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                    </div>
+                    <div>
+                        <label for="tanggal_sk_gaji" class="block text-gray-600">Tanggal SK</label>
+                        <input type="date" id="tanggal_sk_gaji" name="tanggal_sk_gaji"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                    </div>
+                    <div>
+                        <label for="tmt_kgb" class="block text-gray-600">TMT KGB</label>
+                        <input type="date" id="tmt_kgb" name="tmt_kgb"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                    </div>
+                    <div>
+                        <label for="masa_kerja_tahun_gaji" class="block text-gray-600">Masa Kerja (Tahun)</label>
+                        <input type="number" id="masa_kerja_tahun_gaji" name="masa_kerja_tahun_gaji"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                    </div>
+                    <div>
+                        <label for="masa_kerja_bulan_gaji" class="block text-gray-600">Masa Kerja (Bulan)</label>
+                        <input type="number" id="masa_kerja_bulan_gaji" name="masa_kerja_bulan_gaji"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                    </div>
+                    <div>
+                        <label for="gaji_pokok" class="block text-gray-600">Gaji Pokok</label>
+                        <input type="number" id="gaji_pokok" name="gaji_pokok"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 17: Riwayat Jabatan Structural -->
+            <div class="step" id="step17">
+                <h2 class="text-2xl font-semibold text-gray-700 mb-4">Riwayat Jabatan Structural</h2>
+                <div class="space-y-4">
+                    <div>
+                        <label for="no_jabatan_structural" class="block text-gray-600">No</label>
+                        <input type="number" id="no_jabatan_structural" name="no_jabatan_structural"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                    </div>
+                    <div>
+                        <label for="jabatan_ptk_structural" class="block text-gray-600">Jabatan PTK</label>
+                        <input type="text" id="jabatan_ptk_structural" name="jabatan_ptk_structural"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                    </div>
+                    <div>
+                        <label for="sk_structural" class="block text-gray-600">SK Structural</label>
+                        <input type="text" id="sk_structural" name="sk_structural"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                    </div>
+                    <div>
+                        <label for="tmt_jabatan" class="block text-gray-600">TMT Jabatan</label>
+                        <input type="date" id="tmt_jabatan" name="tmt_jabatan"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 18: Riwayat Kepangkatan -->
+            <div class="step" id="step18">
+                <h2 class="text-2xl font-semibold text-gray-700 mb-4">Riwayat Kepangkatan</h2>
+                <div class="space-y-4">
+                    <div>
+                        <label for="no_pangkat" class="block text-gray-600">No</label>
+                        <input type="number" id="no_pangkat" name="no_pangkat"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                    </div>
+                    <div>
+                        <label for="pangkat_golongan" class="block text-gray-600">Pangkat Golongan</label>
+                        <input type="text" id="pangkat_golongan" name="pangkat_golongan"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                    </div>
+                    <div>
+                        <label for="no_sk_pangkat" class="block text-gray-600">No SK</label>
+                        <input type="text" id="no_sk_pangkat" name="no_sk_pangkat"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                    </div>
+                    <div>
+                        <label for="tanggal_sk_pangkat" class="block text-gray-600">Tanggal SK</label>
+                        <input type="date" id="tanggal_sk_pangkat" name="tanggal_sk_pangkat"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                    </div>
+                    <div>
+                        <label for="tmt_pangkat" class="block text-gray-600">TMT Pangkat</label>
+                        <input type="date" id="tmt_pangkat" name="tmt_pangkat"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                    </div>
+                    <div>
+                        <label for="masa_kerja_tahun_pangkat" class="block text-gray-600">Masa Kerja (Tahun)</label>
+                        <input type="number" id="masa_kerja_tahun_pangkat" name="masa_kerja_tahun_pangkat"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                    </div>
+                    <div>
+                        <label for="masa_kerja_bulan_pangkat" class="block text-gray-600">Masa Kerja (Bulan)</label>
+                        <input type="number" id="masa_kerja_bulan_pangkat" name="masa_kerja_bulan_pangkat"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 19: Riwayat Pendidikan Formal -->
+            <div class="step" id="step19">
+                <h2 class="text-2xl font-semibold text-gray-700 mb-4">Riwayat Pendidikan Formal</h2>
+                <div class="space-y-4">
+                    <div>
+                        <label for="no_pendidikan" class="block text-gray-600">No</label>
+                        <input type="number" id="no_pendidikan" name="no_pendidikan"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                    </div>
+                    <div>
+                        <label for="bidang_study" class="block text-gray-600">Bidang Study</label>
+                        <input type="text" id="bidang_study" name="bidang_study"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                    </div>
+                    <div>
+                        <label for="jenjang_pendidikan" class="block text-gray-600">Jenjang Pendidikan</label>
+                        <input type="text" id="jenjang_pendidikan" name="jenjang_pendidikan"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                    </div>
+                    <div>
+                        <label for="gelar_akademik" class="block text-gray-600">Gelar Akademik</label>
+                        <input type="text" id="gelar_akademik" name="gelar_akademik"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                    </div>
+                    <div>
+                        <label for="satuan_pendidikan" class="block text-gray-600">Satuan Pendidikan</label>
+                        <input type="text" id="satuan_pendidikan" name="satuan_pendidikan"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                    </div>
+                    <div>
+                        <label for="fakultas" class="block text-gray-600">Fakultas</label>
+                        <input type="text" id="fakultas" name="fakultas"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                    </div>
+                    <div>
+                        <label for="kependidikan" class="block text-gray-600">Kependidikan</label>
+                        <input type="text" id="kependidikan" name="kependidikan"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                    </div>
+                    <div>
+                        <label for="tahun_masuk" class="block text-gray-600">Tahun Masuk</label>
+                        <input type="number" id="tahun_masuk" name="tahun_masuk"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                    </div>
+                    <div>
+                        <label for="tahun_lulus" class="block text-gray-600">Tahun Lulus</label>
+                        <input type="number" id="tahun_lulus" name="tahun_lulus"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                    </div>
+                    <div>
+                        <label for="nim" class="block text-gray-600">NIM</label>
+                        <input type="text" id="nim" name="nim"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                    </div>
+                    <div>
+                        <label for="masih_kuliah" class="block text-gray-600">Masih Kuliah</label>
+                        <input type="checkbox" id="masih_kuliah" name="masih_kuliah"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                    </div>
+                    <div>
+                        <label for="semester" class="block text-gray-600">Semester</label>
+                        <input type="number" id="semester" name="semester"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                    </div>
+                    <div>
+                        <label for="ipk" class="block text-gray-600">IPK</label>
+                        <input type="number" id="ipk" name="ipk" step="0.01"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 20: Riwayat Sertifikasi -->
+            <div class="step" id="step20">
+                <h2 class="text-2xl font-semibold text-gray-700 mb-4">Riwayat Sertifikasi</h2>
+                <div class="space-y-4">
+                    <div>
+                        <label for="no_sertifikasi" class="block text-gray-600">No</label>
+                        <input type="number" id="no_sertifikasi" name="no_sertifikasi"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                    </div>
+                    <div>
+                        <label for="jenis_sertifikasi" class="block text-gray-600">Jenis Sertifikasi</label>
+                        <input type="text" id="jenis_sertifikasi" name="jenis_sertifikasi"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                    </div>
+                    <div>
+                        <label for="no_sertifikat" class="block text-gray-600">No Sertifikat</label>
+                        <input type="text" id="no_sertifikat" name="no_sertifikat"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                    </div>
+                    <div>
+                        <label for="tahun_sertifikasi" class="block text-gray-600">Tahun Sertifikasi</label>
+                        <input type="number" id="tahun_sertifikasi" name="tahun_sertifikasi"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                    </div>
+                    <div>
+                        <label for="bidang_studi_sertifikasi" class="block text-gray-600">Bidang Studi</label>
+                        <input type="text" id="bidang_studi_sertifikasi" name="bidang_studi_sertifikasi"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                    </div>
+                    <div>
+                        <label for="nrg" class="block text-gray-600">NRG</label>
+                        <input type="text" id="nrg" name="nrg"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                    </div>
+                    <div>
+                        <label for="no_peserta_sertifikasi" class="block text-gray-600">No Peserta</label>
+                        <input type="text" id="no_peserta_sertifikasi" name="no_peserta_sertifikasi"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 21: Riwayat Jabatan Fungsional -->
+            <div class="step" id="step21">
+                <h2 class="text-2xl font-semibold text-gray-700 mb-4">Riwayat Jabatan Fungsional</h2>
+                <div class="space-y-4">
+                    <div>
+                        <label for="no_jabatan_fungsional" class="block text-gray-600">No</label>
+                        <input type="number" id="no_jabatan_fungsional" name="no_jabatan_fungsional"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                    </div>
+                    <div>
+                        <label for="jabatan_fungsional" class="block text-gray-600">Jabatan Fungsional</label>
+                        <input type="text" id="jabatan_fungsional" name="jabatan_fungsional"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                    </div>
+                    <div>
+                        <label for="sk_jabatan_fungsional" class="block text-gray-600">SK Jabatan</label>
+                        <input type="text" id="sk_jabatan_fungsional" name="sk_jabatan_fungsional"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                    </div>
+                    <div>
+                        <label for="tmt_jabatan_fungsional" class="block text-gray-600">TMT Jabatan</label>
+                        <input type="date" id="tmt_jabatan_fungsional" name="tmt_jabatan_fungsional"
+                            class="mt-1 px-4 py-2 w-full border border-gray-300 rounded-lg">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step Navigation (Buttons) -->
+            <div class="flex justify-between mt-8">
+                <button id="prevBtn" type="button"
+                    class="px-4 py-2 bg-gray-300 rounded-lg text-gray-700 font-semibold cursor-pointer hidden">Previous</button>
+                <button id="nextBtn" type="button"
+                    class="px-4 py-2 bg-blue-500 text-white rounded-lg font-semibold cursor-pointer">Next</button>
+            </div>
+
+            <!-- Submit Button (Only shown in last step) -->
+            <div class="flex justify-end mt-8 hidden" id="submitBtnContainer">
+                <button type="submit" id="submitBtn"
+                    class="px-6 py-2 bg-green-500 text-white rounded-lg font-semibold cursor-pointer">Submit</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        let currentStep = 1;
+        const totalSteps = 21;
+
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const submitBtnContainer = document.getElementById('submitBtnContainer');
+        const steps = document.querySelectorAll('.step');
+        const stepNumber = document.getElementById('stepNumber');
+
+        function showStep(step) {
+            steps.forEach((s, index) => {
+                s.classList.remove('active');
+                if (index === step - 1) {
+                    s.classList.add('active');
+                }
+            });
+            stepNumber.textContent = step;
+            prevBtn.classList.toggle('hidden', step === 1);
+            nextBtn.classList.toggle('hidden', step === totalSteps);
+            submitBtnContainer.classList.toggle('hidden', step !== totalSteps);
+        }
+
+        prevBtn.addEventListener('click', () => {
+            if (currentStep > 1) {
+                currentStep--;
+                showStep(currentStep);
+            }
+        });
+
+        nextBtn.addEventListener('click', () => {
+            if (currentStep < totalSteps) {
+                currentStep++;
+                showStep(currentStep);
+            }
+        });
+
+        // Initialize
+        showStep(currentStep);
+    </script>
+</body>
+
+</html>
