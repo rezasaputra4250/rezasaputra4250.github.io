@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Font Awesome Love Beat</title>
+
+    <!-- Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        crossorigin="anonymous" />
+
+    <style>
+        @keyframes beat {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.3);
+            }
+        }
+
+        .beat {
+            animation: beat 1s infinite ease-in-out;
+        }
+    </style>
+</head>
+
+<body class="flex items-center justify-center h-screen bg-gray-100">
+
+    <div class="text-center">
+        <h1 class="text-2xl font-semibold mb-6">Ikon Love yang Berdetak ❤️</h1>
+
+        <!-- Font Awesome Heart Beat Animation -->
+        <div class="mt-6 text-red-500 text-7xl">
+            <i class="fas fa-heart beat"></i>
+        </div>
+    </div>
+
+</body>
+
+</html>

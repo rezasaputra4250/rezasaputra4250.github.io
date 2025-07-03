@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript Animation</title>
+
+    <!-- Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        crossorigin="anonymous" />
+    <style>
+        .animated-icon {
+            position: relative;
+            transition: transform 0.3s ease-in-out;
+        }
+    </style>
+</head>
+
+<body class="flex items-center justify-center h-screen bg-gray-100">
+
+    <div class="text-center">
+        <button id="animateBtn"
+            class="px-6 py-3 bg-green-600 text-white rounded-lg shadow hover:bg-green-700 transition duration-300 mb-10">
+            Jalankan Animasi
+        </button>
+
+        <div>
+            <i id="icon" class="fas fa-paper-plane text-6xl text-blue-600 animated-icon"></i>
+        </div>
+    </div>
+
+    <script>
+        const btn = document.getElementById('animateBtn');
+        const icon = document.getElementById('icon');
+
+        btn.addEventListener('click', () => {
+            // Langkah 1: Gerakkan ke kanan dan perbesar
+            icon.style.transform = 'translateX(150px) scale(1.5)';
+
+            // Langkah 2: Setelah 600ms, kembalikan ke posisi semula
+            setTimeout(() => {
+                icon.style.transform = 'translateX(0) scale(1)';
+            }, 600);
+        });
+    </script>
+
+</body>
+
+</html>
