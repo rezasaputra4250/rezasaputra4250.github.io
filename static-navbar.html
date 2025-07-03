@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Statistic Navbar</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        crossorigin="anonymous" />
+    <script>
+        // Ganti 'your-kit-id.js' dengan Font Awesome Kit ID milik kamu
+    </script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-100">
+
+    <!-- Navbar -->
+    <nav class="bg-white shadow fixed top-0 left-0 right-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+
+            <!-- Logo -->
+            <div class="flex items-center space-x-2">
+                <i class="fas fa-chart-line text-blue-600 text-2xl"></i>
+                <span class="text-xl font-bold text-gray-700">StatNav</span>
+            </div>
+
+            <!-- Navigation Links -->
+            <div class="hidden md:flex space-x-6">
+                <a href="#" class="text-gray-600 hover:text-blue-600">Dashboard</a>
+                <a href="#" class="text-gray-600 hover:text-blue-600">Analytics</a>
+                <a href="#" class="text-gray-600 hover:text-blue-600">Reports</a>
+            </div>
+
+            <!-- Statistics + Profile -->
+            <div class="flex items-center space-x-6">
+                <!-- Stats -->
+                <div class="hidden sm:flex space-x-4">
+                    <div class="text-center">
+                        <div class="text-gray-500 text-sm">Users</div>
+                        <div class="text-blue-600 font-semibold">1,204</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-gray-500 text-sm">Sales</div>
+                        <div class="text-green-600 font-semibold">872</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-gray-500 text-sm">Alerts</div>
+                        <div class="text-red-500 font-semibold">5</div>
+                    </div>
+                </div>
+
+                <!-- Notifications -->
+                <button class="relative text-gray-600 hover:text-blue-600">
+                    <i class="fas fa-bell text-xl"></i>
+                    <span
+                        class="absolute -top-1 -right-2 bg-red-500 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">3</span>
+                </button>
+
+                <!-- Profile -->
+                <div class="relative">
+                    <img src="https://i.pravatar.cc/40" alt="Profile" class="w-9 h-9 rounded-full ring-2 ring-blue-500">
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Placeholder Content -->
+    <div class="pt-24 p-6">
+        <h1 class="text-2xl font-bold mb-4">Welcome to the Statistic Dashboard</h1>
+        <p class="text-gray-700">Ini adalah contoh statistic navbar menggunakan Tailwind CSS dan Font Awesome.</p>
+    </div>
+
+</body>
+
+</html>

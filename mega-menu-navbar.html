@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mega Menu Navbar</title>
+
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        crossorigin="anonymous" />
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100">
+
+    <!-- Navbar -->
+    <nav class="bg-white shadow-md fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+            <!-- Logo -->
+            <div class="flex items-center space-x-2">
+                <i class="fas fa-layer-group text-indigo-600 text-2xl"></i>
+                <span class="text-xl font-bold text-gray-800">MegaBrand</span>
+            </div>
+
+            <!-- Navigation -->
+            <ul class="hidden md:flex space-x-6 items-center relative">
+                <li><a href="#" class="text-gray-700 hover:text-indigo-600">Home</a></li>
+                <li><a href="#" class="text-gray-700 hover:text-indigo-600">About</a></li>
+
+                <!-- Mega Menu Trigger -->
+                <li class="group relative">
+                    <button class="flex items-center space-x-1 text-gray-700 hover:text-indigo-600">
+                        <span>Products</span>
+                        <i class="fas fa-chevron-down text-sm"></i>
+                    </button>
+
+                    <!-- Mega Menu -->
+                    <div
+                        class="absolute left-0 top-full mt-3 hidden group-hover:block w-[700px] bg-white shadow-lg rounded-md p-6 z-50">
+                        <div class="grid grid-cols-3 gap-6">
+                            <div>
+                                <h4 class="text-gray-900 font-semibold mb-2">Category 1</h4>
+                                <ul class="space-y-1 text-sm">
+                                    <li><a href="#" class="hover:text-indigo-600">Product A</a></li>
+                                    <li><a href="#" class="hover:text-indigo-600">Product B</a></li>
+                                    <li><a href="#" class="hover:text-indigo-600">Product C</a></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="text-gray-900 font-semibold mb-2">Category 2</h4>
+                                <ul class="space-y-1 text-sm">
+                                    <li><a href="#" class="hover:text-indigo-600">Product D</a></li>
+                                    <li><a href="#" class="hover:text-indigo-600">Product E</a></li>
+                                    <li><a href="#" class="hover:text-indigo-600">Product F</a></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="text-gray-900 font-semibold mb-2">Category 3</h4>
+                                <ul class="space-y-1 text-sm">
+                                    <li><a href="#" class="hover:text-indigo-600">Product G</a></li>
+                                    <li><a href="#" class="hover:text-indigo-600">Product H</a></li>
+                                    <li><a href="#" class="hover:text-indigo-600">Product I</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <li><a href="#" class="text-gray-700 hover:text-indigo-600">Contact</a></li>
+            </ul>
+
+            <!-- Icon Right -->
+            <div class="flex items-center space-x-4">
+                <button class="relative text-gray-600 hover:text-indigo-600">
+                    <i class="fas fa-shopping-cart text-xl"></i>
+                    <span
+                        class="absolute -top-1 -right-2 bg-red-500 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">3</span>
+                </button>
+                <img src="https://i.pravatar.cc/40" alt="Avatar" class="w-9 h-9 rounded-full ring-2 ring-indigo-500">
+            </div>
+        </div>
+    </nav>
+
+    <!-- Content -->
+    <div class="pt-24 px-6 max-w-3xl mx-auto">
+        <h1 class="text-3xl font-bold mb-4">Mega Menu Navbar</h1>
+        <p class="text-gray-700">
+            Arahkan kursor ke menu <strong>Products</strong> untuk membuka mega menu. Menu ini responsif dan cocok untuk
+            toko online atau aplikasi kompleks.
+        </p>
+    </div>
+
+</body>
+
+</html>
