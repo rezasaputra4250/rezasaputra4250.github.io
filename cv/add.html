@@ -70,7 +70,6 @@
                     class="w-full mt-1 p-2 border rounded-xl focus:ring-2 focus:ring-blue-500" value="">
             </div>
 
-            <!-- Tambahkan di dalam <form id="taskForm" class="space-y-4"> -->
             <div>
                 <label class="block font-medium">Pengulangan</label>
                 <select id="pengulanganTugas"
@@ -81,7 +80,7 @@
                 </select>
             </div>
 
-            <!-- Checkbox Hari, hanya muncul saat 'Khusus' dipilih -->
+            <!-- Checkbox Hari -->
             <div id="hariKhusus" class="hidden">
                 <label class="block font-medium mb-1">Pilih Hari:</label>
                 <div class="grid grid-cols-3 gap-2 text-sm">
@@ -111,6 +110,15 @@
             const today = new Date().toISOString().split('T')[0];
             $('#tanggalTugas').val(today);
 
+            // Tampilkan checkbox hari jika "Khusus" dipilih
+            $('#pengulanganTugas').on('change', function () {
+                if ($(this).val() === 'Khusus') {
+                    $('#hariKhusus').slideDown();
+                } else {
+                    $('#hariKhusus').slideUp();
+                }
+            });
+
             $('#taskForm').on('submit', function (e) {
                 e.preventDefault();
                 const judul = $('#judulTugas').val().trim();
@@ -123,12 +131,25 @@
                     return;
                 }
 
+                let hari = [];
+                if (pengulangan === 'Khusus') {
+                    $('input[name="hari[]"]:checked').each(function () {
+                        hari.push($(this).val());
+                    });
+
+                    if (hari.length === 0) {
+                        alert('Pilih minimal satu hari jika pengulangan Khusus.');
+                        return;
+                    }
+                }
+
                 const tugasBaru = {
                     id: Date.now(),
                     judul,
                     kategori,
                     tanggal,
                     pengulangan,
+                    hari: hari,
                     selesai: false
                 };
 
@@ -138,6 +159,7 @@
 
                 $('#taskForm')[0].reset();
                 $('#tanggalTugas').val(today);
+                $('#hariKhusus').hide();
                 $('#successMsg').fadeIn().delay(2000).fadeOut();
             });
         });
