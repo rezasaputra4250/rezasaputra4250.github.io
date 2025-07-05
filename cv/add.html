@@ -70,14 +70,29 @@
                     class="w-full mt-1 p-2 border rounded-xl focus:ring-2 focus:ring-blue-500" value="">
             </div>
 
+            <!-- Tambahkan di dalam <form id="taskForm" class="space-y-4"> -->
             <div>
                 <label class="block font-medium">Pengulangan</label>
                 <select id="pengulanganTugas"
                     class="w-full mt-1 p-2 border rounded-xl focus:ring-2 focus:ring-blue-500">
                     <option value="Sekali">Sekali</option>
-                    <option value="Mingguan">Mingguan</option>
+                    <option value="Setiap Hari">Setiap Hari</option>
                     <option value="Khusus">Khusus</option>
                 </select>
+            </div>
+
+            <!-- Checkbox Hari, hanya muncul saat 'Khusus' dipilih -->
+            <div id="hariKhusus" class="hidden">
+                <label class="block font-medium mb-1">Pilih Hari:</label>
+                <div class="grid grid-cols-3 gap-2 text-sm">
+                    <label><input type="checkbox" name="hari[]" value="Senin" class="mr-1">Senin</label>
+                    <label><input type="checkbox" name="hari[]" value="Selasa" class="mr-1">Selasa</label>
+                    <label><input type="checkbox" name="hari[]" value="Rabu" class="mr-1">Rabu</label>
+                    <label><input type="checkbox" name="hari[]" value="Kamis" class="mr-1">Kamis</label>
+                    <label><input type="checkbox" name="hari[]" value="Jumat" class="mr-1">Jumat</label>
+                    <label><input type="checkbox" name="hari[]" value="Sabtu" class="mr-1">Sabtu</label>
+                    <label><input type="checkbox" name="hari[]" value="Minggu" class="mr-1">Minggu</label>
+                </div>
             </div>
 
             <button type="submit"
