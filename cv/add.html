@@ -65,7 +65,7 @@
             </div>
 
             <div>
-                <label class="block font-medium">Tanggal</label>
+                <label class="block font-medium">Tanggal Mulai</label>
                 <input type="date" id="tanggalTugas"
                     class="w-full mt-1 p-2 border rounded-xl focus:ring-2 focus:ring-blue-500" value="">
             </div>
@@ -80,7 +80,7 @@
                 </select>
             </div>
 
-            <!-- Checkbox Hari -->
+            <!-- Checkbox Hari jika "Khusus" -->
             <div id="hariKhusus" class="hidden">
                 <label class="block font-medium mb-1">Pilih Hari:</label>
                 <div class="grid grid-cols-3 gap-2 text-sm">
@@ -110,7 +110,7 @@
             const today = new Date().toISOString().split('T')[0];
             $('#tanggalTugas').val(today);
 
-            // Tampilkan checkbox hari jika "Khusus" dipilih
+            // Tampilkan pilihan hari jika "Khusus"
             $('#pengulanganTugas').on('change', function () {
                 if ($(this).val() === 'Khusus') {
                     $('#hariKhusus').slideDown();
@@ -125,22 +125,21 @@
                 const kategori = $('#kategoriTugas').val();
                 const tanggal = $('#tanggalTugas').val();
                 const pengulangan = $('#pengulanganTugas').val();
+                const hari = [];
 
-                if (judul === '') {
-                    alert('Judul tugas tidak boleh kosong!');
-                    return;
-                }
-
-                let hari = [];
                 if (pengulangan === 'Khusus') {
                     $('input[name="hari[]"]:checked').each(function () {
                         hari.push($(this).val());
                     });
-
                     if (hari.length === 0) {
-                        alert('Pilih minimal satu hari jika pengulangan Khusus.');
+                        alert("Pilih minimal satu hari untuk pengulangan khusus!");
                         return;
                     }
+                }
+
+                if (judul === '') {
+                    alert('Judul tugas tidak boleh kosong!');
+                    return;
                 }
 
                 const tugasBaru = {
@@ -149,8 +148,8 @@
                     kategori,
                     tanggal,
                     pengulangan,
-                    hari: hari,
-                    selesai: false
+                    hari: pengulangan === "Khusus" ? hari : [],
+                    selesaiPerTanggal: {}
                 };
 
                 let daftarTugas = JSON.parse(localStorage.getItem('daftarTugas')) || [];
@@ -159,7 +158,7 @@
 
                 $('#taskForm')[0].reset();
                 $('#tanggalTugas').val(today);
-                $('#hariKhusus').hide();
+                $('#hariKhusus').slideUp();
                 $('#successMsg').fadeIn().delay(2000).fadeOut();
             });
         });
