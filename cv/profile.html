@@ -21,34 +21,32 @@
 </head>
 
 <body class="bg-gray-100 min-h-screen p-4">
-    <!-- Bottom Navbar (Only visible on mobile) -->
-    <nav class="fixed bottom-0 left-0 right-0 bg-white border-t shadow z-50 block sm:hidden">
-        <div class="flex justify-around py-2 text-gray-600">
-            <a href="../cv/index.html" class="flex flex-col items-center text-sm hover:text-blue-600">
-                <i class="fas fa-home text-lg"></i>
-                <span>Home</span>
-            </a>
-            <a href="../cv/search.html" class="flex flex-col items-center text-sm hover:text-blue-600">
-                <i class="fas fa-search text-lg"></i>
-                <span>Search</span>
-            </a>
-            <a href="../cv/add.html" class="flex flex-col items-center text-sm hover:text-blue-600">
-                <i class="fas fa-plus-circle text-lg"></i>
-                <span>Add</span>
-            </a>
-            <a href="../cv/alerts.html" class="flex flex-col items-center text-sm hover:text-blue-600">
-                <i class="fas fa-bell text-lg"></i>
-                <span>Alerts</span>
-            </a>
-            <a href="../cv/profile.html" class="flex flex-col items-center text-sm hover:text-blue-600">
-                <i class="fas fa-user text-lg"></i>
-                <span>Profile</span>
-            </a>
+    <!-- Top Navbar -->
+    <header class="fixed top-0 left-0 right-0 bg-white border-b shadow z-50 block sm:hidden">
+        <div class="flex items-center justify-between px-4 py-2 text-gray-700">
+            <!-- Tombol Kembali -->
+            <button onclick="history.back()" class="text-xl hover:text-blue-600">
+                <i class="fas fa-arrow-left"></i>
+            </button>
+
+            <!-- Judul (opsional) -->
+            <h1 class="text-lg font-semibold">Profile</h1>
+
+            <!-- Tombol Unduh & Pengaturan -->
+            <div class="flex space-x-4">
+                <button class="text-xl hover:text-blue-600">
+                    <i class="fas fa-download"></i>
+                </button>
+                <button class="text-xl hover:text-blue-600">
+                    <i class="fas fa-cog"></i>
+                </button>
+            </div>
         </div>
-    </nav>
+    </header>
+
 
     <!-- Main Container -->
-    <div class="container mx-auto px-4 pb-24">
+    <div class="container mx-auto px-4 pt-10 pb-20">
         <div class="flex flex-col items-center gap-4 w-full max-w-screen-xl mx-auto">
             <!-- Experience Card -->
             <div class="bg-blue-50 p-4 rounded-xl shadow w-full">
@@ -105,6 +103,32 @@
             </div>
         </div>
     </div>
+
+    <!-- Bottom Navbar (Only visible on mobile) -->
+    <footer class="fixed bottom-0 left-0 right-0 bg-white border-t shadow z-50 block sm:hidden">
+        <div class="flex justify-around py-2 text-gray-600">
+            <a href="../cv/index.html" class="flex flex-col items-center text-sm hover:text-blue-600">
+                <i class="fas fa-home text-lg"></i>
+                <span>Home</span>
+            </a>
+            <a href="../cv/search.html" class="flex flex-col items-center text-sm hover:text-blue-600">
+                <i class="fas fa-search text-lg"></i>
+                <span>Search</span>
+            </a>
+            <a href="../cv/add.html" class="flex flex-col items-center text-sm hover:text-blue-600">
+                <i class="fas fa-plus-circle text-lg"></i>
+                <span>Add</span>
+            </a>
+            <a href="../cv/alerts.html" class="flex flex-col items-center text-sm hover:text-blue-600">
+                <i class="fas fa-bell text-lg"></i>
+                <span>Alerts</span>
+            </a>
+            <a href="../cv/profile.html" class="flex flex-col items-center text-sm hover:text-blue-600">
+                <i class="fas fa-user text-lg"></i>
+                <span>Profile</span>
+            </a>
+        </div>
+    </footer>
 
     <!-- Chart.js Init -->
     <script>
