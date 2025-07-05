@@ -2,8 +2,8 @@
 <html lang="id">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>LocalStorage Viewer</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
@@ -13,12 +13,13 @@
     <div class="bg-white shadow-lg rounded-xl w-full max-w-2xl p-6">
         <h1 class="text-2xl font-bold mb-4 text-center text-gray-700">Daftar LocalStorage</h1>
 
-        <div id="localStorageTableWrapper">
-            <!-- Table akan di-generate lewat JavaScript -->
+        <div id="localStorageList" class="space-y-6">
+            <!-- Data akan di-render di sini -->
         </div>
 
-        <div class="text-center mt-4">
-            <button onclick="clearLocalStorage()" class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded">
+        <div class="text-center mt-6">
+            <button onclick="clearLocalStorage()"
+                class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded shadow">
                 Hapus Semua LocalStorage
             </button>
         </div>
@@ -26,42 +27,38 @@
 
     <script>
         function renderLocalStorage() {
-            const wrapper = document.getElementById('localStorageTableWrapper');
+            const container = document.getElementById('localStorageList');
+            container.innerHTML = '';
+
             if (localStorage.length === 0) {
-                wrapper.innerHTML = '<p class="text-gray-500 text-center">Tidak ada data di localStorage.</p>';
+                container.innerHTML = '<p class="text-gray-500 text-center">Tidak ada data di localStorage.</p>';
                 return;
             }
 
-            let tableHTML = `
-                <div class="overflow-x-auto">
-                    <table class="table-auto w-full text-left border border-gray-300">
-                        <thead class="bg-gray-200">
-                            <tr>
-                                <th class="px-4 py-2 border">Key</th>
-                                <th class="px-4 py-2 border">Value</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-            `;
-
             for (let i = 0; i < localStorage.length; i++) {
                 const key = localStorage.key(i);
-                const value = localStorage.getItem(key);
-                tableHTML += `
-                    <tr class="hover:bg-gray-50">
-                        <td class="px-4 py-2 border font-semibold text-gray-700">${key}</td>
-                        <td class="px-4 py-2 border text-gray-600 break-all">${value}</td>
-                    </tr>
-                `;
+                const rawValue = localStorage.getItem(key);
+                let formattedValue = rawValue;
+
+                // Coba parse jika JSON
+                try {
+                    const parsed = JSON.parse(rawValue);
+                    formattedValue = JSON.stringify(parsed, null, 2);
+                } catch (e) {
+                    // Bukan JSON, tampilkan mentah
+                }
+
+                const item = document.createElement('div');
+
+                item.innerHTML = `
+          <h2 class="font-bold text-blue-700 text-lg break-all">${key}</h2>
+          <div class="bg-gray-50 border rounded-lg shadow-sm p-4 mt-1">
+            <pre class="text-sm text-gray-800 whitespace-pre-wrap break-words">${formattedValue}</pre>
+          </div>
+        `;
+
+                container.appendChild(item);
             }
-
-            tableHTML += `
-                        </tbody>
-                    </table>
-                </div>
-            `;
-
-            wrapper.innerHTML = tableHTML;
         }
 
         function clearLocalStorage() {
@@ -71,9 +68,10 @@
             }
         }
 
-        // Render saat halaman dimuat
+        // Tampilkan saat halaman dimuat
         renderLocalStorage();
     </script>
+
 </body>
 
 </html>
