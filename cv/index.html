@@ -19,7 +19,7 @@
 
 <body class="bg-gray-100 min-h-screen p-6">
     <!-- Kontainer Utama -->
-    <div class="max-w-2xl mx-auto bg-white shadow-md rounded-xl p-6 pb-32">
+    <div id="swipeArea" class="max-w-2xl mx-auto bg-white shadow-md rounded-xl p-6 pb-32">
         <h2 class="text-2xl font-bold text-blue-600 mb-2 text-center">
             <i class="fas fa-list-check mr-2"></i>Daftar Tugas
         </h2>
@@ -150,6 +150,29 @@
                 if (tugasIndex !== -1) {
                     daftarTugas[tugasIndex].selesai = this.checked;
                     localStorage.setItem('daftarTugas', JSON.stringify(daftarTugas));
+                    updateTanggalDanTugas();
+                }
+            });
+
+            // Geser kiri dan kanan
+            let startX = 0;
+            let endX = 0;
+
+            $('#swipeArea').on('touchstart', function (e) {
+                startX = e.originalEvent.touches[0].clientX;
+            });
+
+            $('#swipeArea').on('touchend', function (e) {
+                endX = e.originalEvent.changedTouches[0].clientX;
+                let deltaX = endX - startX;
+
+                if (deltaX > 50) {
+                    // Geser kanan (sebelumnya)
+                    currentDate.setDate(currentDate.getDate() - 1);
+                    updateTanggalDanTugas();
+                } else if (deltaX < -50) {
+                    // Geser kiri (berikutnya)
+                    currentDate.setDate(currentDate.getDate() + 1);
                     updateTanggalDanTugas();
                 }
             });
