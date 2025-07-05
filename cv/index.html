@@ -23,15 +23,9 @@
             <i class="fas fa-list-check mr-2"></i>Daftar Tugas
         </h2>
 
-        <!-- Navigasi Hari -->
-        <div class="flex justify-between items-center mb-4">
-            <button id="prevBtn" class="text-sm px-3 py-1 rounded-lg bg-gray-200 hover:bg-gray-300 transition">
-                <i class="fas fa-chevron-left mr-1"></i>Sebelumnya
-            </button>
+        <!-- Hanya Tanggal, Tanpa Tombol -->
+        <div class="flex justify-center mb-4">
             <h3 id="tanggalTampil" class="text-lg font-semibold text-gray-700"></h3>
-            <button id="nextBtn" class="text-sm px-3 py-1 rounded-lg bg-gray-200 hover:bg-gray-300 transition">
-                Berikutnya<i class="fas fa-chevron-right ml-1"></i>
-            </button>
         </div>
 
         <div id="tugasList" class="space-y-4"></div>
@@ -105,26 +99,25 @@
             }
 
             tugasHariIni.forEach(tugas => {
-                const tanggalStr = getTanggalString(currentDate);
                 const selesaiHariIni = tugas.selesaiPerTanggal?.[tanggalStr] || false;
                 const selesaiClass = selesaiHariIni ? 'line-through text-gray-400' : '';
                 const checkbox = selesaiHariIni ? 'checked' : '';
 
                 const elemen = `
-          <div class="flex items-start justify-between p-4 bg-gray-50 border rounded-lg shadow-sm">
-            <div class="flex items-start gap-3">
-              <input type="checkbox" class="statusCheckbox mt-1" data-id="${tugas.id}" ${checkbox}>
-              <div>
-                <h3 class="text-lg font-semibold ${selesaiClass}">${tugas.judul}</h3>
-                <p class="text-sm text-gray-600 mt-1">
-                  <i class="fas fa-tag mr-1 text-gray-400"></i>${tugas.kategori}
-                </p>
-                <p class="text-xs text-gray-500 mt-1">
-                  <i class="fas fa-redo mr-1"></i>${tugas.pengulangan || 'Sekali'}
-                </p>
-              </div>
+        <div class="flex items-start justify-between p-4 bg-gray-50 border rounded-lg shadow-sm">
+          <div class="flex items-start gap-3">
+            <input type="checkbox" class="statusCheckbox mt-1" data-id="${tugas.id}" ${checkbox}>
+            <div>
+              <h3 class="text-lg font-semibold ${selesaiClass}">${tugas.judul}</h3>
+              <p class="text-sm text-gray-600 mt-1">
+                <i class="fas fa-tag mr-1 text-gray-400"></i>${tugas.kategori}
+              </p>
+              <p class="text-xs text-gray-500 mt-1">
+                <i class="fas fa-redo mr-1"></i>${tugas.pengulangan || 'Sekali'}
+              </p>
             </div>
-          </div>`;
+          </div>
+        </div>`;
                 $('#tugasList').append(elemen);
             });
         }
@@ -137,16 +130,6 @@
 
         $(document).ready(function () {
             updateTanggalDanTugas();
-
-            $('#prevBtn').click(function () {
-                currentDate.setDate(currentDate.getDate() - 1);
-                updateTanggalDanTugas();
-            });
-
-            $('#nextBtn').click(function () {
-                currentDate.setDate(currentDate.getDate() + 1);
-                updateTanggalDanTugas();
-            });
 
             $(document).on('change', '.statusCheckbox', function () {
                 const tugasId = $(this).data('id');
@@ -164,7 +147,7 @@
                 }
             });
 
-            // Geser kiri/kanan (mobile swipe)
+            // Geser kiri/kanan (swipe gesture)
             let startX = 0;
             $('#swipeArea').on('touchstart', function (e) {
                 startX = e.originalEvent.touches[0].clientX;
