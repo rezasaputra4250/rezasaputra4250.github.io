@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Zakat</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 flex justify-center items-center min-h-screen">
+
+    <div class="zakat-calculator bg-white p-6 rounded-xl shadow-lg w-full max-w-md">
+        <h1 class="text-2xl font-semibold text-center text-gray-800 mb-6">Kalkulator Zakat Penghasilan</h1>
+
+        <!-- Input fields for income and nisab -->
+        <input type="number" id="income" placeholder="Jumlah Penghasilan (IDR)"
+            class="w-full p-3 mb-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
+            step="0.01" />
+
+        <input type="number" id="nisab" placeholder="Nisab Zakat (IDR)"
+            class="w-full p-3 mb-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
+            step="0.01" />
+
+        <!-- Calculate Zakat button -->
+        <button onclick="calculateZakat()"
+            class="w-full py-3 bg-green-500 text-white rounded-lg hover:bg-green-600 transition duration-300 mb-4">
+            Hitung Zakat
+        </button>
+
+        <!-- Display Zakat result -->
+        <div id="result" class="text-center text-gray-700"></div>
+    </div>
+
+    <script>
+        function calculateZakat() {
+            const income = parseFloat(document.getElementById('income').value);
+            const nisab = parseFloat(document.getElementById('nisab').value);
+            let result = '';
+
+            if (isNaN(income) || isNaN(nisab) || income <= 0 || nisab <= 0) {
+                result = 'Masukkan penghasilan dan nisab yang valid!';
+            } else {
+                // Zakat penghasilan adalah 2.5% dari penghasilan yang melebihi nisab
+                let zakat = 0;
+                if (income >= nisab) {
+                    zakat = (income - nisab) * 0.025;
+                    result = `
+                        <p>Zakat yang harus dibayar: ${zakat.toFixed(2)} IDR</p>
+                    `;
+                } else {
+                    result = 'Penghasilan Anda belum memenuhi nisab zakat.';
+                }
+            }
+
+            document.getElementById('result').innerHTML = result;
+        }
+    </script>
+
+</body>
+
+</html>

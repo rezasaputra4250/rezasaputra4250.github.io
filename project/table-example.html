@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabel Interaktif dengan Pagination</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 p-6">
+    <!-- Header -->
+    <div class="flex justify-between items-center mb-4">
+        <input id="searchBox" type="text" placeholder="Cari data..."
+            class="px-4 py-2 border rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none">
+        <button onclick="addRow()" class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700">
+            + Tambah Data
+        </button>
+    </div>
+
+    <!-- Tabel -->
+    <div class="overflow-x-auto shadow-lg rounded-lg mb-6">
+        <table class="min-w-full table-auto bg-white">
+            <thead class="bg-gray-100">
+                <tr>
+                    <th class="px-4 py-2">
+                        <input type="checkbox" id="selectAll" onclick="toggleSelectAll(this)">
+                    </th>
+                    <th class="px-4 py-2 text-left font-semibold text-gray-700 cursor-pointer" onclick="sortTable(1)">No
+                    </th>
+                    <th class="px-4 py-2 text-left font-semibold text-gray-700 cursor-pointer" onclick="sortTable(2)">
+                        Nama</th>
+                    <th class="px-4 py-2 text-left font-semibold text-gray-700 cursor-pointer" onclick="sortTable(3)">
+                        Email</th>
+                    <th class="px-4 py-2 text-left font-semibold text-gray-700">Telepon</th>
+                    <th class="px-4 py-2 text-left font-semibold text-gray-700">Alamat</th>
+                    <th class="px-4 py-2 text-left font-semibold text-gray-700">Aksi</th>
+                </tr>
+            </thead>
+            <tbody id="tableBody">
+                <!-- Data tabel akan di-generate melalui JavaScript -->
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Pagination -->
+    <div class="flex justify-between items-center">
+        <div class="flex items-center space-x-2" id="paginationControls">
+            <!-- Tombol pagination akan di-generate melalui JavaScript -->
+        </div>
+        <span id="paginationInfo" class="text-gray-600"></span>
+    </div>
+
+    <script>
+        const data = [
+            { no: 1, nama: "John Doe", email: "johndoe@example.com", telepon: "08123456789", alamat: "Jl. Contoh No. 123" },
+            { no: 2, nama: "Jane Smith", email: "janesmith@example.com", telepon: "08198765432", alamat: "Jl. Contoh 2 No. 456" },
+            { no: 3, nama: "Alice Johnson", email: "alice.johnson@example.com", telepon: "08212345678", alamat: "Jl. Kebun Raya No. 789" },
+            { no: 4, nama: "Bob Martin", email: "bob.martin@example.com", telepon: "08321234567", alamat: "Jl. Merdeka No. 101" },
+            { no: 5, nama: "Cindy White", email: "cindy.white@example.com", telepon: "08432345678", alamat: "Jl. Sejahtera No. 112" },
+            { no: 6, nama: "Derek Blue", email: "derek.blue@example.com", telepon: "08543567890", alamat: "Jl. Harmoni No. 223" },
+            { no: 7, nama: "Eva Green", email: "eva.green@example.com", telepon: "08121234567", alamat: "Jl. Pembangunan No. 334" },
+            { no: 8, nama: "Fiona Red", email: "fiona.red@example.com", telepon: "08130098765", alamat: "Jl. Impian No. 445" },
+            { no: 9, nama: "George Black", email: "george.black@example.com", telepon: "08122134567", alamat: "Jl. Bahagia No. 556" },
+            { no: 10, nama: "Hannah White", email: "hannah.white@example.com", telepon: "08144234567", alamat: "Jl. Kebangkitan No. 667" }
+        ];
+
+        const rowsPerPage = 5;
+        let currentPage = 1;
+
+        function renderTable(page = 1) {
+            const startIndex = (page - 1) * rowsPerPage;
+            const endIndex = startIndex + rowsPerPage;
+            const currentData = data.slice(startIndex, endIndex);
+
+            const tbody = document.getElementById("tableBody");
+            tbody.innerHTML = currentData.map(row => `
+                <tr class="border-t">
+                    <td class="px-4 py-2"><input type="checkbox"></td>
+                    <td class="px-4 py-2">${row.no}</td>
+                    <td class="px-4 py-2">${row.nama}</td>
+                    <td class="px-4 py-2">${row.email}</td>
+                    <td class="px-4 py-2">${row.telepon}</td>
+                    <td class="px-4 py-2">${row.alamat}</td>
+                    <td class="px-4 py-2">
+                        <button onclick="viewRow('${row.nama}')" class="px-2 py-1 bg-green-600 text-white rounded hover:bg-green-700">View</button>
+                        <button onclick="editRow('${row.nama}')" class="px-2 py-1 bg-yellow-500 text-white rounded hover:bg-yellow-600">Edit</button>
+                        <button onclick="deleteRow(${row.no})" class="px-2 py-1 bg-red-600 text-white rounded hover:bg-red-700">Delete</button>
+                    </td>
+                </tr>
+            `).join("");
+
+            renderPagination();
+            updatePaginationInfo();
+        }
+
+        function renderPagination() {
+            const paginationControls = document.getElementById("paginationControls");
+            const totalPages = Math.ceil(data.length / rowsPerPage);
+
+            paginationControls.innerHTML = Array.from({ length: totalPages }, (_, index) => `
+                <button onclick="changePage(${index + 1})" class="px-4 py-2 ${index + 1 === currentPage ? 'bg-blue-600 text-white' : 'bg-gray-300 text-gray-700'} rounded-md hover:bg-blue-400 focus:outline-none">
+                    ${index + 1}
+                </button>
+            `).join("");
+        }
+
+        function updatePaginationInfo() {
+            const paginationInfo = document.getElementById("paginationInfo");
+            const start = (currentPage - 1) * rowsPerPage + 1;
+            const end = Math.min(currentPage * rowsPerPage, data.length);
+            paginationInfo.textContent = `Showing ${start} to ${end} of ${data.length} entries`;
+        }
+
+        function changePage(page) {
+            currentPage = page;
+            renderTable(page);
+        }
+
+        function deleteRow(no) {
+            const index = data.findIndex(row => row.no === no);
+            if (index > -1) {
+                data.splice(index, 1);
+                renderTable(currentPage);
+            }
+        }
+
+        function viewRow(nama) {
+            alert(`Viewing details for ${nama}`);
+        }
+
+        function editRow(nama) {
+            const newName = prompt("Edit name:", nama);
+            if (newName) {
+                const row = data.find(row => row.nama === nama);
+                if (row) row.nama = newName;
+                renderTable(currentPage);
+            }
+        }
+
+        function addRow() {
+            const newName = prompt("Enter name:");
+            if (newName) {
+                const newEntry = {
+                    no: data.length + 1,
+                    nama: newName,
+                    email: `${newName.toLowerCase().replace(/\s+/g, '')}@example.com`,
+                    telepon: "08100000000",
+                    alamat: "Alamat baru"
+                };
+                data.push(newEntry);
+                renderTable(currentPage);
+            }
+        }
+
+        function toggleSelectAll(checkbox) {
+            const checkboxes = document.querySelectorAll("#tableBody input[type='checkbox']");
+            checkboxes.forEach(cb => cb.checked = checkbox.checked);
+        }
+
+        renderTable();
+    </script>
+</body>
+
+</html>

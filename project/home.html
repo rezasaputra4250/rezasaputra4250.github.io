@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halaman Utama - Daftar Aplikasi</title>
+    <!-- Memasukkan CSS Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .card {
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        /* CSS untuk memastikan footer berada di bawah */
+        html,
+        body {
+            height: 100%;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+        }
+
+        main {
+            flex: 1;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100">
+
+    <!-- Navbar -->
+    <header>
+        <nav class="bg-blue-600 shadow-lg">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="relative flex items-center justify-between h-16">
+                    <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+                        <!-- Hamburger Menu Button (Mobile) -->
+                        <button id="mobile-menu-button" class="text-white hover:text-gray-300 focus:outline-none">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
+                        <!-- Logo / Nama Website -->
+                        <a href="#" class="text-white text-2xl font-semibold">MyWebsite</a>
+                    </div>
+                    <div class="hidden sm:block sm:ml-6">
+                        <!-- Desktop Navbar Links -->
+                        <div class="flex space-x-4">
+                            <a href="home.html"
+                                class="text-white hover:bg-blue-700 px-3 py-2 rounded-md text-sm font-medium">Home</a>
+                            <a href="about-us.html"
+                                class="text-white hover:bg-blue-700 px-3 py-2 rounded-md text-sm font-medium">About</a>
+                            <a href="services.html"
+                                class="text-white hover:bg-blue-700 px-3 py-2 rounded-md text-sm font-medium">Services</a>
+                            <a href="contact-us.html"
+                                class="text-white hover:bg-blue-700 px-3 py-2 rounded-md text-sm font-medium">Contact</a>
+                        </div>
+                    </div>
+                    <div class="hidden sm:block">
+                        <!-- Login / Sign Up Button -->
+                        <a href="login.html"
+                            class="text-white bg-blue-800 hover:bg-blue-700 px-4 py-2 rounded-md text-sm font-medium">Login</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile Menu (Hidden by Default) -->
+            <div id="mobile-menu" class="sm:hidden">
+                <div class="px-2 pt-2 pb-3 space-y-1">
+                    <a href="home.html"
+                        class="text-white hover:bg-blue-700 block px-3 py-2 rounded-md text-base font-medium">Home</a>
+                    <a href="about-us.html"
+                        class="text-white hover:bg-blue-700 block px-3 py-2 rounded-md text-base font-medium">About</a>
+                    <a href="services.html"
+                        class="text-white hover:bg-blue-700 block px-3 py-2 rounded-md text-base font-medium">Services</a>
+                    <a href="contact-us.html"
+                        class="text-white hover:bg-blue-700 block px-3 py-2 rounded-md text-base font-medium">Contact</a>
+                    <a href="login.html"
+                        class="text-white bg-blue-800 hover:bg-blue-700 block px-3 py-2 rounded-md text-base font-medium">Login</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- Konten Utama Halaman -->
+    <main class="bg-gray-100 py-16">
+        <div class="container mx-auto px-6 text-center">
+            <div class="bg-blue-600 text-white p-12 rounded-lg shadow-xl">
+                <!-- Jumbotron Content -->
+                <h1 class="text-4xl sm:text-5xl font-extrabold mb-4">
+                    Welcome to MyWebsite
+                </h1>
+                <p class="text-lg sm:text-xl mb-8">
+                    Your one-stop platform for learning and personal development. Explore our services and start growing
+                    today.
+                </p>
+
+                <!-- Tombol Pendaftaran untuk Guru dan Murid -->
+                <div class="flex justify-center gap-6">
+                    <!-- Tombol Pendaftaran Guru -->
+                    <a href="register-teacher.html"
+                        class="bg-blue-800 hover:bg-blue-700 text-white py-3 px-6 rounded-md text-lg font-semibold">
+                        Daftar sebagai Guru
+                    </a>
+                    <!-- Tombol Pendaftaran Murid -->
+                    <a href="register-student.html"
+                        class="bg-green-600 hover:bg-green-500 text-white py-3 px-6 rounded-md text-lg font-semibold">
+                        Daftar sebagai Murid
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Container Utama untuk Konten Lainnya -->
+        <div class="container mx-auto mt-10 px-4" id="main-container">
+            <!-- Konten akan dimasukkan melalui JavaScript -->
+        </div>
+        <!-- Konten utama lainnya bisa ditambahkan di sini -->
+    </main>
+
+
+    <!-- Footer Section -->
+    <footer class="bg-blue-600 text-white py-8">
+        <div class="container mx-auto px-6 md:flex justify-between items-center">
+            <!-- Logo or Brand Name -->
+            <div class="mb-4 md:mb-0">
+                <h2 class="text-2xl font-semibold">MyWebsite</h2>
+                <p class="text-sm">© 2024 <a href="">Web Development Indonesia</a>. All Rights Reserved.</p>
+            </div>
+
+            <!-- Social Media Links -->
+            <div class="flex space-x-6 mb-4 md:mb-0">
+                <!-- Facebook Icon using Font Awesome -->
+                <a href="https://www.facebook.com" target="_blank"
+                    class="text-white-400 hover:text-white transition-colors duration-200">
+                    <i class="fab fa-facebook-f w-6 h-6"></i>
+                </a>
+                <!-- Twitter Icon using Font Awesome -->
+                <a href="https://www.twitter.com" target="_blank"
+                    class="text-white-400 hover:text-white transition-colors duration-200">
+                    <i class="fab fa-twitter w-6 h-6"></i>
+                </a>
+                <!-- Instagram Icon using Font Awesome -->
+                <a href="https://www.instagram.com" target="_blank"
+                    class="text-white-400 hover:text-white transition-colors duration-200">
+                    <i class="fab fa-instagram w-6 h-6"></i>
+                </a>
+                <!-- TikTok Icon using Font Awesome -->
+                <a href="https://www.tiktok.com" target="_blank"
+                    class="text-white-400 hover:text-white transition-colors duration-200">
+                    <i class="fab fa-tiktok w-6 h-6"></i>
+                </a>
+                <!-- LinkedIn Icon using Font Awesome -->
+                <a href="https://www.linkedin.com" target="_blank"
+                    class="text-white-400 hover:text-white transition-colors duration-200">
+                    <i class="fab fa-linkedin-in w-6 h-6"></i>
+                </a>
+            </div>
+
+            <!-- Additional Links -->
+            <div class="text-sm text-white-400">
+                <a href="#" class="hover:text-white transition-colors duration-200">Privacy Policy</a> |
+                <a href="#" class="hover:text-white transition-colors duration-200">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+    <!-- JavaScript -->
+    <script>// Data daftar aplikasi yang diurutkan berdasarkan abjad
+        const apps = [
+            {
+                title: "About Us",
+                link: "about-us.html",
+            },
+            {
+                title: "Age Calculator",
+                link: "age-calculator.html",
+            },
+            {
+                title: "BMI Calculator",
+                link: "bmi-calculator.html",
+            },
+            {
+                title: "Body Fat Calculator",
+                link: "body-fat-calculator.html",
+            },
+            {
+                title: "Button Examples",
+                link: "button-examples.html",
+            },
+            {
+                title: "Calorie Calculator",
+                link: "calorie-calculator.html",
+            },
+            {
+                title: "Class Attendance Table",
+                link: "class-attendance-table.html",
+            },
+            {
+                title: "Clock and Timer",
+                link: "clock-and-timer.html",
+            },
+            {
+                title: "Contact Us",
+                link: "contact-us.html",
+            },
+            {
+                title: "Countdown Timer",
+                link: "countdown-timer.html",
+            },
+            {
+                title: "Credit Calculator",
+                link: "credit-calculator.html",
+            },
+            {
+                title: "Dist",
+                link: "dist/",
+            },
+            {
+                title: "Discount Calculator",
+                link: "discount-calculator.html",
+            },
+            {
+                title: "E-Commerce",
+                link: "e-commerce.html",
+            },
+            {
+                title: "Electricity Calculator",
+                link: "electricity-calculator.html",
+            },
+            {
+                title: "Family Card Form",
+                link: "family-card-form.html",
+            },
+            {
+                title: "Form Box",
+                link: "form-box.html",
+            },
+            {
+                title: "General Calculator",
+                link: "general-calculator.html",
+            },
+            {
+                title: "Home",
+                link: "home.html",
+            },
+            {
+                title: "ID Card Form",
+                link: "id-card-form.html",
+            },
+            {
+                title: "Index",
+                link: "index.html",
+            },
+            {
+                title: "Love Tester",
+                link: "love-tester.html",
+            },
+            {
+                title: "Navbar Example",
+                link: "navbar-example.html",
+            },
+            {
+                title: "Number Guessing Game",
+                link: "number-guessing-game.html",
+            },
+            {
+                title: "Portfolio",
+                link: "portfolio.html",
+            },
+            {
+                title: "Portofolio",
+                link: "portofolio.html",
+            },
+            {
+                title: "PTK Form",
+                link: "ptk-form.html",
+            },
+            {
+                title: "Quiz",
+                link: "quiz.html",
+            },
+            {
+                title: "Registration",
+                link: "registration.html",
+            },
+            {
+                title: "Services",
+                link: "services.html",
+            },
+            {
+                title: "Silver Coin Calculator",
+                link: "silver-coin-calculator.html",
+            },
+            {
+                title: "Sidebar Example",
+                link: "sidebar-example.html",
+            },
+            {
+                title: "Student Attendance Table",
+                link: "student-attendance-table.html",
+            },
+            {
+                title: "Students Form",
+                link: "students-form.html",
+            },
+            {
+                title: "Tax Calculator",
+                link: "tax-calculator.html",
+            },
+            {
+                title: "Table Example",
+                link: "table-example.html",
+            },
+            {
+                title: "Temperature Calculator",
+                link: "temperature-calculator.html",
+            },
+            {
+                title: "To Do List",
+                link: "to-do-list.html",
+            },
+            {
+                title: "Zakat Calculator",
+                link: "zakat-calculator.html",
+            },
+            {
+                title: "Zodiac Compatibility",
+                link: "zodiac-compatibility.html",
+            },
+        ];
+
+
+        // Fungsi untuk menampilkan elemen ke dalam kontainer utama
+        function renderContent() {
+            const mainContainer = document.getElementById("main-container");
+
+            // Header
+            const header = `
+                <h1 class="text-center text-3xl font-semibold mb-6">Selamat Datang di Halaman Utama</h1>
+                <p class="text-center text-lg mb-8">Berikut adalah daftar aplikasi yang tersedia:</p>
+            `;
+            mainContainer.innerHTML = header;
+
+            // Grid untuk daftar aplikasi
+            const gridContainer = document.createElement("div");
+            gridContainer.className = "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6";
+
+            // Tambahkan setiap aplikasi ke dalam grid
+            apps.forEach(app => {
+                const appCard = `
+                    <div class="card bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl">
+                        <h5 class="text-xl font-semibold mb-4">${app.title}</h5>
+                        <a href="${app.link}" class="text-white bg-blue-600 hover:bg-blue-700 py-2 px-4 rounded-md inline-block">Buka</a>
+                    </div>
+                `;
+                gridContainer.innerHTML += appCard;
+            });
+
+            // Tambahkan grid ke mainContainer
+            mainContainer.appendChild(gridContainer);
+        }
+
+        // Jalankan fungsi saat halaman dimuat
+        window.onload = renderContent;
+    </script>
+
+</body>
+
+</html>

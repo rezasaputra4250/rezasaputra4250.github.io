@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Suhu</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 flex justify-center items-center min-h-screen">
+
+    <div class="temperature-converter bg-white p-6 rounded-xl shadow-lg w-full max-w-md">
+        <h1 class="text-2xl font-semibold text-center text-gray-800 mb-6">Kalkulator Suhu</h1>
+
+        <!-- Input field for temperature value -->
+        <input type="number" id="inputValue" placeholder="Masukkan nilai suhu"
+            class="w-full p-3 mb-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none" />
+
+        <!-- Dropdown for selecting temperature unit -->
+        <select id="inputUnit"
+            class="w-full p-3 mb-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none">
+            <option value="C">Celcius</option>
+            <option value="F">Fahrenheit</option>
+            <option value="K">Kelvin</option>
+        </select>
+
+        <!-- Convert button -->
+        <button onclick="convertTemperature()"
+            class="w-full py-3 bg-green-500 text-white rounded-lg hover:bg-green-600 transition duration-300 mb-4">
+            Konversi
+        </button>
+
+        <!-- Display conversion results -->
+        <div id="result" class="text-center text-gray-700"></div>
+    </div>
+
+    <script>
+        function convertTemperature() {
+            const inputValue = parseFloat(document.getElementById('inputValue').value);
+            const inputUnit = document.getElementById('inputUnit').value;
+            let result = '';
+
+            if (isNaN(inputValue)) {
+                result = 'Masukkan nilai suhu yang valid!';
+            } else {
+                switch (inputUnit) {
+                    case 'C':
+                        result = ` 
+                            <p>${inputValue}°C = ${(inputValue * 9 / 5) + 32}°F</p>
+                            <p>${inputValue}°C = ${inputValue + 273.15}K</p>
+                        `;
+                        break;
+                    case 'F':
+                        result = `
+                            <p>${inputValue}°F = ${(inputValue - 32) * 5 / 9}°C</p>
+                            <p>${inputValue}°F = ${((inputValue - 32) * 5 / 9) + 273.15}K</p>
+                        `;
+                        break;
+                    case 'K':
+                        result = `
+                            <p>${inputValue}K = ${inputValue - 273.15}°C</p>
+                            <p>${inputValue}K = ${(inputValue - 273.15) * 9 / 5 + 32}°F</p>
+                        `;
+                        break;
+                    default:
+                        result = 'Pilih unit suhu yang benar!';
+                }
+            }
+
+            document.getElementById('result').innerHTML = result;
+        }
+    </script>
+
+</body>
+
+</html>

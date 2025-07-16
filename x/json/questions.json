@@ -1,0 +1,699 @@
+{
+  "quiz": {
+    "class": "Kelas 1 SD",
+    "subject": "Matematika",
+    "questions": [
+      {
+        "question": "Berapa 1 + 1?",
+        "options": {
+          "A": "2",
+          "B": "3",
+          "C": "4"
+        },
+        "answer": "A"
+      },
+      {
+        "question": "Berapa 2 + 1?",
+        "options": {
+          "A": "3",
+          "B": "4",
+          "C": "5"
+        },
+        "answer": "A"
+      },
+      {
+        "question": "Berapa 3 + 2?",
+        "options": {
+          "A": "5",
+          "B": "6",
+          "C": "7"
+        },
+        "answer": "A"
+      },
+      {
+        "question": "Berapa 4 + 1?",
+        "options": {
+          "A": "4",
+          "B": "5",
+          "C": "6"
+        },
+        "answer": "B"
+      },
+      {
+        "question": "Berapa 5 - 1?",
+        "options": {
+          "A": "3",
+          "B": "4",
+          "C": "5"
+        },
+        "answer": "B"
+      },
+      {
+        "question": "Berapa 2 + 2?",
+        "options": {
+          "A": "3",
+          "B": "4",
+          "C": "5"
+        },
+        "answer": "B"
+      },
+      {
+        "question": "Berapa 3 - 1?",
+        "options": {
+          "A": "1",
+          "B": "2",
+          "C": "3"
+        },
+        "answer": "B"
+      },
+      {
+        "question": "Berapa 1 + 4?",
+        "options": {
+          "A": "4",
+          "B": "5",
+          "C": "6"
+        },
+        "answer": "B"
+      },
+      {
+        "question": "Berapa 2 + 3?",
+        "options": {
+          "A": "5",
+          "B": "4",
+          "C": "6"
+        },
+        "answer": "A"
+      },
+      {
+        "question": "Berapa 5 - 2?",
+        "options": {
+          "A": "2",
+          "B": "3",
+          "C": "4"
+        },
+        "answer": "B"
+      },
+      {
+        "question": "Berapa 3 + 3?",
+        "options": {
+          "A": "5",
+          "B": "6",
+          "C": "7"
+        },
+        "answer": "B"
+      },
+      {
+        "question": "Berapa 6 - 1?",
+        "options": {
+          "A": "4",
+          "B": "5",
+          "C": "6"
+        },
+        "answer": "B"
+      },
+      {
+        "question": "Berapa 4 - 2?",
+        "options": {
+          "A": "1",
+          "B": "2",
+          "C": "3"
+        },
+        "answer": "B"
+      },
+      {
+        "question": "Berapa 2 + 4?",
+        "options": {
+          "A": "5",
+          "B": "6",
+          "C": "7"
+        },
+        "answer": "B"
+      },
+      {
+        "question": "Berapa 3 + 1?",
+        "options": {
+          "A": "4",
+          "B": "5",
+          "C": "6"
+        },
+        "answer": "A"
+      },
+      {
+        "question": "Berapa 4 + 3?",
+        "options": {
+          "A": "5",
+          "B": "6",
+          "C": "7"
+        },
+        "answer": "C"
+      },
+      {
+        "question": "Berapa 5 + 1?",
+        "options": {
+          "A": "5",
+          "B": "6",
+          "C": "7"
+        },
+        "answer": "B"
+      },
+      {
+        "question": "Berapa 2 - 1?",
+        "options": {
+          "A": "1",
+          "B": "2",
+          "C": "3"
+        },
+        "answer": "A"
+      },
+      {
+        "question": "Berapa 1 + 3?",
+        "options": {
+          "A": "4",
+          "B": "5",
+          "C": "6"
+        },
+        "answer": "A"
+      },
+      {
+        "question": "Berapa 6 - 2?",
+        "options": {
+          "A": "3",
+          "B": "4",
+          "C": "5"
+        },
+        "answer": "A"
+      },
+      {
+        "question": "Berapa 5 - 3?",
+        "options": {
+          "A": "2",
+          "B": "3",
+          "C": "4"
+        },
+        "answer": "A"
+      },
+      {
+        "question": "Berapa 2 + 1?",
+        "options": {
+          "A": "3",
+          "B": "4",
+          "C": "5"
+        },
+        "answer": "A"
+      },
+      {
+        "question": "Berapa 4 - 3?",
+        "options": {
+          "A": "1",
+          "B": "2",
+          "C": "3"
+        },
+        "answer": "A"
+      },
+      {
+        "question": "Berapa 3 + 2?",
+        "options": {
+          "A": "5",
+          "B": "6",
+          "C": "7"
+        },
+        "answer": "A"
+      },
+      {
+        "question": "Berapa 5 + 2?",
+        "options": {
+          "A": "6",
+          "B": "7",
+          "C": "8"
+        },
+        "answer": "B"
+      },
+      {
+        "question": "Berapa 6 - 3?",
+        "options": {
+          "A": "2",
+          "B": "3",
+          "C": "4"
+        },
+        "answer": "B"
+      },
+      {
+        "question": "Berapa 4 + 2?",
+        "options": {
+          "A": "5",
+          "B": "6",
+          "C": "7"
+        },
+        "answer": "B"
+      },
+      {
+        "question": "Berapa 1 + 2?",
+        "options": {
+          "A": "2",
+          "B": "3",
+          "C": "4"
+        },
+        "answer": "B"
+      },
+      {
+        "question": "Berapa 2 + 5?",
+        "options": {
+          "A": "5",
+          "B": "6",
+          "C": "7"
+        },
+        "answer": "C"
+      },
+      {
+        "question": "Berapa 3 - 2?",
+        "options": {
+          "A": "1",
+          "B": "2",
+          "C": "3"
+        },
+        "answer": "A"
+      },
+      {
+        "question": "Berapa 1 + 5?",
+        "options": {
+          "A": "5",
+          "B": "6",
+          "C": "7"
+        },
+        "answer": "B"
+      },
+      {
+        "question": "Berapa 2 + 3?",
+        "options": {
+          "A": "5",
+          "B": "6",
+          "C": "7"
+        },
+        "answer": "A"
+      },
+      {
+        "question": "Berapa 6 - 4?",
+        "options": {
+          "A": "2",
+          "B": "3",
+          "C": "4"
+        },
+        "answer": "A"
+      },
+      {
+        "question": "Berapa 4 + 1?",
+        "options": {
+          "A": "5",
+          "B": "6",
+          "C": "7"
+        },
+        "answer": "A"
+      },
+      {
+        "question": "Berapa 5 + 3?",
+        "options": {
+          "A": "7",
+          "B": "8",
+          "C": "9"
+        },
+        "answer": "B"
+      },
+      {
+        "question": "Berapa 2 - 2?",
+        "options": {
+          "A": "0",
+          "B": "1",
+          "C": "2"
+        },
+        "answer": "A"
+      },
+      {
+        "question": "Berapa 3 + 4?",
+        "options": {
+          "A": "7",
+          "B": "8",
+          "C": "9"
+        },
+        "answer": "A"
+      },
+      {
+        "question": "Berapa 6 + 1?",
+        "options": {
+          "A": "6",
+          "B": "7",
+          "C": "8"
+        },
+        "answer": "B"
+      },
+      {
+        "question": "Berapa 4 - 1?",
+        "options": {
+          "A": "3",
+          "B": "4",
+          "C": "5"
+        },
+        "answer": "A"
+      },
+      {
+        "question": "Berapa 5 + 4?",
+        "options": {
+          "A": "8",
+          "B": "9",
+          "C": "10"
+        },
+        "answer": "A"
+      }
+    ]
+  },
+  "quiz": {
+    "class": "Kelas 1 SD",
+    "subject": "Bahasa Indonesia",
+    "questions": [
+      {
+        "question": "Apa nama ibu kota Indonesia?",
+        "options": {
+          "A": "Jakarta",
+          "B": "Bandung",
+          "C": "Surabaya"
+        },
+        "answer": "A"
+      },
+      {
+        "question": "Siapa nama presiden Indonesia?",
+        "options": {
+          "A": "Joko Widodo",
+          "B": "Bambang Yudhoyono",
+          "C": "Megawati"
+        },
+        "answer": "A"
+      },
+      {
+        "question": "Apa warna bendera Indonesia?",
+        "options": {
+          "A": "Merah dan putih",
+          "B": "Biru dan putih",
+          "C": "Merah dan kuning"
+        },
+        "answer": "A"
+      },
+      {
+        "question": "Apa nama hewan yang bisa terbang?",
+        "options": {
+          "A": "Kucing",
+          "B": "Burung",
+          "C": "Gajah"
+        },
+        "answer": "B"
+      },
+      {
+        "question": "Apa arti kata 'berlari'?",
+        "options": {
+          "A": "Menari",
+          "B": "Berlari cepat",
+          "C": "Tidur"
+        },
+        "answer": "B"
+      },
+      {
+        "question": "Apa nama buah yang berwarna kuning dan panjang?",
+        "options": {
+          "A": "Mangga",
+          "B": "Pisang",
+          "C": "Apel"
+        },
+        "answer": "B"
+      },
+      {
+        "question": "Apa yang kita pakai di kaki?",
+        "options": {
+          "A": "Topi",
+          "B": "Sepatu",
+          "C": "Baju"
+        },
+        "answer": "B"
+      },
+      {
+        "question": "Apa nama alat yang digunakan untuk menulis?",
+        "options": {
+          "A": "Buku",
+          "B": "Pensil",
+          "C": "Kertas"
+        },
+        "answer": "B"
+      },
+      {
+        "question": "Apa yang kita makan di pagi hari?",
+        "options": {
+          "A": "Makan siang",
+          "B": "Sarapan",
+          "C": "Makan malam"
+        },
+        "answer": "B"
+      },
+      {
+        "question": "Apa nama warna yang ada di langit saat siang hari?",
+        "options": {
+          "A": "Biru",
+          "B": "Hitam",
+          "C": "Merah"
+        },
+        "answer": "A"
+      },
+      {
+        "question": "Apa yang kita pakai di kepala?",
+        "options": {
+          "A": "Sepatu",
+          "B": "Topi",
+          "C": "Celana"
+        },
+        "answer": "B"
+      },
+      {
+        "question": "Siapa yang mengajar di sekolah?",
+        "options": {
+          "A": "Guru",
+          "B": "Dokter",
+          "C": "Polisi"
+        },
+        "answer": "A"
+      },
+      {
+        "question": "Kata 'besar' adalah lawan kata dari?",
+        "options": {
+          "A": "Kecil",
+          "B": "Tinggi",
+          "C": "Panjang"
+        },
+        "answer": "A"
+      },
+      {
+        "question": "Apa yang ada di dalam kotak pensil?",
+        "options": {
+          "A": "Pensil",
+          "B": "Buku",
+          "C": "Topi"
+        },
+        "answer": "A"
+      },
+      {
+        "question": "Siapa nama pahlawan nasional yang terkenal dengan julukan 'Bung Karno'?",
+        "options": {
+          "A": "Sukarno",
+          "B": "Sudirman",
+          "C": "Teguh"
+        },
+        "answer": "A"
+      },
+      {
+        "question": "Apa yang kita gunakan untuk menggambar?",
+        "options": {
+          "A": "Pensil",
+          "B": "Cangkir",
+          "C": "Meja"
+        },
+        "answer": "A"
+      },
+      {
+        "question": "Apa yang biasanya kita lakukan sebelum tidur?",
+        "options": {
+          "A": "Makan",
+          "B": "Mandi",
+          "C": "Berdoa"
+        },
+        "answer": "C"
+      },
+      {
+        "question": "Apa warna buah apel?",
+        "options": {
+          "A": "Merah",
+          "B": "Hijau",
+          "C": "Kuning"
+        },
+        "answer": "A"
+      },
+      {
+        "question": "Apa nama hewan yang memiliki ekor panjang dan suka bergelantungan?",
+        "options": {
+          "A": "Kera",
+          "B": "Singapura",
+          "C": "Kucing"
+        },
+        "answer": "A"
+      },
+      {
+        "question": "Apa yang ada di dalam tas sekolah?",
+        "options": {
+          "A": "Kue",
+          "B": "Buku",
+          "C": "Makanan"
+        },
+        "answer": "B"
+      },
+      {
+        "question": "Apa warna bunga mawar?",
+        "options": {
+          "A": "Merah",
+          "B": "Biru",
+          "C": "Kuning"
+        },
+        "answer": "A"
+      },
+      {
+        "question": "Kata 'panjang' adalah lawan kata dari?",
+        "options": {
+          "A": "Pendek",
+          "B": "Tinggi",
+          "C": "Lebar"
+        },
+        "answer": "A"
+      },
+      {
+        "question": "Apa nama musim yang datang setelah musim panas?",
+        "options": {
+          "A": "Musim dingin",
+          "B": "Musim hujan",
+          "C": "Musim semi"
+        },
+        "answer": "B"
+      },
+      {
+        "question": "Apa yang biasa kita baca di pagi hari?",
+        "options": {
+          "A": "Buku cerita",
+          "B": "Koran",
+          "C": "Tugas sekolah"
+        },
+        "answer": "B"
+      },
+      {
+        "question": "Apa nama hewan yang suka berlari di padang rumput?",
+        "options": {
+          "A": "Kucing",
+          "B": "Kuda",
+          "C": "Ikan"
+        },
+        "answer": "B"
+      },
+      {
+        "question": "Apa yang biasanya kita pakai di musim hujan?",
+        "options": {
+          "A": "Topi",
+          "B": "Payung",
+          "C": "Sepatu"
+        },
+        "answer": "B"
+      },
+      {
+        "question": "Kata 'tinggi' adalah lawan kata dari?",
+        "options": {
+          "A": "Pendek",
+          "B": "Rendah",
+          "C": "Lebar"
+        },
+        "answer": "B"
+      },
+      {
+        "question": "Apa yang kita makan di siang hari?",
+        "options": {
+          "A": "Sarapan",
+          "B": "Makan malam",
+          "C": "Makan siang"
+        },
+        "answer": "C"
+      },
+      {
+        "question": "Apa nama kendaraan yang digunakan untuk berlari di jalan?",
+        "options": {
+          "A": "Sepeda",
+          "B": "Mobil",
+          "C": "Pesawat"
+        },
+        "answer": "A"
+      },
+      {
+        "question": "Apa nama hewan yang bisa melompat tinggi?",
+        "options": {
+          "A": "Kambing",
+          "B": "Kelinci",
+          "C": "Kucing"
+        },
+        "answer": "B"
+      },
+      {
+        "question": "Apa yang kita pakai saat bepergian ke luar rumah?",
+        "options": {
+          "A": "Baju tidur",
+          "B": "Pakaian",
+          "C": "Pakaian rumah"
+        },
+        "answer": "B"
+      },
+      {
+        "question": "Apa yang kita lakukan saat mendengarkan cerita?",
+        "options": {
+          "A": "Tidur",
+          "B": "Mendengarkan",
+          "C": "Menulis"
+        },
+        "answer": "B"
+      },
+      {
+        "question": "Apa warna kulit jeruk?",
+        "options": {
+          "A": "Merah",
+          "B": "Oranye",
+          "C": "Hijau"
+        },
+        "answer": "B"
+      },
+      {
+        "question": "Apa yang kita lakukan sebelum makan?",
+        "options": {
+          "A": "Mencuci tangan",
+          "B": "Tidur",
+          "C": "Bermain"
+        },
+        "answer": "A"
+      },
+      {
+        "question": "Siapa yang menyapu lantai?",
+        "options": {
+          "A": "Guru",
+          "B": "Pembersih",
+          "C": "Dokter"
+        },
+        "answer": "B"
+      },
+      {
+        "question": "Apa yang kita lakukan di sekolah?",
+        "options": {
+          "A": "Bermain",
+          "B": "Belajar",
+          "C": "Tidur"
+        },
+        "answer": "B"
+      }
+    ]
+  }
+}
+

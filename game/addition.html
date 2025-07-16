@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Addition Quiz</title>
+    <!-- Link to Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+
+  <body class="bg-gray-100 text-gray-900 h-screen flex items-center justify-center">
+
+    <div class="max-w-lg w-full p-6 bg-white rounded-lg shadow-lg">
+      <h1 class="text-3xl font-semibold text-center mb-6">Math Addition Quiz</h1>
+
+      <div class="flex justify-center mb-4">
+        <span id="timer" class="text-xl font-bold text-red-600">1:00</span>
+      </div>
+
+      <div id="question" class="text-2xl text-center mb-6">...</div>
+
+      <div class="flex justify-center mb-6">
+        <input type="number" id="answer"
+          class="w-1/2 p-3 text-xl text-center border-2 border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
+          placeholder="Enter your answer..." onchange="checkAnswer()" />
+      </div>
+
+      <!-- Feedback message -->
+      <div id="resultMessage" class="text-xl text-center mb-4"></div>
+
+      <div id="level" class="text-xl font-medium text-center mt-4">Level: 1 | Experience: 0</div>
+    </div>
+
+    <script>
+      let timeLeft = 60;  // Time in seconds (1 minute)
+      let currentAnswer = 0;
+      let timer;
+      let level = 1;  // Starting at level 1
+      let experience = 0;  // Experience starts from 0
+      let experienceData = [];  // Stores level and experience data from JSON
+
+      // Function to start the timer
+      function startTimer() {
+        // Stop the current timer
+        clearInterval(timer);
+
+        // Start a new timer
+        timer = setInterval(function () {
+          timeLeft--;
+          let minutes = Math.floor(timeLeft / 60);
+          let seconds = timeLeft % 60;
+          document.getElementById("timer").textContent = `${minutes}:${seconds < 10 ? '0' + seconds : seconds}`;
+
+          if (timeLeft <= 0) {
+            clearInterval(timer);
+            showResult("Time's up!");
+          }
+        }, 1000);
+      }
+
+      // Function to load experience and level data from the JSON file
+      function loadExperienceData() {
+        fetch('./json/experiences.json')  // Loading data from experiences.json
+          .then(response => response.json())
+          .then(data => {
+            experienceData = data;
+            generateQuestion();  // Generate the first question after loading data
+            startTimer();  // Start the timer after data is loaded
+          })
+          .catch(error => {
+            console.error('Error loading experiences:', error);
+            showResult("There was an error loading experience data.");
+          });
+      }
+
+      // Function to generate a random question based on the level
+      function generateQuestion() {
+        let numDigits = level;  // Adjust the number of digits based on the level
+        let num1 = Math.floor(Math.random() * Math.pow(10, numDigits));
+        let num2 = Math.floor(Math.random() * Math.pow(10, numDigits));
+        currentAnswer = num1 + num2;
+        document.getElementById("question").textContent = `${num1} + ${num2} = ?`;
+      }
+
+      // Function to check the user's answer
+      function checkAnswer() {
+        let userAnswer = parseInt(document.getElementById("answer").value);
+        let answerInput = document.getElementById("answer");
+        let resultMessage = document.getElementById("resultMessage");
+
+        // Clear previous feedback
+        resultMessage.textContent = "";
+        answerInput.classList.remove("border-green-500", "border-red-500");
+
+        if (userAnswer === currentAnswer) {
+          experience++;  // Add 1 experience point
+
+          // Feedback for correct answer
+          resultMessage.textContent = "Correct!";
+          resultMessage.classList.add("text-green-500");
+          answerInput.classList.add("border-green-500");
+
+          // Check if experience is enough for the next level
+          if (experience >= experienceData[level - 1].experience) {
+            level++;
+            experience = 0;  // Reset experience for the next level
+
+            // Show an alert when the user levels up
+            alert(`Congratulations! You've reached Level ${level}!`);
+          }
+
+          // Update level and experience information
+          updateLevelInfo();
+          generateQuestion();  // Generate a new question
+          document.getElementById("answer").value = '';  // Reset input field
+
+          // Reset the timer every time the answer is correct
+          timeLeft = 60;  // Reset the time back to 60 seconds
+          startTimer();   // Restart the timer
+        } else {
+          // Feedback for incorrect answer
+          resultMessage.textContent = "Incorrect!";
+          resultMessage.classList.add("text-red-500");
+          answerInput.classList.add("border-red-500");
+        }
+      }
+
+      // Function to display the result
+      function showResult(message) {
+        document.getElementById("result").textContent = message;
+      }
+
+      // Function to update level and experience information
+      function updateLevelInfo() {
+        document.getElementById("level").textContent = `Level: ${level} | Experience: ${experience}`;
+      }
+
+      // Initialize the page
+      function init() {
+        loadExperienceData();  // Load level and experience data from JSON
+      }
+
+      // Run initialization when the page loads
+      window.onload = init;
+    </script>
+
+  </body>
+
+</html>

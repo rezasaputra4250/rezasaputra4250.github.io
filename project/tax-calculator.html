@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Pajak Penghasilan</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 flex justify-center items-center min-h-screen">
+
+    <div class="tax-calculator bg-white p-6 rounded-xl shadow-lg w-full max-w-md">
+        <h1 class="text-2xl font-semibold text-center text-gray-800 mb-6">Kalkulator Pajak Penghasilan</h1>
+
+        <input type="number" id="income" placeholder="Penghasilan Bruto (IDR)" step="0.01"
+            class="w-full p-3 mb-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none" />
+
+        <input type="number" id="ptkp" placeholder="PTKP (IDR)" step="0.01"
+            class="w-full p-3 mb-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none" />
+
+        <button onclick="calculateTax()"
+            class="w-full py-3 bg-green-500 text-white rounded-lg hover:bg-green-600 transition duration-300 mb-4">
+            Hitung Pajak
+        </button>
+
+        <div id="result" class="text-center text-gray-700"></div>
+    </div>
+
+    <script>
+        function calculateTax() {
+            const income = parseFloat(document.getElementById('income').value); // Penghasilan Bruto
+            const ptkp = parseFloat(document.getElementById('ptkp').value); // Penghasilan Tidak Kena Pajak
+            let result = '';
+
+            if (isNaN(income) || isNaN(ptkp) || income <= 0 || ptkp < 0) {
+                result = 'Masukkan penghasilan bruto dan PTKP yang valid!';
+            } else {
+                // Menghitung penghasilan kena pajak
+                const taxableIncome = income - ptkp;
+
+                if (taxableIncome <= 0) {
+                    result = 'Penghasilan Anda tidak kena pajak.';
+                } else {
+                    // Menghitung pajak dengan tarif progresif
+                    let tax = 0;
+
+                    if (taxableIncome <= 50000000) {
+                        tax = taxableIncome * 0.05;
+                    } else if (taxableIncome <= 250000000) {
+                        tax = (50000000 * 0.05) + ((taxableIncome - 50000000) * 0.15);
+                    } else if (taxableIncome <= 500000000) {
+                        tax = (50000000 * 0.05) + ((200000000) * 0.15) + ((taxableIncome - 250000000) * 0.25);
+                    } else {
+                        tax = (50000000 * 0.05) + ((200000000) * 0.15) + ((250000000) * 0.25) + ((taxableIncome - 500000000) * 0.30);
+                    }
+
+                    result = `
+                        <p class="text-lg text-gray-800">Penghasilan Kena Pajak: <span class="font-bold">${taxableIncome.toFixed(2)} IDR</span></p>
+                        <p class="text-lg text-gray-800">Pajak yang Harus Dibayar: <span class="font-bold">${tax.toFixed(2)} IDR</span></p>
+                    `;
+                }
+            }
+
+            document.getElementById('result').innerHTML = result;
+        }
+    </script>
+
+</body>
+
+</html>

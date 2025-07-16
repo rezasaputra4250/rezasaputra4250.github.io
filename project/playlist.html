@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Materi dengan Checkboxes - Pre dan Post Test</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom styles */
+        .playlist-item:hover {
+            background-color: #f3f4f6;
+        }
+
+        .playlist-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .playlist-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100">
+
+    <div class="container mx-auto py-8">
+        <!-- Menggunakan flexbox untuk card dan materi dalam satu div -->
+        <div class="bg-white shadow-lg rounded-lg p-6 flex flex-col md:flex-row gap-6">
+
+            <!-- Card Section -->
+            <div class="flex-1 bg-gray-50 rounded-lg p-6">
+                <div class="relative w-full h-56 mb-4">
+                    <!-- Default video, which can be changed via JavaScript -->
+                    <iframe id="videoFrame" width="100%" height="100%" src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                        frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen class="rounded-lg">
+                    </iframe>
+                </div>
+            </div>
+
+            <!-- Materi Section -->
+            <div class="w-1/4 bg-gray-50 rounded-lg p-4">
+                <h3 class="text-lg text-gray-500 font-semibold mb-3">Materi</h3>
+
+                <!-- Pre-Test Section -->
+                <div>
+                    <div class="playlist-header p-2 cursor-pointer flex items-center justify-between text-sm">
+                        <h4 class="text-md font-semibold mb-2">Pre-Test</h4>
+                        <span class="text-gray-500">100%</span> <!-- Nilai Pre-Test -->
+                    </div>
+                    <div class="playlist-item p-2 cursor-pointer flex items-center justify-between text-sm">
+                        <a href="javascript:void(0)" onclick="changeVideo('https://www.youtube.com/embed/dQw4w9WgXcQ')"
+                            class="text-gray-800">Video 1 (Pre-Test)</a>
+                    </div>
+                    <div class="playlist-item p-2 cursor-pointer flex items-center justify-between text-sm">
+                        <a href="javascript:void(0)" onclick="changeVideo('https://www.youtube.com/embed/tgbNymZ7vqY')"
+                            class="text-gray-800">Video 2 (Pre-Test)</a>
+                    </div>
+
+                    <div class="playlist-header p-2 cursor-pointer flex items-center justify-between text-sm">
+                        <h4 class="text-md font-semibold mb-2">Post-Test</h4>
+                        <span class="text-gray-500">50%</span> <!-- Nilai Post-Test -->
+                    </div>
+                    <div class="playlist-item p-2 cursor-pointer flex items-center justify-between text-sm">
+                        <a href="javascript:void(0)" onclick="changeVideo('https://www.youtube.com/embed/2Vv-BfVoq4g')"
+                            class="text-gray-800">Video 3 (Post-Test)</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript function to change the iframe video based on the clicked link
+        function changeVideo(url) {
+            document.getElementById('videoFrame').src = url;
+        }
+    </script>
+</body>
+
+</html>

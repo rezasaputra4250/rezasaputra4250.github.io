@@ -1,0 +1,17 @@
+[
+  {
+    "id": 1,
+    "title": "Jaringan AHM untuk penjualan unit",
+    "description": "Deskripsi mengenai jaringan AHM untuk penjualan unit sepeda motor Honda kami."
+  },
+  {
+    "id": 2,
+    "title": "Jaringan AHM untuk pemeliharaan atau servis",
+    "description": "Deskripsi mengenai jaringan AHM yang menyediakan layanan pemeliharaan atau servis untuk sepeda motor Honda."
+  },
+  {
+    "id": 3,
+    "title": "Jaringan AHM untuk penjualan suku cadang asli sepeda motor Honda",
+    "description": "Deskripsi mengenai jaringan AHM yang menyediakan penjualan suku cadang asli untuk sepeda motor Honda."
+  }
+]

@@ -1,0 +1,368 @@
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portofolio Saya</title>
+  <!-- CDN Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- CDN FontAwesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <!-- CDN Swiper -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+</head>
+
+<body class="bg-black text-white">
+
+  <!-- Navbar -->
+  <nav class="bg-black p-4">
+    <div class="container mx-auto flex justify-between items-center">
+      <a href="#" class="text-white text-2xl font-bold name">Portofolio</a>
+      <ul class="flex space-x-4">
+        <li><a href="#skills" class="text-white hover:text-gray-300">Keahlian</a></li>
+        <li><a href="#projects" class="text-white hover:text-gray-300">Proyek</a></li>
+        <li><a href="#certificates" class="text-white hover:text-gray-300">Sertifikat</a></li>
+        <li><a href="#experience" class="text-white hover:text-gray-300">Pengalaman</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="hero" class="flex items-center justify-center h-screen bg-gray-900 text-white">
+    <div class="text-center px-4">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">Halo semua, saya <span class="text-red-500">Reza
+          Saputra</span></h1>
+      <p class="text-xl md:text-2xl font-bold mb-6">Saya seorang <span class="text-red-500">Web Development</span> yang
+        bersemangat
+        untuk menciptakan solusi kreatif
+        dan inovatif di dunia digital.</p>
+
+      <!-- Tautan ke Portofolio -->
+      <a href="#about"
+        class="inline-block bg-white text-black py-2 px-6 rounded-lg font-bold hover:bg-gray-100 transition duration-300 mb-6">Lihat
+        Portofolio</a>
+
+      <!-- Ikon Sosial Media -->
+      <div class="flex justify-center space-x-6 mt-6">
+        <a href="https://www.linkedin.com/in/your-profile" class="text-2xl hover:text-gray-300" title="LinkedIn Saya"><i
+            class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/your-username" class="text-2xl hover:text-gray-300" title="GitHub Saya"><i
+            class="fab fa-github"></i></a>
+        <a href="https://facebook.com/your-username" class="text-2xl hover:text-gray-300" title="Facebook Saya"><i
+            class="fab fa-facebook"></i></a>
+        <a href="https://www.instagram.com/your-username" class="text-2xl hover:text-gray-300" title="Instagram Saya"><i
+            class="fab fa-instagram"></i></a>
+        <a href="https://x.com/your-username" class="text-2xl hover:text-gray-300" title="X (Twitter) Saya"><i
+            class="fab fa-x"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="py-20 bg-gray-800">
+    <div class="container mx-auto text-center">
+      <h2 class="text-3xl font-bold mb-6">Tentang Saya</h2>
+      <p class="text-xl text-white">Saya adalah seorang web developer dengan pengalaman dalam membangun situs web
+        responsif, aplikasi web, dan solusi berbasis frontend dan backend. Saya selalu berusaha untuk belajar dan
+        berkembang di dunia teknologi yang terus berubah ini.</p>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="py-20 bg-gray-900">
+    <div class="container mx-auto text-center">
+      <h2 class="text-3xl font-bold mb-6">Keahlian</h2>
+      <div id="skills-list" class="space-y-8">
+        <!-- Skills will be dynamically inserted here -->
+      </div>
+    </div>
+  </section>
+  <section id="projects" class="py-20 bg-gray-800">
+    <div class="container mx-auto text-center">
+      <h2 class="text-3xl font-bold text-white mb-12">Proyek Saya</h2>
+
+      <!-- Swiper Container -->
+      <div class="swiper projects">
+        <!-- Swiper Wrapper -->
+        <div class="swiper-wrapper">
+
+          <!-- Project Card 1 -->
+          <div class="swiper-slide">
+            <div class="max-w-xs rounded-lg overflow-hidden shadow-lg bg-white text-gray-900">
+              <img class="w-full h-56 object-cover" src="https://via.placeholder.com/400x250?text=Project+1"
+                alt="Project 1">
+              <div class="px-6 py-4">
+                <h3 class="font-bold text-xl">Website E-Commerce</h3>
+                <p class="text-gray-700 text-base mt-2">Website e-commerce yang memungkinkan pengguna untuk membeli dan
+                  menjual produk secara online dengan sistem pembayaran terintegrasi.</p>
+              </div>
+              <div class="px-6 pt-4 pb-2">
+                <a href="#"
+                  class="inline-block bg-blue-500 text-white text-sm font-semibold px-4 py-2 rounded-full">Lihat
+                  Proyek</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project Card 2 -->
+          <div class="swiper-slide">
+            <div class="max-w-xs rounded-lg overflow-hidden shadow-lg bg-white text-gray-900">
+              <img class="w-full h-56 object-cover" src="https://via.placeholder.com/400x250?text=Project+2"
+                alt="Project 2">
+              <div class="px-6 py-4">
+                <h3 class="font-bold text-xl">Aplikasi Mobile</h3>
+                <p class="text-gray-700 text-base mt-2">Aplikasi mobile untuk manajemen tugas harian, memungkinkan
+                  pengguna untuk membuat dan mengelola to-do list dengan mudah.</p>
+              </div>
+              <div class="px-6 pt-4 pb-2">
+                <a href="#"
+                  class="inline-block bg-blue-500 text-white text-sm font-semibold px-4 py-2 rounded-full">Lihat
+                  Proyek</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project Card 3 -->
+          <div class="swiper-slide">
+            <div class="max-w-xs rounded-lg overflow-hidden shadow-lg bg-white text-gray-900">
+              <img class="w-full h-56 object-cover" src="https://via.placeholder.com/400x250?text=Project+3"
+                alt="Project 3">
+              <div class="px-6 py-4">
+                <h3 class="font-bold text-xl">Landing Page</h3>
+                <p class="text-gray-700 text-base mt-2">Halaman arahan (landing page) untuk promosi produk baru dengan
+                  desain modern dan responsif.</p>
+              </div>
+              <div class="px-6 pt-4 pb-2">
+                <a href="#"
+                  class="inline-block bg-blue-500 text-white text-sm font-semibold px-4 py-2 rounded-full">Lihat
+                  Proyek</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Add more project cards here -->
+        </div>
+
+        <!-- Swiper Pagination (optional) -->
+        <div class="swiper-pagination"></div>
+
+        <!-- Swiper Navigation Buttons -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+
+        <!-- Swiper Scrollbar (optional) -->
+        <div class="swiper-scrollbar"></div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- Skills Section -->
+  <section id="skills" class="py-20 bg-gray-900">
+    <div class="container mx-auto text-center">
+      <h2 class="text-3xl font-bold text-white mb-12">Keahlian</h2>
+
+      <!-- Slider main container -->
+      <div class="swiper skills">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+
+          <!-- Card 1 -->
+          <div class="swiper-slide">
+            <div class="max-w-xs rounded-lg overflow-hidden shadow-lg bg-white">
+              <img class="w-full h-40 object-cover" src="https://via.placeholder.com/400x200?text=Web+Development"
+                alt="Web Development">
+              <div class="px-6 py-4">
+                <h3 class="font-bold text-xl text-gray-800">Web Development</h3>
+                <p class="text-gray-600 mt-2">Membangun situs web responsif dan modern menggunakan teknologi seperti
+                  HTML, CSS, JavaScript, dan framework terkait.</p>
+              </div>
+              <div class="px-6 py-4">
+                <span
+                  class="inline-block bg-blue-200 rounded-full px-3 py-1 text-sm font-semibold text-blue-700 mr-2 mb-2">#HTML</span>
+                <span
+                  class="inline-block bg-blue-200 rounded-full px-3 py-1 text-sm font-semibold text-blue-700 mr-2 mb-2">#CSS</span>
+                <span
+                  class="inline-block bg-blue-200 rounded-full px-3 py-1 text-sm font-semibold text-blue-700 mr-2 mb-2">#JavaScript</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="swiper-slide">
+            <div class="max-w-xs rounded-lg overflow-hidden shadow-lg bg-white">
+              <img class="w-full h-40 object-cover" src="https://via.placeholder.com/400x200?text=UI/UX+Design"
+                alt="UI/UX Design">
+              <div class="px-6 py-4">
+                <h3 class="font-bold text-xl text-gray-800">UI/UX Design</h3>
+                <p class="text-gray-600 mt-2">Mendesain antarmuka pengguna (UI) dan pengalaman pengguna (UX) yang
+                  menarik dan intuitif.</p>
+              </div>
+              <div class="px-6 py-4">
+                <span
+                  class="inline-block bg-indigo-200 rounded-full px-3 py-1 text-sm font-semibold text-indigo-700 mr-2 mb-2">#Design</span>
+                <span
+                  class="inline-block bg-indigo-200 rounded-full px-3 py-1 text-sm font-semibold text-indigo-700 mr-2 mb-2">#UX</span>
+                <span
+                  class="inline-block bg-indigo-200 rounded-full px-3 py-1 text-sm font-semibold text-indigo-700 mr-2 mb-2">#UI</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="swiper-slide">
+            <div class="max-w-xs rounded-lg overflow-hidden shadow-lg bg-white">
+              <img class="w-full h-40 object-cover"
+                src="https://via.placeholder.com/400x200?text=Mobile+App+Development" alt="Mobile App Development">
+              <div class="px-6 py-4">
+                <h3 class="font-bold text-xl text-gray-800">Mobile App Development</h3>
+                <p class="text-gray-600 mt-2">Membangun aplikasi mobile menggunakan React Native dan Flutter untuk
+                  platform Android dan iOS.</p>
+              </div>
+              <div class="px-6 py-4">
+                <span
+                  class="inline-block bg-green-200 rounded-full px-3 py-1 text-sm font-semibold text-green-700 mr-2 mb-2">#ReactNative</span>
+                <span
+                  class="inline-block bg-green-200 rounded-full px-3 py-1 text-sm font-semibold text-green-700 mr-2 mb-2">#Flutter</span>
+                <span
+                  class="inline-block bg-green-200 rounded-full px-3 py-1 text-sm font-semibold text-green-700 mr-2 mb-2">#AppDev</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="swiper-slide">
+            <div class="max-w-xs rounded-lg overflow-hidden shadow-lg bg-white">
+              <img class="w-full h-40 object-cover" src="https://via.placeholder.com/400x200?text=Database+Management"
+                alt="Database Management">
+              <div class="px-6 py-4">
+                <h3 class="font-bold text-xl text-gray-800">Database Management</h3>
+                <p class="text-gray-600 mt-2">Pengelolaan dan desain database menggunakan MySQL, PostgreSQL, dan MongoDB
+                  untuk aplikasi berbasis data.</p>
+              </div>
+              <div class="px-6 py-4">
+                <span
+                  class="inline-block bg-yellow-200 rounded-full px-3 py-1 text-sm font-semibold text-yellow-700 mr-2 mb-2">#MySQL</span>
+                <span
+                  class="inline-block bg-yellow-200 rounded-full px-3 py-1 text-sm font-semibold text-yellow-700 mr-2 mb-2">#PostgreSQL</span>
+                <span
+                  class="inline-block bg-yellow-200 rounded-full px-3 py-1 text-sm font-semibold text-yellow-700 mr-2 mb-2">#MongoDB</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+  </section>
+
+  <!-- Certificates Section -->
+  <section id="certificates" class="py-20 bg-gray-900">
+    <div class="container mx-auto text-center">
+      <h2 class="text-3xl font-bold mb-6">Sertifikat</h2>
+      <div id="certificates-list" class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Certificates will be dynamically inserted here -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience Section -->
+  <section id="experience" class="py-20 bg-gray-800">
+    <div class="container mx-auto text-center">
+      <h2 class="text-3xl font-bold mb-6">Pengalaman Bekerja</h2>
+      <div id="experience-list" class="space-y-8">
+        <!-- Experience will be dynamically inserted here -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Communities Section -->
+  <section id="communities" class="py-20 bg-gray-900">
+    <div class="container mx-auto text-center">
+      <h2 class="text-3xl font-bold mb-6">Komunitas yang Pernah Diikuti</h2>
+      <div id="communities-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Communities will be dynamically inserted here -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer class="bg-black text-white py-8">
+    <div class="container mx-auto text-center">
+      <p class="text-lg mb-4">Dibuat dengan 💙 oleh <span class="text-red-500">Reza Saputra</span></p>
+      <p class="text-sm mb-4">&copy; 2024 Reza Saputra. Semua hak cipta dilindungi.</p>
+      <div class="flex justify-center space-x-6">
+        <a href="mailto:email@example.com" class="text-2xl hover:text-gray-300" title="Email Saya"><i
+            class="fas fa-envelope"></i></a>
+        <a href="https://www.linkedin.com/in/your-profile" class="text-2xl hover:text-gray-300" title="LinkedIn Saya"><i
+            class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/your-username" class="text-2xl hover:text-gray-300" title="GitHub Saya"><i
+            class="fab fa-github"></i></a>
+      </div>
+      <p class="text-sm mt-4">Terima kasih telah mengunjungi portofolio saya!</p>
+    </div>
+  </footer>
+
+  <!-- Add your JavaScript file -->
+  <script src="script.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script>
+    // Swiper Initialization
+    var swiper = new Swiper('.skills', {
+      slidesPerView: 3, // Tampilkan 3 card sekaligus
+      spaceBetween: 30, // Jarak antar card
+      breakpoints: {
+        // Responsif untuk perangkat kecil
+        1024: {
+          slidesPerView: 3,
+          spaceBetween: 30,
+        },
+        768: {
+          slidesPerView: 2,
+          spaceBetween: 20,
+        },
+        640: {
+          slidesPerView: 1,
+          spaceBetween: 10,
+        }
+      }
+    });
+
+  </script>
+
+  <script>
+    // Inisialisasi Swiper
+    const swiper = new Swiper('.swiper.projects', {
+      // Opsi Swiper
+      slidesPerView: 1,  // Jumlah slide yang ditampilkan per view
+      spaceBetween: 20,   // Jarak antar slide
+      loop: true,         // Memungkinkan looping slide
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,   // Membuat pagination bisa diklik
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      scrollbar: {
+        el: '.swiper-scrollbar',
+      },
+      breakpoints: {
+        640: {
+          slidesPerView: 1,  // 1 slide untuk perangkat mobile
+        },
+        768: {
+          slidesPerView: 2,  // 2 slide untuk perangkat tablet
+        },
+        1024: {
+          slidesPerView: 3,  // 3 slide untuk perangkat desktop
+        },
+      },
+    });
+  </script>
+
+
+
+</body>
+
+</html>

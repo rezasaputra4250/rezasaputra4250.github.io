@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Daftar Tugas</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        crossorigin="anonymous" />
+</head>
+
+<body class="bg-gray-100 min-h-screen p-6">
+    <div id="swipeArea" class="max-w-2xl mx-auto bg-white shadow-md rounded-xl p-6 pb-32">
+        <h2 class="text-2xl font-bold text-blue-600 mb-2 text-center">
+            <i class="fas fa-list-check mr-2"></i>Daftar Tugas
+        </h2>
+
+        <!-- Hanya Tanggal, Tanpa Tombol -->
+        <div class="flex justify-center mb-4">
+            <h3 id="tanggalTampil" class="text-lg font-semibold text-gray-700"></h3>
+        </div>
+
+        <div id="tugasList" class="space-y-4"></div>
+
+        <div id="kosongMsg" class="text-center text-gray-500 mt-6 hidden">
+            <i class="fas fa-inbox fa-2x mb-2"></i>
+            <p>Belum ada tugas pada tanggal ini.</p>
+        </div>
+    </div>
+
+    <!-- Bottom Navbar -->
+    <footer class="fixed bottom-0 left-0 right-0 bg-white border-t shadow z-50 block sm:hidden">
+        <div class="flex justify-around py-2 text-gray-600">
+            <a href="../cv/index.html" class="flex flex-col items-center text-sm hover:text-blue-600">
+                <i class="fas fa-home text-lg"></i><span>Home</span>
+            </a>
+            <a href="../cv/search.html" class="flex flex-col items-center text-sm hover:text-blue-600">
+                <i class="fas fa-search text-lg"></i><span>Search</span>
+            </a>
+            <a href="../cv/add.html" class="flex flex-col items-center text-sm hover:text-blue-600">
+                <i class="fas fa-plus-circle text-lg"></i><span>Add</span>
+            </a>
+            <a href="../cv/alerts.html" class="flex flex-col items-center text-sm hover:text-blue-600">
+                <i class="fas fa-bell text-lg"></i><span>Alerts</span>
+            </a>
+            <a href="../cv/profile.html" class="flex flex-col items-center text-sm hover:text-blue-600">
+                <i class="fas fa-user text-lg"></i><span>Profile</span>
+            </a>
+        </div>
+    </footer>
+
+    <!-- Script -->
+    <script>
+        let currentDate = new Date();
+
+        function formatTanggal(tanggal) {
+            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            return tanggal.toLocaleDateString('id-ID', options);
+        }
+
+        function getTanggalString(dateObj) {
+            return dateObj.toISOString().split('T')[0];
+        }
+
+        function tampilkanTugasUntukTanggal(tanggalStr) {
+            const daftarTugas = JSON.parse(localStorage.getItem('daftarTugas')) || [];
+            $('#tugasList').empty();
+
+            const dateObj = new Date(tanggalStr);
+            const namaHari = dateObj.toLocaleDateString('id-ID', { weekday: 'long' });
+
+            const tugasHariIni = daftarTugas.filter(tugas => {
+                const tugasDate = new Date(tugas.tanggal);
+                const tugasDateStr = getTanggalString(tugasDate);
+                const isAfterOrSame = tanggalStr >= tugasDateStr;
+
+                if (tugas.pengulangan === "Setiap Hari") {
+                    return isAfterOrSame;
+                } else if (tugas.pengulangan === "Khusus") {
+                    return isAfterOrSame && tugas.hari && tugas.hari.includes(namaHari);
+                } else {
+                    return tugas.tanggal === tanggalStr;
+                }
+            });
+
+            if (tugasHariIni.length === 0) {
+                $('#kosongMsg').show();
+                return;
+            } else {
+                $('#kosongMsg').hide();
+            }
+
+            tugasHariIni.forEach(tugas => {
+                const selesaiHariIni = tugas.selesaiPerTanggal?.[tanggalStr] || false;
+                const selesaiClass = selesaiHariIni ? 'line-through text-gray-400' : '';
+                const checkbox = selesaiHariIni ? 'checked' : '';
+
+                const elemen = `
+        <div class="flex items-start justify-between p-4 bg-gray-50 border rounded-lg shadow-sm">
+          <div class="flex items-start gap-3">
+            <input type="checkbox" class="statusCheckbox mt-1" data-id="${tugas.id}" ${checkbox}>
+            <div>
+              <h3 class="text-lg font-semibold ${selesaiClass}">${tugas.judul}</h3>
+              <p class="text-sm text-gray-600 mt-1">
+                <i class="fas fa-tag mr-1 text-gray-400"></i>${tugas.kategori}
+              </p>
+              <p class="text-xs text-gray-500 mt-1">
+                <i class="fas fa-redo mr-1"></i>${tugas.pengulangan || 'Sekali'}
+              </p>
+            </div>
+          </div>
+        </div>`;
+                $('#tugasList').append(elemen);
+            });
+        }
+
+        function updateTanggalDanTugas() {
+            const tanggalStr = getTanggalString(currentDate);
+            $('#tanggalTampil').text(formatTanggal(currentDate));
+            tampilkanTugasUntukTanggal(tanggalStr);
+        }
+
+        $(document).ready(function () {
+            updateTanggalDanTugas();
+
+            $(document).on('change', '.statusCheckbox', function () {
+                const tugasId = $(this).data('id');
+                const tanggalStr = getTanggalString(currentDate);
+                let daftarTugas = JSON.parse(localStorage.getItem('daftarTugas')) || [];
+                const tugasIndex = daftarTugas.findIndex(t => t.id === tugasId);
+
+                if (tugasIndex !== -1) {
+                    if (!daftarTugas[tugasIndex].selesaiPerTanggal) {
+                        daftarTugas[tugasIndex].selesaiPerTanggal = {};
+                    }
+                    daftarTugas[tugasIndex].selesaiPerTanggal[tanggalStr] = this.checked;
+                    localStorage.setItem('daftarTugas', JSON.stringify(daftarTugas));
+                    updateTanggalDanTugas();
+                }
+            });
+
+            // Geser kiri/kanan (swipe gesture)
+            let startX = 0;
+            $('#swipeArea').on('touchstart', function (e) {
+                startX = e.originalEvent.touches[0].clientX;
+            });
+
+            $('#swipeArea').on('touchend', function (e) {
+                const endX = e.originalEvent.changedTouches[0].clientX;
+                const deltaX = endX - startX;
+                if (deltaX > 50) {
+                    currentDate.setDate(currentDate.getDate() - 1);
+                    updateTanggalDanTugas();
+                } else if (deltaX < -50) {
+                    currentDate.setDate(currentDate.getDate() + 1);
+                    updateTanggalDanTugas();
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

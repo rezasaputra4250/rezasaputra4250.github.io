@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="id">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perusahaan Kami</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Sertakan jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Sertakan Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  </head>
+
+  <body class="font-sans bg-gray-50 text-gray-900">
+
+    <!-- Header -->
+    <header class="bg-blue-600 text-white shadow-lg">
+      <div class="container mx-auto px-4 py-5 flex justify-between items-center">
+        <!-- Nama Perusahaan dengan Icon -->
+        <h1 class="text-2xl font-bold flex items-center space-x-2">
+          <span id="company-name-header">Perusahaan Kami</span>
+        </h1>
+
+        <!-- Navbar Menu -->
+        <nav class="hidden md:flex">
+          <ul class="flex space-x-6">
+            <li><a href="#home" class="text-2xl"><i class="fas fa-home"></i></a></li>
+            <li><a href="#about" class="text-2xl"><i class="fas fa-users"></i></a></li>
+            <li><a href="#services" class="text-2xl"><i class="fas fa-cogs"></i></a></li>
+            <li><a href="#contact" class="text-2xl"><i class="fas fa-envelope"></i></a></li>
+            <li><a href="#cart" class="text-2xl"><i class="fas fa-shopping-cart"></i></a></li>
+            <li><a href="career.html" class="text-2xl"><i class="fas fa-briefcase"></i></a></li>
+            <li><a href="login.html" class="text-2xl"><i class="fas fa-user"></i></a></li>
+          </ul>
+        </nav>
+
+        <!-- Hamburger Icon untuk Mobile -->
+        <div class="md:hidden flex items-center">
+          <button id="hamburger-menu" class="text-2xl">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Menu (Tersembunyi di perangkat besar, tampil di perangkat kecil) -->
+      <div id="mobile-menu" class="md:hidden bg-blue-600 text-white py-5 px-4 hidden">
+        <ul class="space-y-4">
+          <li><a href="#home" class="text-xl"><i class="fas fa-home"></i> Home</a></li>
+          <li><a href="#about" class="text-xl"><i class="fas fa-users"></i> About Us</a></li>
+          <li><a href="#services" class="text-xl"><i class="fas fa-cogs"></i> Services</a></li>
+          <li><a href="#contact" class="text-xl"><i class="fas fa-envelope"></i> Contact</a></li>
+          <li><a href="#cart" class="text-xl"><i class="fas fa-shopping-cart"></i> Cart</a></li>
+          <li><a href="login.html" class="text-xl"><i class="fas fa-user"></i> Login</a></li>
+        </ul>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+      <!-- Hero Section -->
+      <section id="home" class="bg-blue-100 py-20 text-center">
+        <div class="container mx-auto px-4">
+          <h2 class="text-4xl font-bold text-gray-800" id="company-name-hero">Selamat Datang di Perusahaan Kami!</h2>
+          <p class="mt-4 text-lg text-gray-600">Kami menyediakan solusi terbaik untuk kebutuhan bisnis Anda.</p>
+        </div>
+      </section>
+
+      <!-- About Us -->
+      <section id="about" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+          <h3 class="text-3xl font-semibold text-center">Tentang Kami</h3>
+          <p class="mt-4 text-lg text-gray-700 text-center" id="company-description">Kami adalah perusahaan yang
+            berfokus pada memberikan layanan terbaik untuk klien kami di berbagai industri.</p>
+        </div>
+      </section>
+
+      <!-- Services -->
+      <section id="services" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-4 text-center">
+          <h3 class="text-3xl font-semibold">Layanan Kami</h3>
+          <div class="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10" id="services-container">
+            <!-- Data layanan akan dimuat di sini oleh jQuery -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section id="contact" class="py-20 bg-white">
+        <div class="container mx-auto px-4 text-center">
+          <h3 class="text-3xl font-semibold">Kontak Kami</h3>
+          <p class="mt-4 text-lg text-gray-700">Hubungi kami untuk pertanyaan lebih lanjut atau untuk memulai proyek
+            baru dengan kami.</p>
+          <form class="mt-8 space-y-6 max-w-md mx-auto">
+            <input type="text" placeholder="Nama Anda" class="w-full p-3 border border-gray-300 rounded-lg" required>
+            <input type="email" placeholder="Email Anda" class="w-full p-3 border border-gray-300 rounded-lg" required>
+            <textarea placeholder="Pesan Anda" class="w-full p-3 border border-gray-300 rounded-lg" rows="4" required></textarea>
+            <button type="submit" class="w-full bg-blue-600 text-white py-3 rounded-lg">Kirim Pesan</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-blue-600 text-white py-6">
+      <div class="container mx-auto text-center">
+        <p>&copy; 2024 <span id="company-name-footer">Perusahaan Kami</span>. Semua Hak Dilindungi.</p>
+      </div>
+    </footer>
+
+    <!-- jQuery untuk mengganti teks di halaman -->
+    <script>
+
+      $(document).ready(function () {
+        // Ambil data dari services.json
+        $.getJSON("json/services.json", function (data) {
+          // Iterasi data layanan dan masukkan ke dalam elemen HTML di dalam #services-container
+          $.each(data, function (index, service) {
+            const serviceHTML = `
+                        <div class="bg-white p-8 shadow-md rounded-lg">
+                            <h4 class="text-2xl font-semibold text-blue-600">${service.title}</h4>
+                            <p class="mt-4 text-gray-600">${service.description}</p>
+                        </div>
+                    `;
+            $('#services-container').append(serviceHTML);
+          });
+        });
+      });
+      $(document).ready(function () {
+        // Ambil data dari companies.json
+        $.getJSON("json/companies.json", function (data) {
+          // Data perusahaan (misalnya perusahaan pertama dalam array)
+          const companies = data;
+
+          let currentIndex = 0; // Menyimpan index perusahaan yang sedang ditampilkan
+
+          // Fungsi untuk mengganti nama perusahaan pada elemen yang ditentukan
+          function updateCompanyName(selector, companyName) {
+            $(selector).text(companyName);
+          }
+
+          // Fungsi untuk memperbarui semua elemen yang terkait dengan nama perusahaan
+          function updateAllCompanyNames() {
+            const company = companies[currentIndex]; // Ambil perusahaan berdasarkan currentIndex
+            updateCompanyName('#company-name-header', company.name);  // Untuk header
+            updateCompanyName('#company-name-hero', 'Selamat Datang di ' + company.name + '!');  // Untuk hero section
+            updateCompanyName('#company-description', company.description);  // Untuk deskripsi tentang perusahaan
+            updateCompanyName('#company-name-footer', company.name);  // Untuk footer
+
+            // Set judul halaman
+            document.title = company.name;
+          }
+
+          // Panggil updateAllCompanyNames sekali untuk memulai dengan perusahaan pertama
+          updateAllCompanyNames();
+
+          // Fungsi untuk mengganti perusahaan setiap beberapa detik
+          setInterval(function () {
+            // Ubah ke perusahaan berikutnya
+            currentIndex = (currentIndex + 1) % companies.length; // Ini memastikan loop ketika mencapai akhir array
+            updateAllCompanyNames();
+          }, 5000); // Ganti setiap 5 detik (5000 milidetik)
+        });
+      });
+
+      // Toggle the mobile menu when the hamburger icon is clicked
+      document.getElementById("hamburger-menu").addEventListener("click", function () {
+        const mobileMenu = document.getElementById("mobile-menu");
+        mobileMenu.classList.toggle("hidden");
+      });
+    </script>
+
+  </body>
+
+</html>

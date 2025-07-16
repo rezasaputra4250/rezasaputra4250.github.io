@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Tester</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom CSS for animation */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+
+    <div class="bg-white p-6 rounded-xl shadow-xl w-full max-w-sm text-center">
+        <h1 class="text-3xl text-pink-500 font-bold mb-4">Love Tester</h1>
+        <input type="text" id="name1" placeholder="Masukkan nama pertama"
+            class="w-full p-3 mb-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:outline-none" />
+        <input type="text" id="name2" placeholder="Masukkan nama kedua"
+            class="w-full p-3 mb-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:outline-none" />
+        <button onclick="testLove()"
+            class="w-full py-3 bg-pink-500 text-white rounded-lg hover:bg-pink-600 transition duration-300">Cek
+            Kecocokan!</button>
+
+        <div id="error-message" class="text-red-500 mt-4"></div>
+
+        <div id="result" class="text-lg text-green-600 mt-4 animate-fadeIn"></div>
+        <div id="percentage" class="text-3xl font-bold text-red-500 mt-2 animate-fadeIn"></div>
+    </div>
+
+    <script>
+        function testLove() {
+            var name1 = document.getElementById('name1').value;
+            var name2 = document.getElementById('name2').value;
+            var errorMessage = document.getElementById('error-message');
+
+            // Clear previous error message
+            errorMessage.innerHTML = '';
+
+            if (name1 === '' || name2 === '') {
+                errorMessage.innerHTML = 'Harap masukkan kedua nama!';
+                document.getElementById('result').innerHTML = '';
+                document.getElementById('percentage').innerHTML = '';
+                return;
+            }
+
+            var lovePercentage = Math.floor(Math.random() * 101); // Generate a random number between 0 and 100
+
+            var resultMessage = '';
+            if (lovePercentage >= 80) {
+                resultMessage = 'Wow! Kalian sangat cocok!';
+            } else if (lovePercentage >= 50) {
+                resultMessage = 'Hmm, bisa jadi!';
+            } else {
+                resultMessage = 'Mungkin masih bisa lebih baik.';
+            }
+
+            document.getElementById('result').innerHTML = resultMessage;
+            document.getElementById('percentage').innerHTML = lovePercentage + '%';
+        }
+    </script>
+
+</body>
+
+</html>

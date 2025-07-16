@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulir Pendaftaran - Step 1</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./dist/js/script.js"></script> <!-- Link ke script.js Anda -->
+    <style>
+        .step {
+            display: none;
+            /* Semua langkah disembunyikan secara default */
+        }
+
+        .step.active {
+            display: block;
+            /* Langkah yang aktif ditampilkan */
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100 font-sans">
+
+    <div class="flex justify-center items-center min-h-screen bg-gray-50">
+        <form id="wizardForm" class="bg-white p-6 rounded-lg shadow-lg w-full max-w-2xl my-6">
+            <!-- Step 1: Data Pribadi -->
+            <div class="step" id="step-1">
+                <h2 class="text-2xl font-bold mb-6 text-center text-gray-800">Data Pribadi</h2>
+
+                <!-- Nama Lengkap -->
+                <div class="mb-4">
+                    <label for="nama" class="block text-gray-700 font-semibold mb-2">Nama Lengkap</label>
+                    <input type="text" id="nama" name="nama" class="w-full p-3 border border-gray-300 rounded-lg"
+                        placeholder="Masukkan nama lengkap" required>
+                </div>
+
+                <!-- Jenis Kelamin -->
+                <div class="mb-4">
+                    <label for="jenis_kelamin" class="block text-gray-700 font-semibold mb-2">Jenis Kelamin</label>
+                    <select id="jenis_kelamin" name="jenis_kelamin"
+                        class="w-full p-3 border border-gray-300 rounded-lg">
+                        <option value="laki-laki">Laki-laki</option>
+                        <option value="perempuan">Perempuan</option>
+                    </select>
+                </div>
+
+                <!-- NISN -->
+                <div class="mb-4">
+                    <label for="nisn" class="block text-gray-700 font-semibold mb-2">NISN</label>
+                    <input type="text" id="nisn" name="nisn" class="w-full p-3 border border-gray-300 rounded-lg"
+                        placeholder="Masukkan NISN" required>
+                </div>
+
+                <!-- NIK/No KITAS -->
+                <div class="mb-4">
+                    <label for="nik" class="block text-gray-700 font-semibold mb-2">NIK / No KITAS</label>
+                    <input type="text" id="nik" name="nik" class="w-full p-3 border border-gray-300 rounded-lg"
+                        placeholder="Masukkan NIK atau No KITAS" required>
+                </div>
+
+                <!-- Tempat Lahir -->
+                <div class="mb-4">
+                    <label for="tempat_lahir" class="block text-gray-700 font-semibold mb-2">Tempat Lahir</label>
+                    <input type="text" id="tempat_lahir" name="tempat_lahir"
+                        class="w-full p-3 border border-gray-300 rounded-lg" placeholder="Masukkan tempat lahir"
+                        required>
+                </div>
+
+                <!-- Tanggal Lahir -->
+                <div class="mb-4">
+                    <label for="tanggal_lahir" class="block text-gray-700 font-semibold mb-2">Tanggal Lahir</label>
+                    <input type="date" id="tanggal_lahir" name="tanggal_lahir"
+                        class="w-full p-3 border border-gray-300 rounded-lg" required>
+                </div>
+
+                <!-- No Registrasi Akta Lahir -->
+                <div class="mb-4">
+                    <label for="no_registrasi_akta" class="block text-gray-700 font-semibold mb-2">No Registrasi Akta
+                        Lahir</label>
+                    <input type="text" id="no_registrasi_akta" name="no_registrasi_akta"
+                        class="w-full p-3 border border-gray-300 rounded-lg"
+                        placeholder="Masukkan nomor registrasi akta lahir" required>
+                </div>
+
+                <!-- Agama & Kepercayaan -->
+                <div class="mb-4">
+                    <label for="agama" class="block text-gray-700 font-semibold mb-2">Agama & Kepercayaan</label>
+                    <select id="agama" name="agama" class="w-full p-3 border border-gray-300 rounded-lg" required>
+                        <!-- Options akan diisi oleh script.js -->
+                    </select>
+                </div>
+
+                <!-- Kewarganegaraan -->
+                <div class="mb-4">
+                    <label for="kewarganegaraan" class="block text-gray-700 font-semibold mb-2">Kewarganegaraan</label>
+                    <select id="kewarganegaraan" name="kewarganegaraan"
+                        class="w-full p-3 border border-gray-300 rounded-lg" required>
+                        <option value="wni">WNI</option>
+                        <option value="wna">WNA</option>
+                    </select>
+                </div>
+
+                <!-- Nama Negara -->
+                <div class="mb-4">
+                    <label for="nama_negara" class="block text-gray-700 font-semibold mb-2">Nama Negara</label>
+                    <input type="text" id="nama_negara" name="nama_negara"
+                        class="w-full p-3 border border-gray-300 rounded-lg" placeholder="Masukkan nama negara"
+                        required>
+                </div>
+
+                <!-- Berkebutuhan Khusus -->
+                <div class="mb-4">
+                    <label for="berkebutuhan_khusus" class="block text-gray-700 font-semibold mb-2">Berkebutuhan
+                        Khusus</label>
+                    <select id="berkebutuhan_khusus" name="berkebutuhan_khusus"
+                        class="w-full p-3 border border-gray-300 rounded-lg">
+                        <option value="tidak">Tidak</option>
+                        <option value="ya">Ya</option>
+                    </select>
+                </div>
+
+                <!-- Alamat Jalan -->
+                <div class="mb-4">
+                    <label for="alamat_jalan" class="block text-gray-700 font-semibold mb-2">Alamat Jalan</label>
+                    <input type="text" id="alamat_jalan" name="alamat_jalan"
+                        class="w-full p-3 border border-gray-300 rounded-lg" placeholder="Masukkan alamat jalan"
+                        required>
+                </div>
+
+                <!-- RT/RW -->
+                <div class="mb-4 flex space-x-4">
+                    <div class="flex-1">
+                        <label for="rt" class="block text-gray-700 font-semibold mb-2">RT</label>
+                        <input type="text" id="rt" name="rt" class="w-full p-3 border border-gray-300 rounded-lg"
+                            placeholder="Masukkan RT" required>
+                    </div>
+                    <div class="flex-1">
+                        <label for="rw" class="block text-gray-700 font-semibold mb-2">RW</label>
+                        <input type="text" id="rw" name="rw" class="w-full p-3 border border-gray-300 rounded-lg"
+                            placeholder="Masukkan RW" required>
+                    </div>
+                </div>
+
+                <!-- Nama Dusun -->
+                <div class="mb-4">
+                    <label for="nama_dusun" class="block text-gray-700 font-semibold mb-2">Nama Dusun</label>
+                    <input type="text" id="nama_dusun" name="nama_dusun"
+                        class="w-full p-3 border border-gray-300 rounded-lg" placeholder="Masukkan nama dusun" required>
+                </div>
+
+                <!-- Nama Kelurahan -->
+                <div class="mb-4">
+                    <label for="nama_kelurahan" class="block text-gray-700 font-semibold mb-2">Nama Kelurahan</label>
+                    <input type="text" id="nama_kelurahan" name="nama_kelurahan"
+                        class="w-full p-3 border border-gray-300 rounded-lg" placeholder="Masukkan nama kelurahan"
+                        required>
+                </div>
+
+                <!-- Kecamatan -->
+                <div class="mb-4">
+                    <label for="kecamatan" class="block text-gray-700 font-semibold mb-2">Kecamatan</label>
+                    <input type="text" id="kecamatan" name="kecamatan"
+                        class="w-full p-3 border border-gray-300 rounded-lg" placeholder="Masukkan kecamatan" required>
+                </div>
+
+                <!-- Kode Pos -->
+                <div class="mb-4">
+                    <label for="kode_pos" class="block text-gray-700 font-semibold mb-2">Kode Pos</label>
+                    <input type="text" id="kode_pos" name="kode_pos"
+                        class="w-full p-3 border border-gray-300 rounded-lg" placeholder="Masukkan kode pos" required>
+                </div>
+
+                <!-- Lintang / Bujur -->
+                <div class="mb-4 flex space-x-4">
+                    <div class="flex-1">
+                        <label for="lintang" class="block text-gray-700 font-semibold mb-2">Lintang</label>
+                        <input type="text" id="lintang" name="lintang"
+                            class="w-full p-3 border border-gray-300 rounded-lg" placeholder="Masukkan lintang"
+                            required>
+                    </div>
+                    <div class="flex-1">
+                        <label for="bujur" class="block text-gray-700 font-semibold mb-2">Bujur</label>
+                        <input type="text" id="bujur" name="bujur" class="w-full p-3 border border-gray-300 rounded-lg"
+                            placeholder="Masukkan bujur" required>
+                    </div>
+                </div>
+
+                <!-- Tempat Tinggal -->
+                <div class="mb-4">
+                    <label for="tempat_tinggal" class="block text-gray-700 font-semibold mb-2">Tempat Tinggal</label>
+                    <select id="tempat_tinggal" name="tempat_tinggal"
+                        class="w-full p-3 border border-gray-300 rounded-lg">
+                        <option value="rumah">Rumah</option>
+                        <option value="kos">Kos</option>
+                        <option value="asrama">Asrama</option>
+                    </select>
+                </div>
+
+                <!-- Moda Transportasi -->
+                <div class="mb-4">
+                    <label for="moda_transportasi" class="block text-gray-700 font-semibold mb-2">Moda
+                        Transportasi</label>
+                    <select id="moda_transportasi" name="moda_transportasi"
+                        class="w-full p-3 border border-gray-300 rounded-lg">
+                        <option value="sepeda">Sepeda</option>
+                        <option value="mobil">Mobil</option>
+                        <option value="motor">Motor</option>
+                        <option value="kendaraan_umum">Kendaraan Umum</option>
+                    </select>
+                </div>
+
+                <!-- Nomor KKS -->
+                <div class="mb-4">
+                    <label for="nomor_kks" class="block text-gray-700 font-semibold mb-2">Nomor KKS (Kartu Keluarga
+                        Sejahtera)</label>
+                    <input type="text" id="nomor_kks" name="nomor_kks"
+                        class="w-full p-3 border border-gray-300 rounded-lg" placeholder="Masukkan nomor KKS" required>
+                </div>
+
+                <!-- Anak Keberapa -->
+                <div class="mb-4">
+                    <label for="anak_keberapa" class="block text-gray-700 font-semibold mb-2">Anak Keberapa</label>
+                    <input type="number" id="anak_keberapa" name="anak_keberapa"
+                        class="w-full p-3 border border-gray-300 rounded-lg" placeholder="Masukkan anak keberapa"
+                        required>
+                </div>
+
+                <!-- Penerima KPS/PKH -->
+                <div class="mb-4">
+                    <label for="penerima_kps" class="block text-gray-700 font-semibold mb-2">Penerima KPS/PKH</label>
+                    <select id="penerima_kps" name="penerima_kps" class="w-full p-3 border border-gray-300 rounded-lg">
+                        <option value="tidak">Tidak</option>
+                        <option value="ya">Ya</option>
+                    </select>
+                </div>
+
+                <!-- No KPS/PKH -->
+                <div class="mb-4">
+                    <label for="no_kps" class="block text-gray-700 font-semibold mb-2">No KPS/PKH</label>
+                    <input type="text" id="no_kps" name="no_kps" class="w-full p-3 border border-gray-300 rounded-lg"
+                        placeholder="Masukkan nomor KPS/PKH (jika menerima)">
+                </div>
+
+                <!-- Usulan dari Sekolah -->
+                <div class="mb-4">
+                    <label for="usulan_dari_sekolah" class="block text-gray-700 font-semibold mb-2">Usulan dari Sekolah
+                        (Layak PIP)</label>
+                    <select id="usulan_dari_sekolah" name="usulan_dari_sekolah"
+                        class="w-full p-3 border border-gray-300 rounded-lg">
+                        <option value="ya">Ya</option>
+                        <option value="tidak">Tidak</option>
+                    </select>
+                </div>
+
+                <!-- Penerima KIP -->
+                <div class="mb-4">
+                    <label for="penerima_kip" class="block text-gray-700 font-semibold mb-2">Penerima KIP (Kartu
+                        Indonesia Pintar)</label>
+                    <select id="penerima_kip" name="penerima_kip" class="w-full p-3 border border-gray-300 rounded-lg">
+                        <option value="ya">Ya</option>
+                        <option value="tidak">Tidak</option>
+                    </select>
+                </div>
+
+                <!-- Nomor KIP -->
+                <div class="mb-4">
+                    <label for="nomor_kip" class="block text-gray-700 font-semibold mb-2">Nomor KIP</label>
+                    <input type="text" id="nomor_kip" name="nomor_kip"
+                        class="w-full p-3 border border-gray-300 rounded-lg" placeholder="Masukkan nomor KIP">
+                </div>
+
+                <!-- Nama Tertera di KIP -->
+                <div class="mb-4">
+                    <label for="nama_tertera_kip" class="block text-gray-700 font-semibold mb-2">Nama Tertera di
+                        KIP</label>
+                    <input type="text" id="nama_tertera_kip" name="nama_tertera_kip"
+                        class="w-full p-3 border border-gray-300 rounded-lg" placeholder="Masukkan nama tertera di KIP">
+                </div>
+
+                <!-- Terima Fisik Kartu -->
+                <div class="mb-4">
+                    <label for="terima_fisik_kip" class="block text-gray-700 font-semibold mb-2">Terima Fisik Kartu
+                        KIP</label>
+                    <select id="terima_fisik_kip" name="terima_fisik_kip"
+                        class="w-full p-3 border border-gray-300 rounded-lg">
+                        <option value="ya">Ya</option>
+                        <option value="tidak">Tidak</option>
+                    </select>
+                </div>
+
+                <!-- Alasan Layak PIP -->
+                <div class="mb-4">
+                    <label for="alasan_layak_pip" class="block text-gray-700 font-semibold mb-2">Alasan Layak
+                        PIP</label>
+                    <select id="alasan_layak_pip" name="alasan_layak_pip"
+                        class="w-full p-3 border border-gray-300 rounded-lg">
+                        <option value="">Pilih Alasan Layak PIP</option>
+                    </select>
+                </div>
+
+                <!-- Bank -->
+                <div class="mb-4">
+                    <label for="bank" class="block text-gray-700 font-semibold mb-2">Bank</label>
+                    <input type="text" id="bank" name="bank" class="w-full p-3 border border-gray-300 rounded-lg"
+                        placeholder="Masukkan nama bank" required>
+                </div>
+
+                <!-- Nomor Rekening Bank -->
+                <div class="mb-4">
+                    <label for="no_rekening" class="block text-gray-700 font-semibold mb-2">Nomor Rekening Bank</label>
+                    <input type="text" id="no_rekening" name="no_rekening"
+                        class="w-full p-3 border border-gray-300 rounded-lg" placeholder="Masukkan nomor rekening bank"
+                        required>
+                </div>
+
+                <!-- Rekening Atas Nama -->
+                <div class="mb-4">
+                    <label for="rekening_atas_nama" class="block text-gray-700 font-semibold mb-2">Rekening Atas
+                        Nama</label>
+                    <input type="text" id="rekening_atas_nama" name="rekening_atas_nama"
+                        class="w-full p-3 border border-gray-300 rounded-lg"
+                        placeholder="Masukkan nama pemilik rekening" required>
+                </div>
+
+                <!-- Tombol Selanjutnya -->
+                <div class="flex justify-between">
+                    <button type="button" id="next-1"
+                        class="bg-blue-500 text-white px-6 py-3 rounded-lg hover:bg-blue-600 focus:outline-none">Selanjutnya</button>
+                </div>
+            </div>
+            <!-- Step 2: Data Ayah Kandung -->
+            <div class="step" id="step-2">
+                <h2 class="text-2xl font-bold mb-6 text-center text-gray-800">Data Ayah Kandung</h2>
+
+                <!-- Nama Ayah Kandung -->
+                <div class="mb-4">
+                    <label for="nama_ayah" class="block text-gray-700 font-semibold mb-2">Nama Ayah Kandung</label>
+                    <input type="text" id="nama_ayah" name="nama_ayah"
+                        class="w-full p-3 border border-gray-300 rounded-lg" placeholder="Masukkan nama ayah kandung"
+                        required>
+                </div>
+
+                <!-- NIK Ayah -->
+                <div class="mb-4">
+                    <label for="nik_ayah" class="block text-gray-700 font-semibold mb-2">NIK Ayah</label>
+                    <input type="text" id="nik_ayah" name="nik_ayah"
+                        class="w-full p-3 border border-gray-300 rounded-lg" placeholder="Masukkan NIK ayah kandung"
+                        required>
+                </div>
+
+                <!-- Tahun Lahir Ayah -->
+                <div class="mb-4">
+                    <label for="tahun_lahir_ayah" class="block text-gray-700 font-semibold mb-2">Tahun Lahir</label>
+                    <input type="number" id="tahun_lahir_ayah" name="tahun_lahir_ayah"
+                        class="w-full p-3 border border-gray-300 rounded-lg" placeholder="Masukkan tahun lahir ayah"
+                        required>
+                </div>
+
+                <!-- Pendidikan Ayah -->
+                <div class="mb-4">
+                    <label for="pendidikan_ayah" class="block text-gray-700 font-semibold mb-2">Penghasilan Bulanan
+                        Ibu</label>
+                    <select id="pendidikan_ayah" name="pendidikan_ayah"
+                        class="w-full p-3 border border-gray-300 rounded-lg" required>
+                        <option value="">Pilih Pendidikan Ayah</option>
+                    </select>
+                </div>
+
+                <!-- Pekerjaan Ayah -->
+                <div class="mb-4">
+                    <label for="pekerjaan_ayah" class="block text-gray-700 font-semibold mb-2">Pekerjaan Ayah</label>
+                    <select id="pekerjaan_ayah" name="pekerjaan_ayah"
+                        class="w-full p-3 border border-gray-300 rounded-lg" required>
+                        <option value="">Pilih Pekerjaan Ayah</option>
+                        <!-- Pilihan pekerjaan akan diisi oleh JavaScript -->
+                    </select>
+                </div>
+
+                <!-- Penghasilan Bulanan Ayah -->
+                <div class="mb-4">
+                    <label for="penghasilan_ayah" class="block text-gray-700 font-semibold mb-2">Penghasilan Bulanan
+                        Ayah</label>
+                    <select id="penghasilan_ayah" name="penghasilan_ayah"
+                        class="w-full p-3 border border-gray-300 rounded-lg" required>
+                        <option value="">Pilih Penghasilan Bulanan Ayah</option>
+                    </select>
+                </div>
+
+                <!-- Berkebutuhan Khusus Ayah -->
+                <div class="mb-4">
+                    <label for="berkebutuhan_khusus_ayah" class="block text-gray-700 font-semibold mb-2">Berkebutuhan
+                        Khusus</label>
+                    <select id="berkebutuhan_khusus_ayah" name="berkebutuhan_khusus_ayah"
+                        class="w-full p-3 border border-gray-300 rounded-lg">
+                        <option value="tidak">Tidak</option>
+                        <option value="ya">Ya</option>
+                    </select>
+                </div>
+
+                <!-- Tombol Selanjutnya -->
+                <div class="flex justify-between">
+                    <button type="button" id="next-2"
+                        class="bg-blue-500 text-white px-6 py-3 rounded-lg hover:bg-blue-600 focus:outline-none">Selanjutnya</button>
+                </div>
+            </div>
+            <!-- Step 3: Data Ibu Kandung -->
+            <div class="step" id="step-3">
+                <h2 class="text-2xl font-bold mb-6 text-center text-gray-800">Data Ibu Kandung</h2>
+
+                <!-- Nama Ibu Kandung -->
+                <div class="mb-4">
+                    <label for="nama_ibu" class="block text-gray-700 font-semibold mb-2">Nama Ibu Kandung</label>
+                    <input type="text" id="nama_ibu" name="nama_ibu"
+                        class="w-full p-3 border border-gray-300 rounded-lg" placeholder="Masukkan nama ibu kandung"
+                        required>
+                </div>
+
+                <!-- NIK Ibu -->
+                <div class="mb-4">
+                    <label for="nik_ibu" class="block text-gray-700 font-semibold mb-2">NIK Ibu</label>
+                    <input type="text" id="nik_ibu" name="nik_ibu" class="w-full p-3 border border-gray-300 rounded-lg"
+                        placeholder="Masukkan NIK ibu kandung" required>
+                </div>
+
+                <!-- Tahun Lahir Ibu -->
+                <div class="mb-4">
+                    <label for="tahun_lahir_ibu" class="block text-gray-700 font-semibold mb-2">Tahun Lahir</label>
+                    <input type="number" id="tahun_lahir_ibu" name="tahun_lahir_ibu"
+                        class="w-full p-3 border border-gray-300 rounded-lg" placeholder="Masukkan tahun lahir ibu"
+                        required>
+                </div>
+
+                <!-- Pendidikan Ibu -->
+                <div class="mb-4">
+                    <label for="pendidikan_ibu" class="block text-gray-700 font-semibold mb-2">Penghasilan Bulanan
+                        Ibu</label>
+                    <select id="pendidikan_ibu" name="pendidikan_ibu"
+                        class="w-full p-3 border border-gray-300 rounded-lg" required>
+                        <option value="">Pilih Pendidikan Ibu</option>
+                    </select>
+                </div>
+
+                <!-- Pekerjaan Ibu -->
+                <div class="mb-4">
+                    <label for="pekerjaan_ibu" class="block text-gray-700 font-semibold mb-2">Pekerjaan Ibu</label>
+                    <select id="pekerjaan_ibu" name="pekerjaan_ibu" class="w-full p-3 border border-gray-300 rounded-lg"
+                        required>
+                        <option value="">Pilih Pekerjaan Ibu</option>
+                        <!-- Pilihan pekerjaan akan diisi oleh JavaScript -->
+                    </select>
+                </div>
+
+                <!-- Penghasilan Bulanan Ibu -->
+                <div class="mb-4">
+                    <label for="penghasilan_ibu" class="block text-gray-700 font-semibold mb-2">Penghasilan Bulanan
+                        Ibu</label>
+                    <select id="penghasilan_ibu" name="penghasilan_ibu"
+                        class="w-full p-3 border border-gray-300 rounded-lg" required>
+                        <option value="">Pilih Penghasilan Bulanan Ibu</option>
+                    </select>
+                </div>
+
+                <!-- Berkebutuhan Khusus Ibu -->
+                <div class="mb-4">
+                    <label for="berkebutuhan_khusus_ibu" class="block text-gray-700 font-semibold mb-2">Berkebutuhan
+                        Khusus</label>
+                    <select id="berkebutuhan_khusus_ibu" name="berkebutuhan_khusus_ibu"
+                        class="w-full p-3 border border-gray-300 rounded-lg">
+                        <option value="tidak">Tidak</option>
+                        <option value="ya">Ya</option>
+                    </select>
+                </div>
+
+                <!-- Tombol Selanjutnya -->
+                <div class="flex justify-between">
+                    <button type="button" id="next-3"
+                        class="bg-blue-500 text-white px-6 py-3 rounded-lg hover:bg-blue-600 focus:outline-none">Selanjutnya</button>
+                </div>
+
+            </div>
+            <!-- Step 4: Data Wali -->
+            <div class="step" id="step-4">
+                <h2 class="text-2xl font-bold mb-6 text-center text-gray-800">Data Wali</h2>
+
+                <!-- Nama Wali -->
+                <div class="mb-4">
+                    <label for="nama_wali" class="block text-gray-700 font-semibold mb-2">Nama Wali</label>
+                    <input type="text" id="nama_wali" name="nama_wali"
+                        class="w-full p-3 border border-gray-300 rounded-lg" placeholder="Masukkan nama wali" required>
+                </div>
+
+                <!-- NIK Wali -->
+                <div class="mb-4">
+                    <label for="nik_wali" class="block text-gray-700 font-semibold mb-2">NIK Wali</label>
+                    <input type="text" id="nik_wali" name="nik_wali"
+                        class="w-full p-3 border border-gray-300 rounded-lg" placeholder="Masukkan NIK wali" required>
+                </div>
+
+                <!-- Tahun Lahir Wali -->
+                <div class="mb-4">
+                    <label for="tahun_lahir_wali" class="block text-gray-700 font-semibold mb-2">Tahun Lahir</label>
+                    <input type="number" id="tahun_lahir_wali" name="tahun_lahir_wali"
+                        class="w-full p-3 border border-gray-300 rounded-lg" placeholder="Masukkan tahun lahir wali"
+                        required>
+                </div>
+
+                <!-- Pendidikan Wali -->
+                <div class="mb-4">
+                    <label for="pendidikan_wali" class="block text-gray-700 font-semibold mb-2">Penghasilan Bulanan
+                        Ibu</label>
+                    <select id="pendidikan_wali" name="pendidikan_wali"
+                        class="w-full p-3 border border-gray-300 rounded-lg" required>
+                        <option value="">Pilih Pendidikan Wali</option>
+                    </select>
+                </div>
+
+                <!-- Pekerjaan Wali -->
+                <div class="mb-4">
+                    <label for="pekerjaan_wali" class="block text-gray-700 font-semibold mb-2">Pekerjaan Ibu</label>
+                    <select id="pekerjaan_wali" name="pekerjaan_wali"
+                        class="w-full p-3 border border-gray-300 rounded-lg" required>
+                        <option value="">Pilih Pekerjaan Ibu</option>
+                        <!-- Pilihan pekerjaan akan diisi oleh JavaScript -->
+                    </select>
+                </div>
+
+                <!-- Penghasilan Bulanan Wali -->
+                <div class="mb-4">
+                    <label for="penghasilan_wali" class="block text-gray-700 font-semibold mb-2">Penghasilan Bulanan
+                        Wali</label>
+                    <select id="penghasilan_wali" name="penghasilan_wali"
+                        class="w-full p-3 border border-gray-300 rounded-lg" required>
+                        <option value="">Pilih Penghasilan Bulanan Wali</option>
+                    </select>
+                </div>
+
+                <!-- Tombol Selanjutnya -->
+                <div class="flex justify-between">
+                    <button type="button" id="next-4"
+                        class="bg-blue-500 text-white px-6 py-3 rounded-lg hover:bg-blue-600 focus:outline-none">Selanjutnya</button>
+                </div>
+            </div>
+            <!-- Step 5: Data Periodik -->
+            <div class="step" id="step-5">
+                <h2 class="text-2xl font-bold mb-6 text-center text-gray-800">Data Periodik</h2>
+
+                <!-- Tinggi Badan -->
+                <div class="mb-4">
+                    <label for="tinggi_badan" class="block text-gray-700 font-semibold mb-2">Tinggi Badan (cm)</label>
+                    <input type="number" id="tinggi_badan" name="tinggi_badan"
+                        class="w-full p-3 border border-gray-300 rounded-lg" placeholder="Masukkan tinggi badan"
+                        required>
+                </div>
+
+                <!-- Berat Badan -->
+                <div class="mb-4">
+                    <label for="berat_badan" class="block text-gray-700 font-semibold mb-2">Berat Badan (kg)</label>
+                    <input type="number" id="berat_badan" name="berat_badan"
+                        class="w-full p-3 border border-gray-300 rounded-lg" placeholder="Masukkan berat badan"
+                        required>
+                </div>
+
+                <!-- Jarak Tempat Tinggal ke Sekolah -->
+                <div class="mb-4">
+                    <label for="jarak_tinggal_ke_sekolah" class="block text-gray-700 font-semibold mb-2">Jarak Tempat
+                        Tinggal ke
+                        Sekolah (km)</label>
+                    <select id="jarak_tinggal_ke_sekolah" name="jarak_tinggal_ke_sekolah"
+                        class="w-full p-3 border border-gray-300 rounded-lg" required>
+                        <option value="">Pilih Jarak Tempat Tinggal ke Sekolah</option>
+                    </select>
+                </div>
+
+
+                <!-- Waktu Tempuh ke Sekolah -->
+                <div class="mb-4">
+                    <label for="waktu_tempuh" class="block text-gray-700 font-semibold mb-2">Waktu Tempuh ke Sekolah
+                        (jam/menit)</label>
+                    <input type="text" id="waktu_tempuh" name="waktu_tempuh"
+                        class="w-full p-3 border border-gray-300 rounded-lg"
+                        placeholder="Masukkan waktu tempuh (misal: 30 menit)" required>
+                </div>
+
+                <!-- Jumlah Saudara Kandung -->
+                <div class="mb-4">
+                    <label for="jumlah_saudara" class="block text-gray-700 font-semibold mb-2">Jumlah Saudara
+                        Kandung</label>
+                    <input type="number" id="jumlah_saudara" name="jumlah_saudara"
+                        class="w-full p-3 border border-gray-300 rounded-lg"
+                        placeholder="Masukkan jumlah saudara kandung" required>
+                </div>
+
+                <!-- Tombol Selanjutnya -->
+                <div class="flex justify-between">
+                    <button type="button" id="next-5"
+                        class="bg-blue-500 text-white px-6 py-3 rounded-lg hover:bg-blue-600 focus:outline-none">Selanjutnya</button>
+                </div>
+            </div>
+            <!-- Step 6: Prestasi -->
+            <div class="step" id="step-6">
+                <h2 class="text-2xl font-bold mb-6 text-center text-gray-800">Prestasi</h2>
+
+                <!-- Jenis Prestasi -->
+                <div class="mb-4">
+                    <label for="jenis_prestasi" class="block text-gray-700 font-semibold mb-2">Jenis Prestasi</label>
+                    <select id="jenis_prestasi" name="jenis_prestasi"
+                        class="w-full p-3 border border-gray-300 rounded-lg" required>
+                        <option value="">Pilih Jenis Prestasi</option>
+                        <!-- Opsi-opsi akan otomatis ditambahkan oleh JavaScript -->
+                    </select>
+                </div>
+
+                <!-- Tingkat Prestasi -->
+                <div class="mb-4">
+                    <label for="tingkat_prestasi" class="block text-gray-700 font-semibold mb-2">Tingkat
+                        Prestasi</label>
+                    <select id="tingkat_prestasi" name="tingkat_prestasi"
+                        class="w-full p-3 border border-gray-300 rounded-lg" required>
+                        <option value="">Pilih Tingkat Prestasi</option>
+                        <!-- Opsi-opsi akan otomatis ditambahkan oleh JavaScript -->
+                    </select>
+                </div>
+
+                <!-- Nama Prestasi -->
+                <div class="mb-4">
+                    <label for="nama_prestasi" class="block text-gray-700 font-semibold mb-2">Nama Prestasi</label>
+                    <input type="text" id="nama_prestasi" name="nama_prestasi"
+                        class="w-full p-3 border border-gray-300 rounded-lg" placeholder="Masukkan nama prestasi"
+                        required>
+                </div>
+
+                <!-- Tahun Prestasi -->
+                <div class="mb-4">
+                    <label for="tahun_prestasi" class="block text-gray-700 font-semibold mb-2">Tahun Prestasi</label>
+                    <input type="number" id="tahun_prestasi" name="tahun_prestasi"
+                        class="w-full p-3 border border-gray-300 rounded-lg" placeholder="Masukkan tahun prestasi"
+                        required>
+                </div>
+
+                <!-- Penyelenggara Prestasi -->
+                <div class="mb-4">
+                    <label for="penyelenggara_prestasi" class="block text-gray-700 font-semibold mb-2">Penyelenggara
+                        Prestasi</label>
+                    <input type="text" id="penyelenggara_prestasi" name="penyelenggara_prestasi"
+                        class="w-full p-3 border border-gray-300 rounded-lg"
+                        placeholder="Masukkan penyelenggara prestasi" required>
+                </div>
+
+                <!-- Tombol Selanjutnya -->
+                <div class="flex justify-between">
+                    <button type="button" id="next-6"
+                        class="bg-blue-500 text-white px-6 py-3 rounded-lg hover:bg-blue-600 focus:outline-none">Selanjutnya</button>
+                </div>
+            </div>
+            <!-- Step 7: Beasiswa -->
+            <div class="step" id="step-7">
+                <h2 class="text-2xl font-bold mb-6 text-center text-gray-800">Beasiswa</h2>
+
+                <!-- Jenis Beasiswa -->
+                <div class="mb-4">
+                    <label for="jenis_beasiswa" class="block text-gray-700 font-semibold mb-2">Jenis Beasiswa</label>
+                    <input type="text" id="jenis_beasiswa" name="jenis_beasiswa"
+                        class="w-full p-3 border border-gray-300 rounded-lg" placeholder="Masukkan jenis beasiswa"
+                        required>
+                </div>
+
+                <!-- Keterangan Beasiswa -->
+                <div class="mb-4">
+                    <label for="keterangan_beasiswa" class="block text-gray-700 font-semibold mb-2">Keterangan
+                        Beasiswa</label>
+                    <textarea id="keterangan_beasiswa" name="keterangan_beasiswa"
+                        class="w-full p-3 border border-gray-300 rounded-lg" placeholder="Masukkan keterangan beasiswa"
+                        required></textarea>
+                </div>
+
+                <!-- Tahun Mulai -->
+                <div class="mb-4">
+                    <label for="tahun_mulai_beasiswa" class="block text-gray-700 font-semibold mb-2">Tahun Mulai
+                        Beasiswa</label>
+                    <input type="number" id="tahun_mulai_beasiswa" name="tahun_mulai_beasiswa"
+                        class="w-full p-3 border border-gray-300 rounded-lg" placeholder="Masukkan tahun mulai beasiswa"
+                        required>
+                </div>
+
+                <!-- Tahun Selesai -->
+                <div class="mb-4">
+                    <label for="tahun_selesai_beasiswa" class="block text-gray-700 font-semibold mb-2">Tahun Selesai
+                        Beasiswa</label>
+                    <input type="number" id="tahun_selesai_beasiswa" name="tahun_selesai_beasiswa"
+                        class="w-full p-3 border border-gray-300 rounded-lg"
+                        placeholder="Masukkan tahun selesai beasiswa" required>
+                </div>
+
+                <!-- Tombol Selanjutnya -->
+                <div class="flex justify-between">
+                    <button type="button" id="next-7"
+                        class="bg-blue-500 text-white px-6 py-3 rounded-lg hover:bg-blue-600 focus:outline-none">Selanjutnya</button>
+                </div>
+            </div>
+            <!-- Step 8: Registrasi Peserta Didik -->
+            <div class="step" id="step-8">
+                <h2 class="text-2xl font-bold mb-6 text-center text-gray-800">Registrasi Peserta Didik</h2>
+
+                <!-- Kompetensi Keahlian -->
+                <div class="mb-4">
+                    <label for="kompetensi_keahlian" class="block text-gray-700 font-semibold mb-2">Kompetensi
+                        Keahlian</label>
+                    <input type="text" id="kompetensi_keahlian" name="kompetensi_keahlian"
+                        class="w-full p-3 border border-gray-300 rounded-lg" placeholder="Masukkan kompetensi keahlian"
+                        required>
+                </div>
+
+                <!-- Jenis Pendaftaran -->
+                <div class="mb-4">
+                    <label for="jenis_pendaftaran" class="block text-gray-700 font-semibold mb-2">Jenis
+                        Pendaftaran</label>
+                    <select id="jenis_pendaftaran" name="jenis_pendaftaran"
+                        class="w-full p-3 border border-gray-300 rounded-lg" required>
+                        <option value="">Pilih Jenis Pendaftaran</option>
+                        <!-- Opsi-opsi akan otomatis ditambahkan oleh JavaScript -->
+                    </select>
+                </div>
+
+
+                <!-- NIS -->
+                <div class="mb-4">
+                    <label for="nis" class="block text-gray-700 font-semibold mb-2">NIS</label>
+                    <input type="text" id="nis" name="nis" class="w-full p-3 border border-gray-300 rounded-lg"
+                        placeholder="Masukkan NIS" required>
+                </div>
+
+                <!-- Tanggal Masuk Sekolah -->
+                <div class="mb-4">
+                    <label for="tanggal_masuk_sekolah" class="block text-gray-700 font-semibold mb-2">Tanggal Masuk
+                        Sekolah</label>
+                    <input type="date" id="tanggal_masuk_sekolah" name="tanggal_masuk_sekolah"
+                        class="w-full p-3 border border-gray-300 rounded-lg" required>
+                </div>
+
+                <!-- Asal Sekolah -->
+                <div class="mb-4">
+                    <label for="asal_sekolah" class="block text-gray-700 font-semibold mb-2">Asal Sekolah</label>
+                    <input type="text" id="asal_sekolah" name="asal_sekolah"
+                        class="w-full p-3 border border-gray-300 rounded-lg" placeholder="Masukkan asal sekolah"
+                        required>
+                </div>
+
+                <!-- Nomor Peserta Ujian -->
+                <div class="mb-4">
+                    <label for="nomor_peserta_ujian" class="block text-gray-700 font-semibold mb-2">Nomor Peserta
+                        Ujian</label>
+                    <input type="text" id="nomor_peserta_ujian" name="nomor_peserta_ujian"
+                        class="w-full p-3 border border-gray-300 rounded-lg" placeholder="Masukkan nomor peserta ujian"
+                        required>
+                </div>
+
+                <!-- No Seri Ijazah -->
+                <div class="mb-4">
+                    <label for="no_seri_ijazah" class="block text-gray-700 font-semibold mb-2">No Seri Ijazah</label>
+                    <input type="text" id="no_seri_ijazah" name="no_seri_ijazah"
+                        class="w-full p-3 border border-gray-300 rounded-lg" placeholder="Masukkan no seri ijazah"
+                        required>
+                </div>
+
+                <!-- No Seri SKHUS -->
+                <div class="mb-4">
+                    <label for="no_seri_skhus" class="block text-gray-700 font-semibold mb-2">No Seri SKHUS</label>
+                    <input type="text" id="no_seri_skhus" name="no_seri_skhus"
+                        class="w-full p-3 border border-gray-300 rounded-lg" placeholder="Masukkan no seri SKHUS"
+                        required>
+                </div>
+
+                <div class="flex justify-between">
+                    <button type="button" id="next-8"
+                        class="bg-blue-500 text-white px-6 py-3 rounded-lg hover:bg-blue-600 focus:outline-none">Selanjutnya</button>
+                </div>
+            </div>
+
+            <!-- Step 9: Pendaftaran Keluar -->
+            <div class="step" id="step-9">
+                <h2 class="text-2xl font-bold mb-6 text-center text-gray-800">Pendaftaran Keluar</h2>
+
+                <!-- Keluar Karena -->
+                <div class="mb-4">
+                    <label for="keluar_karena" class="block text-gray-700 font-semibold mb-2">Keluar Karena</label>
+                    <select id="keluar_karena" name="keluar_karena" class="w-full p-3 border border-gray-300 rounded-lg"
+                        required>
+                        <option value="">Pilih Alasan Keluar</option>
+                        <!-- Opsi-opsi akan otomatis ditambahkan oleh JavaScript -->
+                    </select>
+                </div>
+
+
+                <!-- Tanggal Keluar -->
+                <div class="mb-4">
+                    <label for="tanggal_keluar" class="block text-gray-700 font-semibold mb-2">Tanggal
+                        Keluar</label>
+                    <input type="date" id="tanggal_keluar" name="tanggal_keluar"
+                        class="w-full p-3 border border-gray-300 rounded-lg" required>
+                </div>
+
+                <!-- Alasan -->
+                <div class="mb-4">
+                    <label for="alasan_keluar" class="block text-gray-700 font-semibold mb-2">Alasan Keluar</label>
+                    <textarea id="alasan_keluar" name="alasan_keluar"
+                        class="w-full p-3 border border-gray-300 rounded-lg" placeholder="Masukkan alasan keluar"
+                        required></textarea>
+                </div>
+
+                <!-- Tombol Selanjutnya -->
+                <div class="flex justify-between">
+                    <button type="button" id="submit-form"
+                        class="bg-blue-500 text-white px-6 py-3 rounded-lg hover:bg-blue-600 focus:outline-none">Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+
+    <script>
+        // Menyimpan referensi ke tombol dan langkah-langkah form
+        const steps = document.querySelectorAll('.step');
+        const nextButtons = document.querySelectorAll('[id^="next-"]');
+
+        let currentStep = 0;
+
+        // Fungsi untuk menampilkan langkah tertentu
+        function showStep(stepIndex) {
+            steps.forEach((step, index) => {
+                if (index === stepIndex) {
+                    step.classList.add('active');
+                } else {
+                    step.classList.remove('active');
+                }
+            });
+        }
+
+        // Menambahkan event listener untuk tombol Selanjutnya
+        nextButtons.forEach((button, index) => {
+            button.addEventListener('click', () => {
+                currentStep++;
+                showStep(currentStep);
+            });
+        });
+
+        // Menampilkan langkah pertama saat halaman pertama dimuat
+        showStep(currentStep);
+    </script>
+    <script src="./dist/js/script.js"></script> <!-- Link ke script.js Anda -->
+</body>
+
+</html>

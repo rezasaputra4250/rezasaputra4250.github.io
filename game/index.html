@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Typing Game</title>
+    <!-- Adding Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+
+  <body class="bg-gray-200 font-sans flex items-center justify-center min-h-screen">
+
+    <div
+      class="container p-4 sm:p-6 bg-white rounded-xl shadow-2xl w-full sm:w-[350px] text-center my-4 sm:my-8 px-4 sm:mx-8">
+      <h1 class="text-xl sm:text-2xl font-bold text-gray-800 mb-4 sm:mb-5">Simple Typing Game</h1>
+
+      <div id="sentence-container" class="mb-3 sm:mb-4">
+        <p id="sentence" class="text-sm sm:text-base text-gray-700">Get ready to type!</p>
+      </div>
+
+      <input type="text" id="input-field"
+        class="w-full p-2 sm:p-3 text-base sm:text-lg border border-gray-400 rounded-xl focus:outline-none focus:ring-4 focus:ring-blue-500 mb-4 sm:mb-5"
+        placeholder="Start typing..." autofocus />
+
+      <div id="timer-container" class="mb-4 sm:mb-5">
+        <p class="text-sm sm:text-base text-gray-700">Time: <span id="timer"
+            class="font-bold text-base sm:text-lg">0</span> seconds</p>
+        <p class="text-sm sm:text-base text-gray-700">Score: <span id="score"
+            class="font-bold text-base sm:text-lg">0</span></p>
+      </div>
+
+      <button id="start-button"
+        class="w-full bg-green-500 text-white py-2 sm:py-3 rounded-xl text-base sm:text-lg hover:bg-green-600 focus:outline-none focus:ring-4 focus:ring-green-400">Start
+        Game</button>
+    </div>
+
+    <script>
+      let sentences = [];
+
+      // Memuat data dari file sentences.json
+      fetch('./json/sentences.json')
+        .then(response => response.json())
+        .then(data => {
+          sentences = data; // Menyimpan data kalimat dari JSON ke variabel sentences
+        })
+        .catch(error => {
+          console.error("Error loading sentences:", error);
+        });
+
+      // Variabel game
+      let currentSentence = '';
+      let timer = 0;
+      let score = 0;
+      let isPlaying = false;
+      let interval;
+      let startTime = 0;
+
+      // Elemen HTML
+      const sentenceContainer = document.getElementById('sentence');
+      const inputField = document.getElementById('input-field');
+      const timerDisplay = document.getElementById('timer');
+      const scoreDisplay = document.getElementById('score');
+      const startButton = document.getElementById('start-button');
+
+      // Fungsi untuk memulai game
+      function startGame() {
+        if (sentences.length === 0) {
+          alert("Kalimat belum dimuat, coba lagi.");
+          return;
+        }
+        isPlaying = true;
+        score = 0;
+        timer = 0;
+        startButton.disabled = true;
+        inputField.value = '';
+        inputField.disabled = false;
+        scoreDisplay.textContent = score;
+        generateNewSentence();
+        startTimer();
+      }
+
+      // Fungsi untuk menghasilkan kalimat acak
+      function generateNewSentence() {
+        const randomIndex = Math.floor(Math.random() * sentences.length);
+        currentSentence = sentences[randomIndex];
+        sentenceContainer.textContent = currentSentence;
+      }
+
+      // Fungsi untuk memulai timer
+      function startTimer() {
+        startTime = Date.now();
+        interval = setInterval(() => {
+          if (isPlaying) {
+            timer = Math.floor((Date.now() - startTime) / 1000);
+            timerDisplay.textContent = timer;
+          }
+        }, 1000);
+      }
+
+      // Fungsi untuk memeriksa input pemain
+      function checkInput() {
+        const inputText = inputField.value;
+
+        // Cek apakah input pemain sama dengan kalimat yang diberikan
+        if (inputText === currentSentence) {
+          score++;
+          scoreDisplay.textContent = score;
+          inputField.value = ''; // Bersihkan input
+          generateNewSentence(); // Ambil kalimat baru
+        }
+      }
+
+      // Fungsi untuk menghentikan game
+      function stopGame() {
+        isPlaying = false;
+        clearInterval(interval);
+        inputField.disabled = true;
+        startButton.disabled = false;
+        alert(`Game selesai! Skor Anda: ${score}`);
+
+        // Setelah game selesai, memungkinkan game dimulai lagi
+        setTimeout(startGame, 2000); // Mulai lagi setelah 2 detik
+      }
+
+      // Event listeners
+      inputField.addEventListener('input', checkInput);
+      startButton.addEventListener('click', startGame);
+
+      // Memastikan game berhenti jika waktunya habis (misalnya 60 detik)
+      setTimeout(stopGame, 60000); // Setel waktu permainan 1 menit
+    </script>
+  </body>
+
+</html>

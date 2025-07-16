@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Animasi Keyframes</title>
+
+    <!-- Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        crossorigin="anonymous" />
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <style>
+        @keyframes bounceIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.3);
+            }
+
+            50% {
+                opacity: 1;
+                transform: scale(1.05);
+            }
+
+            70% {
+                transform: scale(0.9);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .animate-bounce-in {
+            animation: bounceIn 0.6s ease-out;
+        }
+    </style>
+</head>
+
+<body class="flex items-center justify-center h-screen bg-gray-100">
+
+    <div class="text-center">
+        <button id="playAnim"
+            class="px-6 py-3 bg-indigo-600 text-white rounded-lg shadow hover:bg-indigo-700 transition duration-300">
+            Tampilkan Animasi
+        </button>
+
+        <div class="mt-10 text-6xl text-gray-600">
+            <i id="icon" class="fas fa-star hidden"></i>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            $('#playAnim').click(function () {
+                const icon = $('#icon');
+                icon.removeClass('hidden');
+                icon.removeClass('animate-bounce-in');
+
+                // Trigger reflow to restart animation
+                void icon[0].offsetWidth;
+
+                icon.addClass('animate-bounce-in');
+            });
+        });
+    </script>
+
+</body>
+
+</html>

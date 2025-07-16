@@ -1,0 +1,92 @@
+[
+  {
+    "id": 1,
+    "name": "Pensil 2B",
+    "price": 5000,
+    "image": "https://via.placeholder.com/150?text=Pensil"
+  },
+  {
+    "id": 2,
+    "name": "Pulpen Gel",
+    "price": 10000,
+    "image": "https://via.placeholder.com/150?text=Pulpen"
+  },
+  {
+    "id": 3,
+    "name": "Buku Catatan",
+    "price": 25000,
+    "image": "https://via.placeholder.com/150?text=Buku"
+  },
+  {
+    "id": 4,
+    "name": "Penghapus",
+    "price": 3000,
+    "image": "https://via.placeholder.com/150?text=Penghapus"
+  },
+  {
+    "id": 5,
+    "name": "Spidol",
+    "price": 15000,
+    "image": "https://via.placeholder.com/150?text=Spidol"
+  },
+  {
+    "id": 6,
+    "name": "Rautan Pensil",
+    "price": 2000,
+    "image": "https://via.placeholder.com/150?text=Rautan"
+  },
+  {
+    "id": 7,
+    "name": "Pensil Warna",
+    "price": 8000,
+    "image": "https://via.placeholder.com/150?text=Pensil+Warna"
+  },
+  {
+    "id": 8,
+    "name": "Tas Sekolah",
+    "price": 75000,
+    "image": "https://via.placeholder.com/150?text=Tas+Sekolah"
+  },
+  {
+    "id": 9,
+    "name": "Seragam SD",
+    "price": 120000,
+    "image": "https://via.placeholder.com/150?text=Seragam+SD"
+  },
+  {
+    "id": 10,
+    "name": "Seragam SMP",
+    "price": 150000,
+    "image": "https://via.placeholder.com/150?text=Seragam+SMP"
+  },
+  {
+    "id": 11,
+    "name": "Seragam SMK",
+    "price": 180000,
+    "image": "https://via.placeholder.com/150?text=Seragam+SMK"
+  },
+  {
+    "id": 12,
+    "name": "Sepatu Sekolah",
+    "price": 90000,
+    "image": "https://via.placeholder.com/150?text=Sepatu+Sekolah"
+  },
+  {
+    "id": 13,
+    "name": "Topi Sekolah",
+    "price": 15000,
+    "image": "https://via.placeholder.com/150?text=Topi+Sekolah"
+  },
+  {
+    "id": 14,
+    "name": "Gurita Sekolah",
+    "price": 5000,
+    "image": "https://via.placeholder.com/150?text=Gurita+Sekolah"
+  },
+  {
+    "id": 15,
+    "name": "Penggaris",
+    "price": 7000,
+    "image": "https://via.placeholder.com/150?text=Penggaris"
+  }
+]

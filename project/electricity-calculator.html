@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Listrik</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        function calculateElectricityBill() {
+            const power = parseFloat(document.getElementById('power').value); // Daya dalam Watt
+            const hours = parseFloat(document.getElementById('hours').value); // Waktu dalam Jam
+            const rate = parseFloat(document.getElementById('rate').value); // Tarif per kWh
+            let result = '';
+
+            if (isNaN(power) || isNaN(hours) || isNaN(rate) || power <= 0 || hours <= 0 || rate <= 0) {
+                result = '<p class="text-red-500">Masukkan nilai yang valid untuk daya, waktu, dan tarif!</p>';
+            } else {
+                // Menghitung konsumsi energi dalam kWh
+                const energyConsumed = (power / 1000) * hours; // kWh
+                // Menghitung total tagihan listrik
+                const totalBill = energyConsumed * rate;
+
+                result = `
+                    <p class="text-green-500">Konsumsi Energi: ${energyConsumed.toFixed(2)} kWh</p>
+                    <p class="text-green-500">Total Tagihan Listrik: ${totalBill.toFixed(2)} IDR</p>
+                `;
+            }
+
+            document.getElementById('result').innerHTML = result;
+        }
+    </script>
+</head>
+
+<body class="bg-gray-100">
+
+    <div class="flex items-center justify-center h-screen">
+        <div class="bg-white rounded-lg shadow-lg p-8 w-full sm:w-96">
+            <h1 class="text-2xl font-semibold text-center mb-6 text-blue-600">Kalkulator Listrik</h1>
+
+            <input type="number" id="power" placeholder="Daya Peralatan (W)" step="0.1"
+                class="w-full p-3 mb-4 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+            <input type="number" id="hours" placeholder="Waktu Penggunaan (Jam)" step="0.1"
+                class="w-full p-3 mb-4 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+            <input type="number" id="rate" placeholder="Tarif Listrik (IDR/kWh)" step="0.01"
+                class="w-full p-3 mb-4 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+
+            <button onclick="calculateElectricityBill()"
+                class="w-full py-3 bg-green-500 text-white rounded-lg hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500">
+                Hitung Tagihan Listrik
+            </button>
+
+            <div id="result" class="mt-6 text-center"></div>
+        </div>
+    </div>
+
+</body>
+
+</html>

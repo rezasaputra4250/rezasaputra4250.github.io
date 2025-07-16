@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LocalStorage Viewer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 min-h-screen flex items-center justify-center p-4">
+
+    <div class="bg-white shadow-lg rounded-xl w-full max-w-2xl p-6">
+        <h1 class="text-2xl font-bold mb-4 text-center text-gray-700">Daftar LocalStorage</h1>
+
+        <div id="localStorageList" class="space-y-6">
+            <!-- Data akan di-render di sini -->
+        </div>
+
+        <div class="text-center mt-6">
+            <button onclick="clearLocalStorage()"
+                class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded shadow">
+                Hapus Semua LocalStorage
+            </button>
+        </div>
+    </div>
+
+    <script>
+        function renderLocalStorage() {
+            const container = document.getElementById('localStorageList');
+            container.innerHTML = '';
+
+            if (localStorage.length === 0) {
+                container.innerHTML = '<p class="text-gray-500 text-center">Tidak ada data di localStorage.</p>';
+                return;
+            }
+
+            for (let i = 0; i < localStorage.length; i++) {
+                const key = localStorage.key(i);
+                const rawValue = localStorage.getItem(key);
+                let formattedValue = rawValue;
+
+                // Coba parse jika JSON
+                try {
+                    const parsed = JSON.parse(rawValue);
+                    formattedValue = JSON.stringify(parsed, null, 2);
+                } catch (e) {
+                    // Bukan JSON, tampilkan mentah
+                }
+
+                const item = document.createElement('div');
+
+                item.innerHTML = `
+          <h2 class="font-bold text-blue-700 text-lg break-all">${key}</h2>
+          <div class="bg-gray-50 border rounded-lg shadow-sm p-4 mt-1">
+            <pre class="text-sm text-gray-800 whitespace-pre-wrap break-words">${formattedValue}</pre>
+          </div>
+        `;
+
+                container.appendChild(item);
+            }
+        }
+
+        function clearLocalStorage() {
+            if (confirm("Yakin ingin menghapus semua data localStorage?")) {
+                localStorage.clear();
+                renderLocalStorage();
+            }
+        }
+
+        // Tampilkan saat halaman dimuat
+        renderLocalStorage();
+    </script>
+
+</body>
+
+</html>

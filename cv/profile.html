@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Radar Chart with Experience Level</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        crossorigin="anonymous" />
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body class="bg-gray-100 min-h-screen p-4">
+    <!-- Top Navbar -->
+    <header class="fixed top-0 left-0 right-0 bg-white border-b shadow z-50 block sm:hidden">
+        <div class="flex items-center justify-between px-4 py-2 text-gray-700">
+            <!-- Tombol Kembali -->
+            <button onclick="history.back()" class="text-xl hover:text-blue-600">
+                <i class="fas fa-arrow-left"></i>
+            </button>
+
+            <!-- Judul (opsional) -->
+            <h1 class="text-lg font-semibold">Profile</h1>
+
+            <!-- Tombol Unduh & Pengaturan -->
+            <div class="flex space-x-4">
+                <button class="text-xl hover:text-blue-600">
+                    <i class="fas fa-download"></i>
+                </button>
+                <button class="text-xl hover:text-blue-600">
+                    <i class="fas fa-cog"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+
+    <!-- Main Container -->
+    <div class="container mx-auto px-4 pt-10 pb-20">
+        <div class="flex flex-col items-center gap-4 w-full max-w-screen-xl mx-auto">
+            <!-- Experience Card -->
+            <div class="bg-blue-50 p-4 rounded-xl shadow w-full">
+                <div class="flex items-center justify-between mb-2">
+                    <span class="font-semibold text-sm text-gray-700">Level 1</span>
+                    <span class="text-xs font-medium text-blue-600">Exp</span>
+                </div>
+                <div class="w-full bg-blue-100 rounded-full h-2">
+                    <div class="bg-blue-500 h-2 rounded-full" style="width: 40%"></div>
+                </div>
+            </div>
+
+            <!-- Chart Card -->
+            <div class="bg-white p-6 rounded-2xl shadow-lg w-full">
+                <h1 class="text-xl sm:text-2xl font-bold text-center mb-6 text-gray-800">
+                    <i class="fas fa-chart-pie text-blue-500"></i> Skill & Experience Overview
+                </h1>
+                <div class="relative w-full aspect-[4/3]">
+                    <canvas id="radarChart" class="absolute inset-0 w-full h-full"></canvas>
+                </div>
+            </div>
+
+            <!-- Project Cards -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 w-full mt-4">
+                <!-- Card 1 -->
+                <div class="bg-white rounded-xl shadow p-4">
+                    <h2 class="font-semibold text-lg text-blue-600 mb-1">
+                        <i class="fas fa-laptop-code mr-2"></i>Portfolio Website
+                    </h2>
+                    <p class="text-sm text-gray-600">
+                        Dibuat dengan HTML, CSS, dan JavaScript untuk menampilkan profil profesional.
+                    </p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-white rounded-xl shadow p-4">
+                    <h2 class="font-semibold text-lg text-purple-600 mb-1">
+                        <i class="fas fa-store mr-2"></i>Online Shop
+                    </h2>
+                    <p class="text-sm text-gray-600">
+                        E-commerce sederhana menggunakan Laravel dan Bootstrap.
+                    </p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-white rounded-xl shadow p-4">
+                    <h2 class="font-semibold text-lg text-green-600 mb-1">
+                        <i class="fas fa-chart-line mr-2"></i>Dashboard Admin
+                    </h2>
+                    <p class="text-sm text-gray-600">
+                        Dibangun dengan React, TailwindCSS, dan Chart.js untuk visualisasi data.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bottom Navbar (Only visible on mobile) -->
+    <footer class="fixed bottom-0 left-0 right-0 bg-white border-t shadow z-50 block sm:hidden">
+        <div class="flex justify-around py-2 text-gray-600">
+            <a href="../cv/index.html" class="flex flex-col items-center text-sm hover:text-blue-600">
+                <i class="fas fa-home text-lg"></i>
+                <span>Home</span>
+            </a>
+            <a href="../cv/search.html" class="flex flex-col items-center text-sm hover:text-blue-600">
+                <i class="fas fa-search text-lg"></i>
+                <span>Search</span>
+            </a>
+            <a href="../cv/add.html" class="flex flex-col items-center text-sm hover:text-blue-600">
+                <i class="fas fa-plus-circle text-lg"></i>
+                <span>Add</span>
+            </a>
+            <a href="../cv/alerts.html" class="flex flex-col items-center text-sm hover:text-blue-600">
+                <i class="fas fa-bell text-lg"></i>
+                <span>Alerts</span>
+            </a>
+            <a href="../cv/profile.html" class="flex flex-col items-center text-sm hover:text-blue-600">
+                <i class="fas fa-user text-lg"></i>
+                <span>Profile</span>
+            </a>
+        </div>
+    </footer>
+
+    <!-- Chart.js Init -->
+    <script>
+        $(document).ready(function () {
+            const ctx = document.getElementById('radarChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'radar',
+                data: {
+                    labels: [
+                        'HTML',
+                        'CSS',
+                        'JavaScript',
+                        'PHP',
+                        'Bootstrap',
+                        'TailwindCSS',
+                        'CodeIgniter',
+                        'Laravel',
+                        'React'
+                    ],
+                    datasets: [{
+                        label: 'Skill Level',
+                        data: [90, 85, 75, 70, 60, 80, 50, 65, 55],
+                        fill: true,
+                        backgroundColor: 'rgba(59, 130, 246, 0.2)',
+                        borderColor: 'rgba(59, 130, 246, 1)',
+                        pointBackgroundColor: 'rgba(59, 130, 246, 1)',
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        r: {
+                            angleLines: {
+                                color: '#cbd5e1'
+                            },
+                            grid: {
+                                color: '#e2e8f0'
+                            },
+                            pointLabels: {
+                                font: {
+                                    size: 14
+                                },
+                                color: '#334155'
+                            },
+                            suggestedMin: 0,
+                            suggestedMax: 100
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                        },
+                        title: {
+                            display: false
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

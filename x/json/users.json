@@ -1,0 +1,209 @@
+{
+  "users": [
+    {
+      "username": "guru01",
+      "password": "482c811da5d5b4bc6d497ffa98491e38",
+      "role": "teacher"
+    },
+    {
+      "username": "murid01",
+      "password": "482c811da5d5b4bc6d497ffa98491e38",
+      "role": "student"
+    },
+    {
+      "username": "murid02",
+      "password": "482c811da5d5b4bc6d497ffa98491e38",
+      "role": "student"
+    },
+    {
+      "username": "murid03",
+      "password": "482c811da5d5b4bc6d497ffa98491e38",
+      "role": "student"
+    },
+    {
+      "username": "murid04",
+      "password": "482c811da5d5b4bc6d497ffa98491e38",
+      "role": "student"
+    },
+    {
+      "username": "murid05",
+      "password": "482c811da5d5b4bc6d497ffa98491e38",
+      "role": "student"
+    },
+    {
+      "username": "murid06",
+      "password": "482c811da5d5b4bc6d497ffa98491e38",
+      "role": "student"
+    },
+    {
+      "username": "murid07",
+      "password": "482c811da5d5b4bc6d497ffa98491e38",
+      "role": "student"
+    },
+    {
+      "username": "murid08",
+      "password": "482c811da5d5b4bc6d497ffa98491e38",
+      "role": "student"
+    },
+    {
+      "username": "murid09",
+      "password": "482c811da5d5b4bc6d497ffa98491e38",
+      "role": "student"
+    },
+    {
+      "username": "murid10",
+      "password": "482c811da5d5b4bc6d497ffa98491e38",
+      "role": "student"
+    },
+    {
+      "username": "murid11",
+      "password": "482c811da5d5b4bc6d497ffa98491e38",
+      "role": "student"
+    },
+    {
+      "username": "murid12",
+      "password": "482c811da5d5b4bc6d497ffa98491e38",
+      "role": "student"
+    },
+    {
+      "username": "murid13",
+      "password": "482c811da5d5b4bc6d497ffa98491e38",
+      "role": "student"
+    },
+    {
+      "username": "murid14",
+      "password": "482c811da5d5b4bc6d497ffa98491e38",
+      "role": "student"
+    },
+    {
+      "username": "murid15",
+      "password": "482c811da5d5b4bc6d497ffa98491e38",
+      "role": "student"
+    },
+    {
+      "username": "murid16",
+      "password": "482c811da5d5b4bc6d497ffa98491e38",
+      "role": "student"
+    },
+    {
+      "username": "murid17",
+      "password": "482c811da5d5b4bc6d497ffa98491e38",
+      "role": "student"
+    },
+    {
+      "username": "murid18",
+      "password": "482c811da5d5b4bc6d497ffa98491e38",
+      "role": "student"
+    },
+    {
+      "username": "murid19",
+      "password": "482c811da5d5b4bc6d497ffa98491e38",
+      "role": "student"
+    },
+    {
+      "username": "murid20",
+      "password": "482c811da5d5b4bc6d497ffa98491e38",
+      "role": "student"
+    },
+    {
+      "username": "murid21",
+      "password": "482c811da5d5b4bc6d497ffa98491e38",
+      "role": "student"
+    },
+    {
+      "username": "murid22",
+      "password": "482c811da5d5b4bc6d497ffa98491e38",
+      "role": "student"
+    },
+    {
+      "username": "murid23",
+      "password": "482c811da5d5b4bc6d497ffa98491e38",
+      "role": "student"
+    },
+    {
+      "username": "murid24",
+      "password": "482c811da5d5b4bc6d497ffa98491e38",
+      "role": "student"
+    },
+    {
+      "username": "murid25",
+      "password": "482c811da5d5b4bc6d497ffa98491e38",
+      "role": "student"
+    },
+    {
+      "username": "murid26",
+      "password": "482c811da5d5b4bc6d497ffa98491e38",
+      "role": "student"
+    },
+    {
+      "username": "murid27",
+      "password": "482c811da5d5b4bc6d497ffa98491e38",
+      "role": "student"
+    },
+    {
+      "username": "murid28",
+      "password": "482c811da5d5b4bc6d497ffa98491e38",
+      "role": "student"
+    },
+    {
+      "username": "murid29",
+      "password": "482c811da5d5b4bc6d497ffa98491e38",
+      "role": "student"
+    },
+    {
+      "username": "murid30",
+      "password": "482c811da5d5b4bc6d497ffa98491e38",
+      "role": "student"
+    },
+    {
+      "username": "murid31",
+      "password": "482c811da5d5b4bc6d497ffa98491e38",
+      "role": "student"
+    },
+    {
+      "username": "murid32",
+      "password": "482c811da5d5b4bc6d497ffa98491e38",
+      "role": "student"
+    },
+    {
+      "username": "murid33",
+      "password": "482c811da5d5b4bc6d497ffa98491e38",
+      "role": "student"
+    },
+    {
+      "username": "murid34",
+      "password": "482c811da5d5b4bc6d497ffa98491e38",
+      "role": "student"
+    },
+    {
+      "username": "murid35",
+      "password": "482c811da5d5b4bc6d497ffa98491e38",
+      "role": "student"
+    },
+    {
+      "username": "murid36",
+      "password": "482c811da5d5b4bc6d497ffa98491e38",
+      "role": "student"
+    },
+    {
+      "username": "murid37",
+      "password": "482c811da5d5b4bc6d497ffa98491e38",
+      "role": "student"
+    },
+    {
+      "username": "murid38",
+      "password": "482c811da5d5b4bc6d497ffa98491e38",
+      "role": "student"
+    },
+    {
+      "username": "murid39",
+      "password": "482c811da5d5b4bc6d497ffa98491e38",
+      "role": "student"
+    },
+    {
+      "username": "murid40",
+      "password": "482c811da5d5b4bc6d497ffa98491e38",
+      "role": "student"
+    }
+  ]
+}

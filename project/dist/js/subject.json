@@ -1,0 +1,66 @@
+[
+    {
+        "jurusan": "IPA",
+        "tingkat": "10",
+        "kelompok": "Kelompok A",
+        "mataPelajaran": [
+            {
+                "id": "IPA-10-KA-MTK",
+                "nama": "Matematika"
+            },
+            {
+                "id": "IPA-10-KA-BI",
+                "nama": "Bahasa Indonesia"
+            },
+            {
+                "id": "IPA-10-KA-FIS",
+                "nama": "Fisika"
+            }
+        ]
+    },
+    {
+        "jurusan": "IPS",
+        "tingkat": "10",
+        "kelompok": "Kelompok A",
+        "mataPelajaran": [
+            {
+                "id": "IPS-10-KA-SS",
+                "nama": "Sosiologi"
+            },
+            {
+                "id": "IPS-10-KA-PAI",
+                "nama": "Pendidikan Agama Islam"
+            }
+        ]
+    },
+    {
+        "jurusan": "IPA",
+        "tingkat": "11",
+        "kelompok": "Kelompok B",
+        "mataPelajaran": [
+            {
+                "id": "IPA-11-KB-BIO",
+                "nama": "Biologi"
+            },
+            {
+                "id": "IPA-11-KB-CHE",
+                "nama": "Kimia"
+            }
+        ]
+    },
+    {
+        "jurusan": "IPS",
+        "tingkat": "11",
+        "kelompok": "Kelompok B",
+        "mataPelajaran": [
+            {
+                "id": "IPS-11-KB-EKO",
+                "nama": "Ekonomi"
+            },
+            {
+                "id": "IPS-11-KB-ANT",
+                "nama": "Antropologi"
+            }
+        ]
+    }
+]
