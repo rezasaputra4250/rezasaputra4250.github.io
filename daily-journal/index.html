@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To Do List</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-100 p-6">
+    <div class="max-w-xl mx-auto bg-white p-6 rounded shadow">
+        <h1 class="text-2xl font-bold mb-4">📝 To Do List</h1>
+
+        <div class="flex gap-2 mb-4">
+            <input id="taskInput" type="text" placeholder="Tugas..." class="flex-1 border p-2 rounded">
+            <input id="dateInput" type="date" class="border p-2 rounded">
+            <button id="addBtn" class="bg-blue-600 text-white px-4 py-2 rounded">Tambah</button>
+        </div>
+
+        <table class="w-full text-left border-t">
+            <thead>
+                <tr>
+                    <th class="py-2">✔</th>
+                    <th class="py-2">Tugas</th>
+                    <th class="py-2">Tanggal</th>
+                    <th class="py-2">🗑</th>
+                </tr>
+            </thead>
+            <tbody id="todoTable" class="text-sm"></tbody>
+        </table>
+    </div>
+
+    <script>
+        const LOCAL_KEY = 'todoList';
+
+        function loadTodos() {
+            const data = localStorage.getItem(LOCAL_KEY);
+            return data ? JSON.parse(data) : [];
+        }
+
+        function saveTodos(todos) {
+            localStorage.setItem(LOCAL_KEY, JSON.stringify(todos));
+        }
+
+        function renderTodos() {
+            const todos = loadTodos();
+            const $table = $('#todoTable');
+            $table.empty();
+
+            if (todos.length === 0) {
+                $table.append('<tr><td colspan="4" class="py-4 text-center text-gray-500">Tidak ada tugas</td></tr>');
+                return;
+            }
+
+            todos.forEach((todo, index) => {
+                const checked = todo.completed ? 'checked' : '';
+                const strike = todo.completed ? 'line-through text-gray-400' : '';
+                $table.append(`
+          <tr class="border-t">
+            <td class="py-2 text-center">
+              <input type="checkbox" data-index="${index}" class="checkTodo" ${checked}>
+            </td>
+            <td class="py-2 ${strike}">${todo.task}</td>
+            <td class="py-2">${todo.date}</td>
+            <td class="py-2 text-center">
+              <button data-index="${index}" class="deleteTodo text-red-500 hover:underline">Hapus</button>
+            </td>
+          </tr>
+        `);
+            });
+        }
+
+        $(document).ready(function () {
+            renderTodos();
+
+            $('#addBtn').on('click', function () {
+                const task = $('#taskInput').val().trim();
+                const date = $('#dateInput').val();
+                if (task === '' || date === '') return alert('Tugas dan tanggal wajib diisi.');
+
+                const todos = loadTodos();
+                todos.unshift({ task, date, completed: false });
+                saveTodos(todos);
+                renderTodos();
+
+                $('#taskInput').val('');
+                $('#dateInput').val('');
+            });
+
+            // Toggle selesai
+            $(document).on('change', '.checkTodo', function () {
+                const index = $(this).data('index');
+                const todos = loadTodos();
+                todos[index].completed = !todos[index].completed;
+                saveTodos(todos);
+                renderTodos();
+            });
+
+            // Hapus tugas
+            $(document).on('click', '.deleteTodo', function () {
+                const index = $(this).data('index');
+                const todos = loadTodos();
+                todos.splice(index, 1);
+                saveTodos(todos);
+                renderTodos();
+            });
+        });
+    </script>
+</body>
+
+</html>
