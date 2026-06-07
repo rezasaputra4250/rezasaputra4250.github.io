@@ -12,7 +12,7 @@ function About() {
         />
 
         <div className="text-left">
-          <p className="max-w-3xl text-lg leading-8 text-[#5b6470]">
+          <p className="max-w-3xl text-lg leading-8 text-[#5f6f85]">
             Saya suka membangun halaman yang tidak hanya terlihat bagus, tetapi juga
             nyaman dibaca dan mudah dipakai. Fokus saya ada pada struktur konten,
             konsistensi komponen, responsivitas, dan detail kecil yang membuat website
@@ -28,7 +28,7 @@ function About() {
             {skills.map((skill) => (
               <span
                 key={skill}
-                className="rounded-full border border-[#e5dfd4] bg-white px-4 py-2 text-sm font-bold text-[#3f4852]"
+                className="rounded-full border border-[#d8e3f0] bg-white px-4 py-2 text-sm font-bold text-[#334b66]"
               >
                 {skill}
               </span>

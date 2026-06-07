@@ -1,6 +1,7 @@
 export const navItems = [
   { label: 'Tentang', href: '#about' },
   { label: 'Proyek', href: '#projects' },
+  { label: 'Paket', href: '#packages' },
   { label: 'Proses', href: '#process' },
   { label: 'Kontak', href: '#contact' },
 ]
@@ -34,6 +35,8 @@ export const projects = [
     type: 'Company Profile',
     description: 'Halaman promosi dengan struktur konten jelas untuk menjelaskan layanan dan mendorong kontak.',
     stack: ['UI Design', 'React', 'SEO'],
+    href: '#company-profile',
+    action: 'Lihat contoh',
   },
   {
     title: 'Dashboard Admin',
@@ -58,5 +61,30 @@ export const processSteps = [
     step: '03',
     title: 'Build dan testing',
     detail: 'Mengubah desain menjadi React component lalu mengecek tampilan di desktop dan mobile.',
+  },
+]
+
+export const websitePackages = [
+  {
+    name: 'Starter',
+    price: 'Mulai 750K',
+    label: 'Landing Page',
+    description: 'Cocok untuk promosi produk, jasa, event, atau profil singkat.',
+    features: ['1 halaman responsif', 'Desain modern', 'Form kontak', 'Optimasi dasar SEO'],
+  },
+  {
+    name: 'Professional',
+    price: 'Mulai 1.5JT',
+    label: 'Company Profile',
+    description: 'Untuk bisnis yang butuh website lengkap, rapi, dan mudah dipercaya.',
+    features: ['3-5 halaman', 'Konten layanan', 'Galeri atau portofolio', 'Integrasi WhatsApp'],
+    highlighted: true,
+  },
+  {
+    name: 'Custom',
+    price: 'Diskusi dulu',
+    label: 'Web App',
+    description: 'Untuk kebutuhan khusus seperti dashboard, katalog, atau sistem sederhana.',
+    features: ['Flow sesuai kebutuhan', 'Komponen React', 'Siap dikembangkan', 'Konsultasi fitur'],
   },
 ]

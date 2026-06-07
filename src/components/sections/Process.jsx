@@ -9,13 +9,13 @@ function Process() {
 
         <div className="space-y-4">
           {processSteps.map((item) => (
-            <div key={item.step} className="grid gap-4 rounded-2xl border border-[#e5dfd4] bg-white p-5 text-left sm:grid-cols-[72px_1fr]">
-              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#172026] text-sm font-black text-white">
+            <div key={item.step} className="grid gap-4 rounded-2xl border border-[#d8e3f0] bg-white p-5 text-left shadow-sm shadow-[#0f2747]/5 sm:grid-cols-[72px_1fr]">
+              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#0f2747] text-sm font-black text-white">
                 {item.step}
               </div>
               <div>
-                <h3 className="text-lg font-black text-[#172026]">{item.title}</h3>
-                <p className="mt-2 leading-7 text-[#68727f]">{item.detail}</p>
+                <h3 className="text-lg font-black text-[#102033]">{item.title}</h3>
+                <p className="mt-2 leading-7 text-[#5f6f85]">{item.detail}</p>
               </div>
             </div>
           ))}

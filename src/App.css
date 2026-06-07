@@ -8,11 +8,11 @@ body {
 }
 
 ::selection {
-  background: #0f766e;
+  background: #2563eb;
   color: #ffffff;
 }
 
 :focus-visible {
-  outline: 3px solid rgba(15, 118, 110, 0.45);
+  outline: 3px solid rgba(37, 99, 235, 0.45);
   outline-offset: 4px;
 }
